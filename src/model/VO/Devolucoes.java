@@ -14,7 +14,7 @@ class Devolucoes{
 	}
 
 	public void setCpfCliente(String cpfCliente) {
-		if(cpfCliente == null || cpfCliente.trim().equals("")) {
+		if(cpfCliente == null || cpfCliente.isEmpty()) {
 			System.out.println("[ERRO] CPF vazio");
 		}else {
 			this.cpfCliente = cpfCliente;
@@ -26,7 +26,7 @@ class Devolucoes{
 	}
 
 	public void setNomeProduto(String nomeProduto) {
-		if(nomeProduto == null || nomeProduto.trim().equals("")) {
+		if(nomeProduto == null || nomeProduto.isEmpty()) {
 			System.out.println("[ERRO] Nome do produto vazio");
 		}else {
 			this.nomeProduto = nomeProduto;
@@ -38,7 +38,7 @@ class Devolucoes{
 	}
 
 	public void setQtdExemplares(int qtdExemplares) {
-		if(qtdExemplares < 1) {
+		if(qtdExemplares == null || qtdExemplares < 1) {
 			System.out.println("[ERRO] Quantidade inválida");
 		}else {
 			this.qtdExemplares = qtdExemplares;

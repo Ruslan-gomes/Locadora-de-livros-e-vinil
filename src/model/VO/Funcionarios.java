@@ -12,7 +12,7 @@ class Funcionarios{
 	}
 
 	public void setNome(String nome) {
-		if(nome == null || nome.trim().equals("")) {
+		if(nome == null || nome.isEmpty()) {
 			System.out.println("[ERRO] Nome vazio");
 		}else {
 			this.nome = nome;
@@ -24,7 +24,7 @@ class Funcionarios{
 	}
 
 	public void setLogin(String login) {
-		if(login == null || login.trim().equals("")) {
+		if(login == null || login.isEmpty()) {
 			System.out.println("[ERRO] Login vazio");
 		}else {
 			this.login = login;
@@ -36,7 +36,7 @@ class Funcionarios{
 	}
 
 	public void setSenha(String senha) {
-		if(senha == null || senha.trim().equals("")) {
+		if(senha == null || senha.isEmpty()) {
 			System.out.println("[ERRO] Senha vazio");
 		}else {
 			this.senha = senha;
@@ -48,7 +48,7 @@ class Funcionarios{
 	}
 
 	public void setCargo(String cargo) {
-		if(cargo == null || cargo.trim().equals("")) {
+		if(cargo == null || cargo.isEmpty()) {
 			System.out.println("[ERRO] Cargo vazio");
 		}else {
 			this.cargo = cargo;
