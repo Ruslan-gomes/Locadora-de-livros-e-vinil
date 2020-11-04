@@ -14,7 +14,7 @@ class DiscosVO {
 	}
 
 	public void setTitulo(String titulo) {
-		if(titulo.isEmpty() || titulo == null)
+		if(titulo == null || titulo.isEmpty())
 		{
 			System.out.println("Título inválido!");
 		}
@@ -30,7 +30,7 @@ class DiscosVO {
 	}
 
 	public void setNomeBanda(String nomeBanda) {
-		if(nomeBanda.isEmpty() || nomeBanda == null)
+		if(nomeBanda == null || nomeBanda.isEmpty())
 		{
 			System.out.println("Nome de banda inválido!");
 		}
@@ -45,7 +45,7 @@ class DiscosVO {
 	}
 
 	public void setEstilo(String estilo) {
-		if(estilo.isEmpty() || estilo == null)
+		if(estilo == null || estilo.isEmpty())
 		{
 			System.out.println("Estilo inválido!");
 		}

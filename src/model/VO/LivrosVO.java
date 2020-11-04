@@ -15,7 +15,7 @@ class LivrosVO {
 	}
 
 	public void setTitulo(String titulo) {
-		if(titulo.isEmpty() || titulo == null)
+		if(titulo == null || titulo.isEmpty())
 		{
 			System.out.println("Título inválido!");
 		}
@@ -30,7 +30,7 @@ class LivrosVO {
 	}
 
 	public void setGenero(String genero) {
-		if(genero.isEmpty() || genero == null)
+		if(genero == null || genero.isEmpty())
 		{
 			System.out.println("Gênero inválido!");
 		}
@@ -45,7 +45,7 @@ class LivrosVO {
 	}
 
 	public void setAnoLancamento(String anoLancamento) {
-		if(anoLancamento.isEmpty() || anoLancamento == null)
+		if(anoLancamento == null || anoLancamento.isEmpty() )
 		{
 			System.out.println("Ano de lançamento inválido!");
 		}
@@ -75,7 +75,7 @@ class LivrosVO {
 	}
 
 	public void setQtdExemplares(int qtdExemplares) {
-		if(qtdExemplares < 0)
+		if(qtdExemplares <= 0)
 		{
 			System.out.println("Quantidade de exemplares inválida!");
 		}
@@ -90,7 +90,7 @@ class LivrosVO {
 	}
 
 	public void setValorAluguel(double valorAluguel) {
-		if(valorAluguel < 0 && valorAluguel >=200 )
+		if(valorAluguel <= 0 && valorAluguel >=200 )
 		{
 			System.out.println("Valor de aluguel inválido!");
 		}
