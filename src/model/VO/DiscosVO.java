@@ -1,6 +1,6 @@
 package model.VO;
 
-class Discos {
+class DiscosVO {
 	private String titulo;
 	private String nomeBanda;
 	private String estilo;
@@ -14,7 +14,7 @@ class Discos {
 	}
 
 	public void setTitulo(String titulo) {
-		if(titulo.isEmpty())
+		if(titulo.isEmpty() || titulo == null)
 		{
 			System.out.println("Título inválido!");
 		}
@@ -22,6 +22,7 @@ class Discos {
 		{
 			this.titulo = titulo;
 		}
+		
 	}
 
 	public String getNomeBanda() {
@@ -29,7 +30,7 @@ class Discos {
 	}
 
 	public void setNomeBanda(String nomeBanda) {
-		if(nomeBanda.isEmpty())
+		if(nomeBanda.isEmpty() || nomeBanda == null)
 		{
 			System.out.println("Nome de banda inválido!");
 		}
@@ -44,7 +45,7 @@ class Discos {
 	}
 
 	public void setEstilo(String estilo) {
-		if(estilo.isEmpty())
+		if(estilo.isEmpty() || estilo == null)
 		{
 			System.out.println("Estilo inválido!");
 		}
@@ -59,7 +60,7 @@ class Discos {
 	}
 
 	public void setQtdExemplares(int qtdExemplares) {
-		if(qtdExemplares < 0)
+		if(qtdExemplares <= 0)
 		{
 			System.out.println("Quantidade de exemplares inválida!");
 		}
@@ -74,7 +75,7 @@ class Discos {
 	}
 
 	public void setValorAluguel(double valorAluguel) {
-		if(valorAluguel < 0)
+		if(valorAluguel <= 0 && valorAluguel >=200)
 		{
 			System.out.println("Valor de aluguel inválido!");
 		}

@@ -1,6 +1,6 @@
 package model.VO;
 
-class Livros {
+class LivrosVO {
 	private String titulo;
 	private String genero;
 	private String anoLancamento;
@@ -15,14 +15,14 @@ class Livros {
 	}
 
 	public void setTitulo(String titulo) {
-		if(titulo.isEmpty())
+		if(titulo.isEmpty() || titulo == null)
 		{
 			System.out.println("Título inválido!");
 		}
 		else
 		{
 			this.titulo = titulo;
-		}
+		}	
 	}
 
 	public String getGenero() {
@@ -30,11 +30,11 @@ class Livros {
 	}
 
 	public void setGenero(String genero) {
-		if(genero.isEmpty())
+		if(genero.isEmpty() || genero == null)
 		{
 			System.out.println("Gênero inválido!");
 		}
-		else
+		else 
 		{
 			this.genero = genero;
 		}
@@ -45,7 +45,7 @@ class Livros {
 	}
 
 	public void setAnoLancamento(String anoLancamento) {
-		if(anoLancamento.isEmpty())
+		if(anoLancamento.isEmpty() || anoLancamento == null)
 		{
 			System.out.println("Ano de lançamento inválido!");
 		}
@@ -90,7 +90,7 @@ class Livros {
 	}
 
 	public void setValorAluguel(double valorAluguel) {
-		if(valorAluguel < 0 )
+		if(valorAluguel < 0 && valorAluguel >=200 )
 		{
 			System.out.println("Valor de aluguel inválido!");
 		}
