@@ -38,7 +38,7 @@ class Alugueis{
 	}
 
 	public void setQtdExemplares(int qtdExemplares) {
-		if(qtdExemplares == null || qtdExemplares < 1) {
+		if(qtdExemplares < 1) {
 			System.out.println("[ERRO] Quantidade inválida");
 		}else {
 			this.qtdExemplares = qtdExemplares;
