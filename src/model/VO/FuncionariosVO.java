@@ -1,23 +1,10 @@
 package model.VO;
 
-class Funcionarios{
-	private String nome;
+class Funcionarios extends PessoaVO{
 	private String login;
 	private String senha;
 	private String cargo;
 	
-	
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		if(nome == null || nome.isEmpty()) {
-			System.out.println("[ERRO] Nome vazio");
-		}else {
-			this.nome = nome;
-		}
-	}
 
 	public String getLogin() {
 		return login;

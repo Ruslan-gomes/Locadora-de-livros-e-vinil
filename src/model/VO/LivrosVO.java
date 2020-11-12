@@ -1,30 +1,13 @@
 package model.VO;
 
-class LivrosVO {
-	private String titulo;
+public class LivrosVO extends ProdutoVO {
 	private String genero;
 	private String anoLancamento;
 	private int qtdPaginas;
-	private int qtdExemplares;
-	private double valorAluguel;
 
 
-
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		if(titulo == null || titulo.isEmpty())
-		{
-			System.out.println("Título inválido!");
-		}
-		else
-		{
-			this.titulo = titulo;
-		}	
-	}
-
+	//Métodos getters and setters.
+	
 	public String getGenero() {
 		return genero;
 	}
@@ -70,49 +53,22 @@ class LivrosVO {
 		}
 	}
 
-	public int getQtdExemplares() {
-		return qtdExemplares;
-	}
 
-	public void setQtdExemplares(int qtdExemplares) {
-		if(qtdExemplares <= 0)
-		{
-			System.out.println("Quantidade de exemplares inválida!");
-		}
-		else
-		{
-			this.qtdExemplares = qtdExemplares;
-		}
-	}
-
-	public double getValorAluguel() {
-		return valorAluguel;
-	}
-
-	public void setValorAluguel(double valorAluguel) {
-		if(valorAluguel <= 0 && valorAluguel >=200 )
-		{
-			System.out.println("Valor de aluguel inválido!");
-		}
-		else
-		{
-			this.valorAluguel = valorAluguel;
-		}
-	}
-
-	void cadastrarLivro(){
+	//métodos gerais.
+	
+	public void cadastrarLivro(){
 
 	}
 	
-	void deletarLivro(){
+	public void deletarLivro(){
 
 	}
 
-	void editarLivro(){
+	public void editarLivro(){
 		
 	}
 
-	void pesquisarLivro(){
+	public void pesquisarLivro(){
 
 	}
 }
