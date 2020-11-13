@@ -1,6 +1,6 @@
 package model.VO;
 
-public class ProdutoVO {
+public class ProdutosVO {
 	private String titulo;
 	private int qtdExemplares;
 	private double valorAluguel;

@@ -1,6 +1,6 @@
 package model.VO;
 
-class Funcionarios extends PessoaVO{
+public class FuncionariosVO extends PessoasVO{
 	private String login;
 	private String senha;
 	private String cargo;
@@ -42,20 +42,4 @@ class Funcionarios extends PessoaVO{
 		}
 	}
 	
-
-	void cadastrarFuncionario() {
-		
-	}
-	
-	void deletarFuncionario() {
-		
-	}
-	
-	void editarFuncionario() {
-		
-	}
-	
-	void pesquisarFuncionario() {
-		
-	}
 }

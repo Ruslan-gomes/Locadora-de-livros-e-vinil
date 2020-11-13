@@ -1,6 +1,6 @@
 package model.VO;
 
-public class LivrosVO extends ProdutoVO {
+public class LivrosVO extends ProdutosVO {
 	private String genero;
 	private String anoLancamento;
 	private int qtdPaginas;
@@ -54,21 +54,4 @@ public class LivrosVO extends ProdutoVO {
 	}
 
 
-	//métodos gerais.
-	
-	public void cadastrarLivro(){
-
-	}
-	
-	public void deletarLivro(){
-
-	}
-
-	public void editarLivro(){
-		
-	}
-
-	public void pesquisarLivro(){
-
-	}
 }

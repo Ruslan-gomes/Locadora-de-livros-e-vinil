@@ -2,34 +2,48 @@ package model.VO;
 
 import java.util.Calendar;
 
-class Alugueis{
-	private String cpfCliente;
-	private String nomeProduto;
+public class AlugueisVO{
+	private ClientesVO cliente;
+	private LivrosVO livro;
+	private DiscosVO disco;
 	private int qtdExemplares;
+	private int qtdAlugados;
 	private Calendar dataEmprestimo;
+	private Calendar dataDevolucao;
 	
-	
-	public String getCpfCliente() {
-		return cpfCliente;
+	public ClientesVO getCliente() {
+		return cliente;
 	}
 
-	public void setCpfCliente(String cpfCliente) {
-		if(cpfCliente == null || cpfCliente.isEmpty()) {
-			System.out.println("[ERRO] CPF vazio");
+	public void setCliente(ClientesVO cliente) {
+		if(cliente == null) {
+			System.out.println("[ERRO] Cliente vazio");
 		}else {
-			this.cpfCliente = cpfCliente;
+			this.cliente = cliente;
 		}
 	}
 
-	public String getNomeProduto() {
-		return nomeProduto;
+	public LivrosVO getLivro() {
+		return livro;
 	}
 
-	public void setNomeProduto(String nomeProduto) {
-		if(nomeProduto == null || nomeProduto.isEmpty()) {
-			System.out.println("[ERRO] Nome vazio");
+	public void setLivro(LivrosVO livro) {
+		if(livro == null) {
+			System.out.println("[ERRO] Livro vazio");
 		}else {
-			this.nomeProduto = nomeProduto;
+			this.livro = livro;
+		}
+	}
+
+	public DiscosVO getDisco() {
+		return disco;
+	}
+
+	public void setDisco(DiscosVO disco) {
+		if(disco == null) {
+			System.out.println("[ERRO] Disco vazio");
+		}else {
+			this.disco = disco;
 		}
 	}
 
@@ -44,6 +58,18 @@ class Alugueis{
 			this.qtdExemplares = qtdExemplares;
 		}
 	}
+	
+	public int getQtdAlugados() {
+		return qtdAlugados;
+	}
+
+	public void setQtdAlugados(int qtdAlugados) {
+		if(qtdAlugados < 0) {
+			System.out.println("[ERRO] Quantidade de alugados inválida");
+		}else {
+			this.qtdAlugados = qtdAlugados;
+		}
+	}
 
 	public Calendar getDataEmprestimo() {
 		return dataEmprestimo;
@@ -51,26 +77,22 @@ class Alugueis{
 
 	public void setDataEmprestimo(Calendar dataEmprestimo) {
 		if(dataEmprestimo == null) {
-			System.out.println("[ERRO] Data nula");
+			System.out.println("[ERRO] Data de empréstimo nula");
 		}else {
 			this.dataEmprestimo = dataEmprestimo;
 		}
 	}
 	
+	public Calendar getDataDevolucao() {
+		return dataDevolucao;
+	}
 
-	void cadastrarAluguel() {
-		
+	public void setDataDevolucao(Calendar dataDevolucao) {
+		if(dataDevolucao == null) {
+			System.out.println("[ERRO] Data de devolução nula");
+		}else {
+			this.dataDevolucao = dataDevolucao;
+		}
 	}
-	
-	void deletarAluguel() {
-		
-	}
-	
-	void editarAluguel() {
-		
-	}
-	
-	void pesquisarAluguel() {
-		
-	}
+
 }

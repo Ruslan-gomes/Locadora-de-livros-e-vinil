@@ -1,6 +1,6 @@
 package model.VO;
 
-public class DiscosVO extends ProdutoVO{
+public class DiscosVO extends ProdutosVO{
 	private String nomeBanda;
 	private String estilo;
 
@@ -37,22 +37,4 @@ public class DiscosVO extends ProdutoVO{
 		}
 	}
 
-	
-	//metodos gerais.
-	
-	public void cadastrarDisco(){
-
-	}
-
-	public void deletarDisco(){
-
-	}
-
-	public void editarDisco(){
-
-	}
-
-	public void pesquisarDisco(){
-
-	}
 }
