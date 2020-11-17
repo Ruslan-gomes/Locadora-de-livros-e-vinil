@@ -7,28 +7,32 @@ public class LivrosBO {
 	void cadastrarLivro(LivrosVO livro)
 	{
 		/*
-		 * livro.cadastrarLivro();
+		 * Recebe um objeto do tipo LivrosVO verifica se já esta cadastrada
+		 * então cadastra os dados.
 		 */
 	}
 	
 	void deletarLivro(LivrosVO livro)
 	{
 		/*
-		 * livro.deletarLivro();
+		 * Recebe um objeto do tipo LivrosVO verifica se já está cadastrada
+		 * então deleta a tupla solicitada pelo ID_livro
 		 */
 	}
 	
 	void editarLivro(LivrosVO livro)
 	{
 		/*
-		 * livro.editarLivro();
+		 * Recebe um objeto do tipo LivrosVO verifica se já esta cadastrado
+		 * então edita os campos solicitados.
 		 */
 	}
 	
 	void pesquisarLivro(LivrosVO livro)
 	{
 		/*
-		 * livro.pesquisarLivro();
+		 * Recebe um objeto do tipo LivrosVO verifica se já esta cadastrado
+		 * então busca a tupla correspondente ao ID_livro.
 		 */
 	}
 }
