@@ -1,6 +1,6 @@
 package model.VO;
 
-public class PessoasVO {
+public abstract class PessoasVO {
 	protected String cpf;
 	protected String nome;
 	protected String endereco;
