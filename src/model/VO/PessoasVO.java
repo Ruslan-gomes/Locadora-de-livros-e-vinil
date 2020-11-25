@@ -52,4 +52,19 @@ public abstract class PessoasVO {
 			this.endereco = endereco;
 		}	
 	}
+	
+	
+	//métodos abstratos da classe funcionariosVO.
+	
+	public abstract String getLogin();
+
+	public abstract void setLogin(String login);
+
+	public abstract String getSenha();
+
+	public abstract void setSenha(String senha);
+
+	public abstract String getCargo();
+
+	public abstract void setCargo(String cargo);
 }

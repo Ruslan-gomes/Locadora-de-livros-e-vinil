@@ -52,5 +52,30 @@ public abstract class ProdutosVO {
 			this.valorAluguel = valorAluguel;
 		}
 	}
+	
+	
+	
+	//métodos abstratos da classe DiscosVO.
+	
+	public abstract String getNomeBanda(); 
+
+	public abstract void setNomeBanda(String nomeBanda);
+
+	public abstract String getEstilo();
+
+	public abstract void setEstilo(String estilo);
+
+	
+	//métodos abstratos da classe LivrosVO
+	
+	public abstract String getGenero();
+
+	public abstract void setGenero(String genero);
+
+	public abstract String getAnoLancamento();
+
+	public abstract void setAnoLancamento(String anoLancamento);
+
+	public abstract void setQtdPaginas(int qtdPaginas);
 
 }

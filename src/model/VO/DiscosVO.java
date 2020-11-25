@@ -5,8 +5,6 @@ public class DiscosVO extends ProdutosVO{
 	private String estilo;
 
 	
-
-	//Metodos getters e setters.
 	public String getNomeBanda() {
 		return nomeBanda;
 	}
@@ -35,6 +33,39 @@ public class DiscosVO extends ProdutosVO{
 		{
 			this.estilo = estilo;
 		}
+	}
+
+	
+	
+	// métodos vazios provenientes dos métodos abstratos da classe LivrosVO.
+	@Override
+	public String getGenero() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setGenero(String genero) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getAnoLancamento() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setAnoLancamento(String anoLancamento) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setQtdPaginas(int qtdPaginas) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
