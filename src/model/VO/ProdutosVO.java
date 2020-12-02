@@ -41,7 +41,7 @@ public abstract class ProdutosVO {
 	}
 
 	public void setQtdExemplares(int qtdExemplares) {
-		if(qtdExemplares <= 0)
+		if(qtdExemplares < 0)
 		{
 			System.out.println("Quantidade de exemplares inválida!");
 		}
