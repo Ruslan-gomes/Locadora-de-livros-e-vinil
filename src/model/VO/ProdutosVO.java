@@ -1,11 +1,24 @@
 package model.VO;
 
+import java.util.Calendar;
+
 public abstract class ProdutosVO {
+	private int id;
 	private String titulo;
 	private int qtdExemplares;
 	private double valorAluguel;
 	
-	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		if(id <= 0) {
+			System.out.println("ID inválido!");
+		}else {
+			this.id = id;
+		}
+	}
 	
 	public String getTitulo() {
 		return titulo;
@@ -72,10 +85,11 @@ public abstract class ProdutosVO {
 
 	public abstract void setGenero(String genero);
 
-	public abstract String getAnoLancamento();
+	public abstract Calendar getAnoLancamento();
 
-	public abstract void setAnoLancamento(String anoLancamento);
+	public abstract void setAnoLancamento(Calendar anoLancamento);
 
 	public abstract void setQtdPaginas(int qtdPaginas);
+
 
 }

@@ -1,5 +1,7 @@
 package model.VO;
 
+import java.util.Calendar;
+
 public class DiscosVO extends ProdutosVO{
 	private String nomeBanda;
 	private String estilo;
@@ -51,13 +53,13 @@ public class DiscosVO extends ProdutosVO{
 	}
 
 	@Override
-	public String getAnoLancamento() {
+	public Calendar getAnoLancamento() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void setAnoLancamento(String anoLancamento) {
+	public void setAnoLancamento(Calendar anoLancamento) {
 		// TODO Auto-generated method stub
 		
 	}

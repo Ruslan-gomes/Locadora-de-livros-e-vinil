@@ -1,8 +1,10 @@
 package model.VO;
 
+import java.util.Calendar;
+
 public class LivrosVO extends ProdutosVO {
 	private String genero;
-	private String anoLancamento;
+	private Calendar anoLancamento;
 	private int qtdPaginas;
 	
 	public String getGenero() {
@@ -20,12 +22,12 @@ public class LivrosVO extends ProdutosVO {
 		}
 	}
 
-	public String getAnoLancamento() {
+	public Calendar getAnoLancamento() {
 		return anoLancamento;
 	}
 
-	public void setAnoLancamento(String anoLancamento) {
-		if(anoLancamento == null || anoLancamento.isEmpty() )
+	public void setAnoLancamento(Calendar anoLancamento) {
+		if(anoLancamento == null)
 		{
 			System.out.println("Ano de lançamento inválido!");
 		}
