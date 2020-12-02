@@ -60,9 +60,9 @@ public abstract class PessoasVO {
 
 	public abstract void setLogin(String login);
 
-	public abstract String getSenha();
+	public abstract int getSenha();
 
-	public abstract void setSenha(String senha);
+	public abstract void setSenha(int senha);
 
 	public abstract String getCargo();
 

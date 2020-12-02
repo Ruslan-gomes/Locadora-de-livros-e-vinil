@@ -10,7 +10,7 @@ public interface AlugueisInterBO {
 	public void cadastrarDevolucao(AlugueisVO aluguel);
 	public void deletarAluguel(AlugueisVO aluguel);
 	public void editarAluguel(AlugueisVO aluguel);
-	public void pesquisarAluguel(AlugueisVO aluguel);
+	public AlugueisVO pesquisarAluguel(AlugueisVO aluguel);
 	public AlugueisVO [] relatorioAlugados(ClientesVO cliente, Calendar dataInicio, Calendar dataFim);
 	public AlugueisVO [] relatorioAlugados(Calendar dataInicio, Calendar dataFim);
 	public AlugueisVO [] relatorioFaturaMensal(Calendar mes);

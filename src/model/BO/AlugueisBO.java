@@ -24,10 +24,11 @@ public class AlugueisBO implements AlugueisInterBO {
 		// Vai receber um objeto do tipo AlugueisVO contendo as alterações desejadas e vai adiciona-las no BD. 
 	}
 	
-	public void pesquisarAluguel(AlugueisVO aluguel) {
+	public AlugueisVO pesquisarAluguel(AlugueisVO aluguel) {
 		/* Vai receber um objeto do tipo AlugueisVO com infromação do produto ou cliente, pesquisar no BD
 		 * e retornar com todas as informações desse aluguél.
 		 */
+		return null;
 	}
 	
 	//Cliente específico
