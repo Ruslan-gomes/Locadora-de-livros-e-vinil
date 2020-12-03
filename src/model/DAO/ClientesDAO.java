@@ -4,8 +4,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 import model.VO.ClientesVO;
 
@@ -66,12 +64,11 @@ public class ClientesDAO extends BaseDAO implements ClientesInterDAO{
 	}
 
 	@Override
-	public List<ClientesVO> Pesquisar(ClientesVO vo) {
+	public ResultSet Pesquisar(ClientesVO vo) {
 		String sql = " ";
 		conn = getConnection();
 		PreparedStatement ptst = null;
-		ResultSet rs;
-		List<ClientesVO> clientes = new ArrayList<ClientesVO>();
+		ResultSet rs = null;
 		try {
 			if(vo.getNome() == null)
 			{
@@ -86,48 +83,31 @@ public class ClientesDAO extends BaseDAO implements ClientesInterDAO{
 				ptst.setString(1, "%" + vo.getNome() + "%");
 			}
 			rs = ptst.executeQuery();
-			while(rs.next())
-			{
-				ClientesVO cliente = new ClientesVO();
-				cliente.setCpf(rs.getString("Cpf"));
-				cliente.setNome(rs.getString("Nome"));
-				cliente.setEndereco(rs.getString("Endereco"));
-				clientes.add(cliente);
-			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println("Cliente Pesquisado");
-		return clientes;
+		return rs;
 	}
 	
 	
 	@Override
-	public List<ClientesVO> Listar() {
+	public ResultSet Listar() {
 		conn = getConnection();
 		String sql = "SELECT * FROM Clientes";
 		Statement st;
-		ResultSet rs;
-		
-		List<ClientesVO> clientes = new ArrayList<ClientesVO>();
+		ResultSet rs = null;
 		try {
 			st = conn.createStatement();
 			rs = st.executeQuery(sql);
-			while(rs.next())
-			{
-				ClientesVO cliente = new ClientesVO();
-				cliente.setCpf(rs.getString("Cpf"));
-				cliente.setNome(rs.getString("Nome"));
-				cliente.setEndereco(rs.getString("Endereco"));
-				clientes.add(cliente);
-			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println("Clientes listados");
-		return clientes;
+		return rs;
 	}
 
 }

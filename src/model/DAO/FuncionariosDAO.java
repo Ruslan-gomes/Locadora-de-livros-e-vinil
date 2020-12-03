@@ -4,8 +4,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 import model.VO.FuncionariosVO;
 
@@ -73,63 +71,38 @@ public class FuncionariosDAO extends BaseDAO implements FuncionariosInterDAO{
 	}
 
 	@Override
-	public FuncionariosVO Pesquisar(FuncionariosVO vo) {
+	public ResultSet Pesquisar(FuncionariosVO vo) {
 		conn = getConnection();
 		String sql = "SELECT * FROM Funcionarios WHERE Id_func = ?";
 		PreparedStatement ptst;
-		ResultSet rs;
-		FuncionariosVO func = new FuncionariosVO();
+		ResultSet rs = null;
 		try {
 			ptst = conn.prepareStatement(sql);
 			ptst.setLong(1, vo.getId());
 			rs = ptst.executeQuery();
-			while(rs.next())
-			{
-				func.setCpf(rs.getString("Cpf"));
-				func.setNome(rs.getString("Nome"));
-				func.setEndereco(rs.getString("Endereco"));
-				func.setLogin(rs.getString("Login"));
-				func.setSenha(rs.getInt("Senha"));
-				func.setCargo(rs.getString("Cargo"));
-				func.setId(rs.getLong("Id_func"));
-			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println("Funcionário Pesquisado");
-		return func;
+		return rs;
 	}
 
 	@Override
-	public List<FuncionariosVO> Listar() {
+	public ResultSet Listar() {
 		conn = getConnection();
 		String sql = "SELECT * FROM Funcionarios";
 		Statement st;
-		ResultSet rs;
-		
-		List<FuncionariosVO> funcionarios = new ArrayList<FuncionariosVO>();
+		ResultSet rs = null;
 		try {
 			st = conn.createStatement();
 			rs = st.executeQuery(sql);
-			while(rs.next())
-			{
-				FuncionariosVO func = new FuncionariosVO();
-				func.setCpf(rs.getString("Cpf"));
-				func.setNome(rs.getString("Nome"));
-				func.setEndereco(rs.getString("Endereco"));
-				func.setLogin(rs.getString("Login"));
-				func.setSenha(rs.getInt("Senha"));
-				func.setCargo(rs.getString("Cargo"));
-				func.setId(rs.getLong("Cpf"));
-				funcionarios.add(func);
-			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println("Funcionários listados");
-		return funcionarios;
+		return rs;
 	}
 
 }

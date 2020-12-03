@@ -1,6 +1,6 @@
 package model.DAO;
 
-import java.util.List;
+import java.sql.ResultSet;
 
 import model.VO.FuncionariosVO;
 
@@ -8,6 +8,6 @@ public interface FuncionariosInterDAO {
 	public void Cadastrar(FuncionariosVO vo);
 	public void Deletar(FuncionariosVO vo);
 	public void Editar(FuncionariosVO vo);
-	public FuncionariosVO Pesquisar(FuncionariosVO vo);
-	public List<FuncionariosVO> Listar();
+	public ResultSet Pesquisar(FuncionariosVO vo);
+	public ResultSet Listar();
 }

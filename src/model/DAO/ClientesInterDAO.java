@@ -1,6 +1,6 @@
 package model.DAO;
 
-import java.util.List;
+import java.sql.ResultSet;
 
 import model.VO.ClientesVO;
 
@@ -8,6 +8,6 @@ public interface ClientesInterDAO {
 	public void Cadastrar(ClientesVO vo);
 	public void Deletar(ClientesVO vo);
 	public void Editar(ClientesVO vo);
-	public List<ClientesVO> Pesquisar(ClientesVO vo);
-	public List<ClientesVO> Listar();
+	public ResultSet Pesquisar(ClientesVO vo);
+	public ResultSet Listar();
 }
