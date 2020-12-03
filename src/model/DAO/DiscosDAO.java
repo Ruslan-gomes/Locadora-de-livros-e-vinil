@@ -4,8 +4,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 import model.VO.DiscosVO;
 
@@ -67,12 +65,11 @@ public class DiscosDAO extends BaseDAO implements DiscosInterDAO{
 		}	
 	}
 	
-	public List<DiscosVO> pesquisar(DiscosVO vo) {
+	public ResultSet pesquisar(DiscosVO vo) {
 		conn = getConnection();
 		PreparedStatement ptst;
-		ResultSet rs;
+		ResultSet rs = null;
 		
-		List<DiscosVO> discos = new ArrayList<DiscosVO>();
 		try {
 			//pesquisa por titulo
 			if(vo.getTitulo() != null) {
@@ -80,20 +77,6 @@ public class DiscosDAO extends BaseDAO implements DiscosInterDAO{
 				ptst = conn.prepareStatement(sql);
 				ptst.setString(1, "%" + vo.getTitulo() + "%");
 				rs = ptst.executeQuery();
-				
-				while(rs.next()) {
-					DiscosVO disco = new DiscosVO();
-					//adicionando o resultado ao objeto
-					disco.setId(rs.getInt("id_disco"));
-					disco.setTitulo(rs.getString("titulo"));
-					disco.setEstilo(rs.getString("estilo"));
-					disco.setNomeBanda(rs.getString("nome_banda"));
-					disco.setQtdExemplares(rs.getInt("qtd_exemplares"));
-					disco.setValorAluguel(rs.getDouble("valor_aluguel"));
-					
-					discos.add(disco);
-				}
-			
 			}
 			//pesquisa por nome da banda
 			else if(vo.getNomeBanda() != null) {
@@ -101,19 +84,6 @@ public class DiscosDAO extends BaseDAO implements DiscosInterDAO{
 				ptst = conn.prepareStatement(sql);
 				ptst.setString(1, "%" + vo.getNomeBanda() + "%");
 				rs = ptst.executeQuery();
-				
-				while(rs.next()) {
-					DiscosVO disco = new DiscosVO();
-					//adicionando o resultado ao objeto
-					disco.setId(rs.getInt("id_disco"));
-					disco.setTitulo(rs.getString("titulo"));
-					disco.setEstilo(rs.getString("estilo"));
-					disco.setNomeBanda(rs.getString("nome_banda"));
-					disco.setQtdExemplares(rs.getInt("qtd_exemplares"));
-					disco.setValorAluguel(rs.getDouble("valor_aluguel"));
-					
-					discos.add(disco);
-				}
 			}
 			//pesquisa por estilo
 			else if(vo.getEstilo() != null) {
@@ -121,54 +91,31 @@ public class DiscosDAO extends BaseDAO implements DiscosInterDAO{
 				ptst = conn.prepareStatement(sql);
 				ptst.setString(1, "%" + vo.getEstilo() + "%");
 				rs = ptst.executeQuery();
-				
-				while(rs.next()) {
-					DiscosVO disco = new DiscosVO();
-					//adicionando o resultado ao objeto
-					disco.setId(rs.getInt("id_disco"));
-					disco.setTitulo(rs.getString("titulo"));
-					disco.setEstilo(rs.getString("estilo"));
-					disco.setNomeBanda(rs.getString("nome_banda"));
-					disco.setQtdExemplares(rs.getInt("qtd_exemplares"));
-					disco.setValorAluguel(rs.getDouble("valor_aluguel"));
-					
-					discos.add(disco);
-				}
 			}
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
 		System.out.println("Disco pesquisado!");
-		return discos;
+		return rs;
 	}
 	
-	public List<DiscosVO> listar(){
+	//Listar todos os discos
+	public ResultSet listar(){
 		conn = getConnection();
 		String sql = "SELECT * FROM discos";
 		Statement st;
-		ResultSet rs;
-		List<DiscosVO> discos = new ArrayList<DiscosVO>();
+		ResultSet rs = null;
 		
 		try {
 			st = conn.createStatement();
 			rs = st.executeQuery(sql);
-			while(rs.next()) {
-				DiscosVO vo = new DiscosVO();
-				vo.setId(rs.getInt("id_disco"));
-				vo.setTitulo(rs.getString("titulo"));
-				vo.setEstilo(rs.getString("estilo"));
-				vo.setNomeBanda(rs.getString("nome_banda"));
-				vo.setQtdExemplares(rs.getInt("qtd_exemplares"));
-				vo.setValorAluguel(rs.getDouble("valor_aluguel"));
-				discos.add(vo);
-			}
+			
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 		
 		System.out.println("Discos listados!");
-		return discos;
+		return rs;
 	}
 }
