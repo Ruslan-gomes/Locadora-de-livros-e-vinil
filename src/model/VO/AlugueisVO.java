@@ -4,12 +4,14 @@ import java.util.Calendar;
 
 public class AlugueisVO{
 	private ClientesVO cliente;
+	private String nomeProduto;
 	private LivrosVO livro;
 	private DiscosVO disco;
 	private int qtdExemplares;
 	private int qtdAlugados;
 	private Calendar dataEmprestimo;
 	private Calendar dataDevolucao;
+	private double valorTotal;
 	
 	public ClientesVO getCliente() {
 		return cliente;
@@ -20,6 +22,18 @@ public class AlugueisVO{
 			System.out.println("[ERRO] Cliente vazio");
 		}else {
 			this.cliente = cliente;
+		}
+	}
+
+	public String getNomeProduto() {
+		return nomeProduto;
+	}
+
+	public void setNomeProduto(String nomeProduto) {
+		if(nomeProduto == null || nomeProduto.isEmpty()) {
+			System.out.println("Nome do produto inválido!");
+		}else {
+			this.nomeProduto = nomeProduto;
 		}
 	}
 
@@ -93,6 +107,19 @@ public class AlugueisVO{
 		}else {
 			this.dataDevolucao = dataDevolucao;
 		}
+	}
+
+	public double getValorTotal() {
+		return valorTotal;
+	}
+
+	public void setValorTotal(double valorTotal) {
+		if(valorTotal < 0) {
+			System.out.println("[ERRO] Valor total inválido ou negativo");
+		}else {
+			this.valorTotal = valorTotal;
+		}
+		
 	}
 
 }

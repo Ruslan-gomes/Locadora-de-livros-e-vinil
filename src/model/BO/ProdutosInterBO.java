@@ -2,9 +2,9 @@ package model.BO;
 
 import model.VO.ProdutosVO;
 
-public interface ProdutosInterBO {
+public interface ProdutosInterBO<VO> {
 	
-	public void cadastrarProduto(ProdutosVO produto);
+	public void cadastrarProduto(VO vo);
 	public void deletarProduto(ProdutosVO produto);
 	public void editarProduto(ProdutosVO produto);
 	public void pesquisarProduto(ProdutosVO produto);
