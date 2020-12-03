@@ -9,7 +9,6 @@ import java.util.List;
 
 import model.VO.DiscosVO;
 
-
 public class DiscosDAO extends BaseDAO implements DiscosInterDAO{
 	public void cadastrar(DiscosVO vo) {
 		conn = getConnection();
@@ -68,25 +67,73 @@ public class DiscosDAO extends BaseDAO implements DiscosInterDAO{
 		}	
 	}
 	
-	public DiscosVO pesquisar(DiscosVO vo) {
+	public List<DiscosVO> pesquisar(DiscosVO vo) {
 		conn = getConnection();
-		String sql = "SELECT * FROM discos WHERE titulo = ?";
 		PreparedStatement ptst;
 		ResultSet rs;
 		
-		DiscosVO disco = new DiscosVO();
+		List<DiscosVO> discos = new ArrayList<DiscosVO>();
 		try {
-			ptst = conn.prepareStatement(sql);
-			ptst.setString(1, vo.getTitulo());
-			rs = ptst.executeQuery();
-			while(rs.next()) {
-				//adicionando o resultado ao objeto livro
-				disco.setId(rs.getInt("id_disco"));
-				disco.setTitulo(rs.getString("titulo"));
-				disco.setEstilo(rs.getString("estilo"));
-				disco.setNomeBanda(rs.getString("nome_banda"));
-				disco.setQtdExemplares(rs.getInt("qtd_exemplares"));
-				disco.setValorAluguel(rs.getDouble("valor_aluguel"));
+			//pesquisa por titulo
+			if(vo.getTitulo() != null) {
+				String sql = "SELECT * FROM discos WHERE titulo ILIKE ?";
+				ptst = conn.prepareStatement(sql);
+				ptst.setString(1, "%" + vo.getTitulo() + "%");
+				rs = ptst.executeQuery();
+				
+				while(rs.next()) {
+					DiscosVO disco = new DiscosVO();
+					//adicionando o resultado ao objeto
+					disco.setId(rs.getInt("id_disco"));
+					disco.setTitulo(rs.getString("titulo"));
+					disco.setEstilo(rs.getString("estilo"));
+					disco.setNomeBanda(rs.getString("nome_banda"));
+					disco.setQtdExemplares(rs.getInt("qtd_exemplares"));
+					disco.setValorAluguel(rs.getDouble("valor_aluguel"));
+					
+					discos.add(disco);
+				}
+			
+			}
+			//pesquisa por nome da banda
+			else if(vo.getNomeBanda() != null) {
+				String sql = "SELECT * FROM discos WHERE nome_banda ILIKE ?";
+				ptst = conn.prepareStatement(sql);
+				ptst.setString(1, "%" + vo.getNomeBanda() + "%");
+				rs = ptst.executeQuery();
+				
+				while(rs.next()) {
+					DiscosVO disco = new DiscosVO();
+					//adicionando o resultado ao objeto
+					disco.setId(rs.getInt("id_disco"));
+					disco.setTitulo(rs.getString("titulo"));
+					disco.setEstilo(rs.getString("estilo"));
+					disco.setNomeBanda(rs.getString("nome_banda"));
+					disco.setQtdExemplares(rs.getInt("qtd_exemplares"));
+					disco.setValorAluguel(rs.getDouble("valor_aluguel"));
+					
+					discos.add(disco);
+				}
+			}
+			//pesquisa por estilo
+			else if(vo.getEstilo() != null) {
+				String sql = "SELECT * FROM discos WHERE estilo ILIKE ?";
+				ptst = conn.prepareStatement(sql);
+				ptst.setString(1, "%" + vo.getEstilo() + "%");
+				rs = ptst.executeQuery();
+				
+				while(rs.next()) {
+					DiscosVO disco = new DiscosVO();
+					//adicionando o resultado ao objeto
+					disco.setId(rs.getInt("id_disco"));
+					disco.setTitulo(rs.getString("titulo"));
+					disco.setEstilo(rs.getString("estilo"));
+					disco.setNomeBanda(rs.getString("nome_banda"));
+					disco.setQtdExemplares(rs.getInt("qtd_exemplares"));
+					disco.setValorAluguel(rs.getDouble("valor_aluguel"));
+					
+					discos.add(disco);
+				}
 			}
 			
 		} catch (SQLException e) {
@@ -94,7 +141,7 @@ public class DiscosDAO extends BaseDAO implements DiscosInterDAO{
 			e.printStackTrace();
 		}	
 		System.out.println("Disco pesquisado!");
-		return disco;
+		return discos;
 	}
 	
 	public List<DiscosVO> listar(){

@@ -12,6 +12,7 @@ import model.VO.LivrosVO;
 
 
 public class LivrosDAO extends BaseDAO implements LivrosInterDAO{
+	//cadastrar livro
 	public void cadastrar(LivrosVO vo) {
 		conn = getConnection();
 		String sql = "INSERT INTO livros (titulo, genero, ano_lancamento, qtd_paginas, qtd_exemplares, valor_aluguel ) VALUES (?, ?, ?, ?, ?, ?)";
@@ -32,6 +33,7 @@ public class LivrosDAO extends BaseDAO implements LivrosInterDAO{
 		}	
 	}
 	
+	//deletar livro
 	public void deletar(LivrosVO vo) {
 		conn = getConnection();
 		String sql = "DELETE FROM livros WHERE id = ?";
@@ -48,6 +50,7 @@ public class LivrosDAO extends BaseDAO implements LivrosInterDAO{
 		}	
 	}
 	
+	//editar livro
 	public void editar(LivrosVO vo) {
 		conn = getConnection();
 		String sql = "UPDATE livros SET titulo = ?, genero = ?, ano_lancamento = ?, qtd_paginas = ?, qtd_exemplares = ?, valor_aluguel = ? WHERE id_livro = ?";
@@ -71,28 +74,82 @@ public class LivrosDAO extends BaseDAO implements LivrosInterDAO{
 		}	
 	}
 	
-	public LivrosVO pesquisar(LivrosVO vo) {
+	public List<LivrosVO> pesquisar(LivrosVO vo) {
 		conn = getConnection();
-		String sql = "SELECT * FROM livros WHERE titulo = ?";
 		PreparedStatement ptst;
 		ResultSet rs;
 		
 		Calendar dataCalendar = Calendar.getInstance();
-		LivrosVO livro = new LivrosVO();
+		
+		List<LivrosVO> livros = new ArrayList<LivrosVO>();
 		try {
-			ptst = conn.prepareStatement(sql);
-			ptst.setString(1, vo.getTitulo());
-			rs = ptst.executeQuery();
-			while(rs.next()) {
-				//adicionando o resultado ao objeto livro
-				livro.setId(rs.getInt("id_livro"));
-				livro.setTitulo(rs.getString("titulo"));
-				livro.setGenero(rs.getString("genero"));
-				dataCalendar.set(Calendar.YEAR, rs.getInt("ano_lancamento"));
-				livro.setAnoLancamento(dataCalendar);
-				livro.setQtdPaginas(rs.getInt("qtd_paginas"));
-				livro.setQtdExemplares(rs.getInt("qtd_exemplares"));
-				livro.setValorAluguel(rs.getDouble("valor_aluguel"));
+			//pesquisa por titulo
+			if(vo.getTitulo() != null) {
+				String sql = "SELECT * FROM livros WHERE titulo ILIKE ?";
+				ptst = conn.prepareStatement(sql);
+				ptst.setString(1, "%" + vo.getTitulo() + "%");
+				rs = ptst.executeQuery();
+				
+				while(rs.next()) {
+					LivrosVO livro = new LivrosVO();
+					//adicionando o resultado ao objeto livro
+					livro.setId(rs.getInt("id_livro"));
+					livro.setTitulo(rs.getString("titulo"));
+					livro.setGenero(rs.getString("genero"));
+					dataCalendar.set(Calendar.YEAR, rs.getInt("ano_lancamento"));
+					livro.setAnoLancamento(dataCalendar);
+					livro.setQtdPaginas(rs.getInt("qtd_paginas"));
+					livro.setQtdExemplares(rs.getInt("qtd_exemplares"));
+					livro.setValorAluguel(rs.getDouble("valor_aluguel"));
+					
+					livros.add(livro);
+				}
+			
+			}
+			//pesquisa por genero
+			else if(vo.getGenero() != null) {
+				String sql = "SELECT * FROM livros WHERE genero ILIKE ?";
+				ptst = conn.prepareStatement(sql);
+				ptst.setString(1, "%" + vo.getGenero() + "%");
+				rs = ptst.executeQuery();
+				
+				while(rs.next()) {
+					LivrosVO livro = new LivrosVO();
+					//adicionando o resultado ao objeto livro
+					livro.setId(rs.getInt("id_livro"));
+					livro.setTitulo(rs.getString("titulo"));
+					livro.setGenero(rs.getString("genero"));
+					dataCalendar.set(Calendar.YEAR, rs.getInt("ano_lancamento"));
+					livro.setAnoLancamento(dataCalendar);
+					livro.setQtdPaginas(rs.getInt("qtd_paginas"));
+					livro.setQtdExemplares(rs.getInt("qtd_exemplares"));
+					livro.setValorAluguel(rs.getDouble("valor_aluguel"));
+					
+					livros.add(livro);
+				}
+			}
+			//pesquisa por ano de lançamento
+			else if(vo.getAnoLancamento() != null) {
+				int ano = vo.getAnoLancamento().getWeekYear();
+				String sql = "SELECT * FROM livros WHERE ano_lancamento = ?";
+				ptst = conn.prepareStatement(sql);
+				ptst.setInt(1, ano);
+				rs = ptst.executeQuery();
+				
+				while(rs.next()) {
+					LivrosVO livro = new LivrosVO();
+					//adicionando o resultado ao objeto livro
+					livro.setId(rs.getInt("id_livro"));
+					livro.setTitulo(rs.getString("titulo"));
+					livro.setGenero(rs.getString("genero"));
+					dataCalendar.set(Calendar.YEAR, rs.getInt("ano_lancamento"));
+					livro.setAnoLancamento(dataCalendar);
+					livro.setQtdPaginas(rs.getInt("qtd_paginas"));
+					livro.setQtdExemplares(rs.getInt("qtd_exemplares"));
+					livro.setValorAluguel(rs.getDouble("valor_aluguel"));
+					
+					livros.add(livro);
+				}
 			}
 			
 		} catch (SQLException e) {
@@ -100,9 +157,10 @@ public class LivrosDAO extends BaseDAO implements LivrosInterDAO{
 			e.printStackTrace();
 		}	
 		System.out.println("Livro pesquisado!");
-		return livro;
+		return livros;
 	}
 	
+	//listar todos os livros
 	public List<LivrosVO> listar() {
 		conn = getConnection();
 		String sql = "SELECT * FROM livros";
