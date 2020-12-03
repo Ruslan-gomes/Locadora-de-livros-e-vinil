@@ -3,3 +3,5 @@ bin/
 .project
 .settings/
 src/model/DAO/Teste.java
+src/view
+src/controller

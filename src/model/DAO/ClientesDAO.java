@@ -66,28 +66,40 @@ public class ClientesDAO extends BaseDAO implements ClientesInterDAO{
 	}
 
 	@Override
-	public ClientesVO Pesquisar(ClientesVO vo) {
+	public List<ClientesVO> Pesquisar(ClientesVO vo) {
+		String sql = " ";
 		conn = getConnection();
-		String sql = "SELECT * FROM Clientes WHERE Cpf = ?";
-		PreparedStatement ptst;
+		PreparedStatement ptst = null;
 		ResultSet rs;
-		ClientesVO cliente = new ClientesVO();
+		List<ClientesVO> clientes = new ArrayList<ClientesVO>();
 		try {
-			ptst = conn.prepareStatement(sql);
-			ptst.setString(1, vo.getCpf());
+			if(vo.getNome() == null)
+			{
+				sql = "SELECT * FROM Clientes WHERE Cpf ILIKE ?";
+				ptst = conn.prepareStatement(sql);
+				ptst.setString(1, "%" + vo.getCpf() + "%");
+			}
+			else
+			{
+				sql = "SELECT * FROM Clientes WHERE Nome ILIKE ?";
+				ptst = conn.prepareStatement(sql);
+				ptst.setString(1, "%" + vo.getNome() + "%");
+			}
 			rs = ptst.executeQuery();
 			while(rs.next())
 			{
+				ClientesVO cliente = new ClientesVO();
 				cliente.setCpf(rs.getString("Cpf"));
 				cliente.setNome(rs.getString("Nome"));
-				cliente.setEndereco(rs.getNString("Endereco"));
+				cliente.setEndereco(rs.getString("Endereco"));
+				clientes.add(cliente);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println("Cliente Pesquisado");
-		return cliente;
+		return clientes;
 	}
 	
 	

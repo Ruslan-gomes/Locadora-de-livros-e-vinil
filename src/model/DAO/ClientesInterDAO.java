@@ -8,6 +8,6 @@ public interface ClientesInterDAO {
 	public void Cadastrar(ClientesVO vo);
 	public void Deletar(ClientesVO vo);
 	public void Editar(ClientesVO vo);
-	public ClientesVO Pesquisar(ClientesVO vo);
+	public List<ClientesVO> Pesquisar(ClientesVO vo);
 	public List<ClientesVO> Listar();
 }
