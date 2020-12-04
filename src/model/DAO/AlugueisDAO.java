@@ -5,12 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 import model.VO.AlugueisVO;
-import model.VO.ClientesVO;
+//import model.VO.ClientesVO;
 
 public class AlugueisDAO extends BaseDAO implements AlugueisInterDAO{
 
@@ -106,132 +104,70 @@ public class AlugueisDAO extends BaseDAO implements AlugueisInterDAO{
 	
 
 	@Override
-	public List<AlugueisVO> pesquisarAluguel(Calendar dataInicio, Calendar dataFim) {
+	public ResultSet pesquisarAluguel(Calendar dataInicio, Calendar dataFim) {
 		conn = getConnection();
 		String sql = "SELECT * FROM alugueis WHERE data_emprestimo >= ? AND data_emprestimo <= ?";
 		PreparedStatement ptst;
-		ResultSet rs;
+		ResultSet rs = null;
 		
 		//conversão de Calendar para Date.SQL
 		Date dateInicio = new Date(dataInicio.getTimeInMillis());
 		Date dateFim = new Date(dataFim.getTimeInMillis());
 		
-		Calendar dataCalendar1 = Calendar.getInstance();
-		Calendar dataCalendar2 = Calendar.getInstance();
-		
-		// lista a ser retornada
-		List<AlugueisVO> alugueis = new ArrayList<AlugueisVO>();
 		try {
 			ptst = conn.prepareStatement(sql);
 			ptst.setDate(1, dateInicio);
 			ptst.setDate(2, dateFim);
 			rs = ptst.executeQuery();
-			while(rs.next())
-			{
-				AlugueisVO vo = new AlugueisVO();
-				ClientesVO cliente = new ClientesVO();
-				cliente.setCpf(rs.getString("Cpf_cliente"));
-				vo.setCliente(cliente);
-				vo.setNomeProduto(rs.getString("Nome_produto"));
-				vo.setQtdAlugados(rs.getInt("Qtd_alugada"));
-				dataCalendar1.setTime(rs.getDate("Data_emprestimo"));
-				vo.setDataEmprestimo(dataCalendar1);
-				dataCalendar2.setTime(rs.getDate("Data_devolucao"));
-				vo.setDataDevolucao(dataCalendar2);
-				vo.setValorTotal(rs.getDouble("valor_total"));
-				alugueis.add(vo);
-			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println("Pesquisa de alugueis por data!");
-		return alugueis;
+		return rs;
 	}
 	
 	@Override
-	public List<AlugueisVO> pesquisarAluguelCliente(AlugueisVO aluguel, Calendar dataInicio, Calendar dataFim) {
+	public ResultSet pesquisarAluguelCliente(AlugueisVO aluguel, Calendar dataInicio, Calendar dataFim) {
 		conn = getConnection();
 		String sql = "SELECT * FROM alugueis WHERE Cpf_cliente = ? AND data_emprestimo >= ? AND data_emprestimo <= ?";
 		PreparedStatement ptst;
-		ResultSet rs;
+		ResultSet rs = null;
 		
 		//conversão de Calendar para Date.SQL
 		Date dateInicio = new Date(dataInicio.getTimeInMillis());
 		Date dateFim = new Date(dataFim.getTimeInMillis());
 		
-		Calendar dataCalendar1 = Calendar.getInstance();
-		Calendar dataCalendar2 = Calendar.getInstance();
-		
-		// lista a ser retornada
-		List<AlugueisVO> alugueis = new ArrayList<AlugueisVO>();
 		try {
 			ptst = conn.prepareStatement(sql);
 			ptst.setString(1, aluguel.getCliente().getCpf());
 			ptst.setDate(2, dateInicio);
 			ptst.setDate(3, dateFim);
 			rs = ptst.executeQuery();
-			while(rs.next())
-			{
-				AlugueisVO vo = new AlugueisVO();
-				ClientesVO cliente = new ClientesVO();
-				cliente.setCpf(rs.getString("Cpf_cliente"));
-				vo.setCliente(cliente);
-				vo.setNomeProduto(rs.getString("Nome_produto"));
-				vo.setQtdAlugados(rs.getInt("Qtd_alugada"));
-				dataCalendar1.setTime(rs.getDate("Data_emprestimo"));
-				vo.setDataEmprestimo(dataCalendar1);
-				dataCalendar2.setTime(rs.getDate("Data_devolucao"));
-				vo.setDataDevolucao(dataCalendar2);
-				vo.setValorTotal(rs.getDouble("valor_total"));
-				alugueis.add(vo);
-			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println("Pesquisa de alugueis por cliente!");
-		return alugueis;
+		return rs;
 	}
 	
-	public List<AlugueisVO> listar(){
+	public ResultSet listar(){
 		conn = getConnection();
 		String sql = "SELECT * FROM alugueis";
 		Statement st;
-		ResultSet rs;
-		List<AlugueisVO> alugueis = new ArrayList<AlugueisVO>();
+		ResultSet rs = null;
 		
 		try {
 			st = conn.createStatement();
 			rs = st.executeQuery(sql);
-			while(rs.next()) {
-				AlugueisVO vo = new AlugueisVO();
-				ClientesVO cliente = new ClientesVO();
-				cliente.setCpf(rs.getString("cpf_cliente"));
-				vo.setCliente(cliente);
-				vo.setNomeProduto(rs.getString("nome_produto"));
-				vo.setQtdAlugados(rs.getInt("qtd_alugada"));
-				
-				Calendar dataCalendar = Calendar.getInstance();
-				//Date date = new Date(dataCalendar.getTimeInMillis());
-				dataCalendar.setTime(rs.getDate("data_emprestimo"));
-				vo.setDataEmprestimo(dataCalendar);
-				
-				Calendar dataCalendar2 = Calendar.getInstance();
-				//Date date2 = new Date(dataCalendar2.getTimeInMillis());
-				dataCalendar2.setTime(rs.getDate("data_devolucao"));
-				vo.setDataDevolucao(dataCalendar2);
-				
-				vo.setValorTotal(rs.getDouble("valor_total"));
-				
-				alugueis.add(vo);
-			}
+			
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 		
 		System.out.println("Alugueis listados!");
-		return alugueis;
+		return rs;
 	}
 	
 	public double faturaMensal(Calendar mes) {
