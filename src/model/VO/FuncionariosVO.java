@@ -3,7 +3,7 @@ package model.VO;
 public class FuncionariosVO extends PessoasVO{
 	private Long id;
 	private String login;
-	private int senha;
+	private String senha;
 	private String cargo;
 	
 	
@@ -27,12 +27,17 @@ public class FuncionariosVO extends PessoasVO{
 		}
 	}
 
-	public int getSenha() {
+	public String getSenha() {
 		return senha;
 	}
 
-	public void setSenha(int senha) {
-		this.senha = senha;
+	public void setSenha(String senha) {
+		if(senha == null) {
+			System.out.println("Senha nula");
+		}else {
+			this.senha = senha;
+		}
+		
 	}
 
 	public String getCargo() {

@@ -20,7 +20,7 @@ public class FuncionariosDAO extends BaseDAO implements FuncionariosInterDAO{
 			ptst.setString(2, vo.getNome());
 			ptst.setString(3, vo.getEndereco());
 			ptst.setString(4, vo.getLogin());
-			ptst.setInt(5, vo.getSenha());
+			ptst.setString(5, vo.getSenha());
 			ptst.setString(6, vo.getCargo());
 			ptst.execute();
 			System.out.println("Funcionário Cadastrado");
@@ -58,7 +58,7 @@ public class FuncionariosDAO extends BaseDAO implements FuncionariosInterDAO{
 			ptst.setString(2, vo.getNome());
 			ptst.setString(3, vo.getEndereco());
 			ptst.setString(4, vo.getLogin());
-			ptst.setInt(5, vo.getSenha());
+			ptst.setString(5, vo.getSenha());
 			ptst.setString(6, vo.getCargo());
 			ptst.setLong(7, vo.getId());
 			ptst.executeUpdate();
@@ -73,13 +73,25 @@ public class FuncionariosDAO extends BaseDAO implements FuncionariosInterDAO{
 	@Override
 	public ResultSet Pesquisar(FuncionariosVO vo) {
 		conn = getConnection();
-		String sql = "SELECT * FROM Funcionarios WHERE Id_func = ?";
 		PreparedStatement ptst;
 		ResultSet rs = null;
+		
 		try {
-			ptst = conn.prepareStatement(sql);
-			ptst.setLong(1, vo.getId());
-			rs = ptst.executeQuery();
+			//Pesquisa por ID
+			if(vo.getId() != null) {
+				String sql = "SELECT * FROM Funcionarios WHERE Id_func = ?";
+				ptst = conn.prepareStatement(sql);
+				ptst.setLong(1, vo.getId());
+				rs = ptst.executeQuery();
+			}
+			//Pesquisa por CPF
+			else if(vo.getLogin() != null) {
+				String sql = "SELECT * FROM Funcionarios WHERE login = ?";
+				ptst = conn.prepareStatement(sql);
+				ptst.setString(1, vo.getLogin());
+				rs = ptst.executeQuery();
+			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -19,13 +19,13 @@ public class ClientesVO extends PessoasVO{
 	}
 
 	@Override
-	public int getSenha() {
+	public String getSenha() {
 		// TODO Auto-generated method stub
-		return 0;
+		return null;
 	}
 
 	@Override
-	public void setSenha(int senha) {
+	public void setSenha(String senha) {
 		// TODO Auto-generated method stub
 		
 	}

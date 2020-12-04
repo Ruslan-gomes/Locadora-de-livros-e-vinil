@@ -7,8 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.controller.FrontController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FrontController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="400.0" layoutX="400.0" pickOnBounds="true">
          <image>
@@ -22,6 +21,7 @@
          </opaqueInsets>
       </TextField>
       <PasswordField fx:id="senha" alignment="CENTER" layoutX="82.0" layoutY="301.0" prefHeight="35.0" prefWidth="230.0" promptText="Senha" style="-fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15px;" />
-      <Button layoutX="147.0" layoutY="362.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-font-size: 16px;" text="Entrar" textFill="WHITE" />
+      <Button layoutX="147.0" layoutY="362.0" mnemonicParsing="false" onAction="#autenticar" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-font-size: 16px;" text="Entrar" textFill="WHITE" />
+      <Label fx:id="erroAut" alignment="CENTER" contentDisplay="CENTER" layoutX="106.0" layoutY="418.0" style="-fx-font-family: Roboto; -fx-font-size: 15px;" text="Usuário ou senha inválidos!" textFill="RED" visible="false" />
    </children>
 </Pane>
