@@ -116,6 +116,14 @@ public class Telas extends Application {
 		painelConteudo.getChildren().add(pane);
 	}
 	
+	//POP-UP de confirmação de deleção.
+	
+	public static void telaConfirmaDelecao(Pane painelConteudo) throws Exception{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/confirmar delecao.fxml"));
+	
+		painelConteudo.getChildren().add(pane);
+	}
+	
 	public static void main(String[] args) {
 		launch();
 	}
