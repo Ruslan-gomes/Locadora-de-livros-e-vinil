@@ -1,21 +1,23 @@
 package controller;
 
-
 import exception.AutenticationException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import model.BO.PessoasBO;
 import model.VO.FuncionariosVO;
+import view.Telas;
 
 public class FrontController {
 	@FXML private Label erroAut;
 	@FXML private TextField login;
 	@FXML private TextField senha;
+	@FXML private Pane painelConteudo;
 	
 	PessoasBO<FuncionariosVO> usuBO = new PessoasBO<FuncionariosVO>();
-	public void autenticar(ActionEvent event) {
+	public void autenticar(ActionEvent event) throws Exception {
 		FuncionariosVO funcionario = new FuncionariosVO();
 		funcionario.setLogin(login.getText());
 		funcionario.setSenha(senha.getText());
@@ -23,10 +25,11 @@ public class FrontController {
 		try {
 			FuncionariosVO usuarioAutenticado = usuBO.autenticar(funcionario);
 			System.out.println("Você está logado " + usuarioAutenticado.getNome());
-			if(usuarioAutenticado.getCargo() == "Administrador") {
+			if(usuarioAutenticado.getCargo().equals("Supervisor")) {
 				//abrir janela de administrador
+				Telas.telaInicial();
 				
-			}else if (usuarioAutenticado.getCargo() == "Recepcionista") {
+			}else if (usuarioAutenticado.getCargo().equals("Recepcionista")) {
 				//Abrir janela de recepcionista
 				
 			}
@@ -35,6 +38,14 @@ public class FrontController {
 			erroAut.setVisible(true);
 		}
 		
-		
+	}//fim autenticar
+	
+	public void telaCadastrarClientes(ActionEvent event) throws Exception {
+		Telas.telaCadastrarClientes(painelConteudo);
+	}
+	
+	//@FXML private TableView<ClientesVO> tableClientes;
+	public void telaPesquisaClientes(ActionEvent event) throws Exception {
+		Telas.telaPesquisaClientes(painelConteudo);
 	}
 }

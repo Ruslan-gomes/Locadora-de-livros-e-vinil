@@ -1,84 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FrontController">
    <children>
-      <Pane fx:id="painelConteudo" layoutX="151.0" prefHeight="600.0" prefWidth="650.0" style="-fx-background-color: gray;" />
+      <Pane fx:id="painelConteudo" layoutX="151.0" prefHeight="600.0" prefWidth="650.0" style="-fx-background-color: white;" />
       <MenuBar prefHeight="600.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: B89465;" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="10.0" prefHeight="17.0" prefWidth="151.0" style="-fx-font-family: Roboto; -fx-font-weight: 700;" text="Nome do funcionário" textAlignment="CENTER" textFill="WHITE" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="20.0" prefHeight="17.0" prefWidth="151.0" style="-fx-font-family: Roboto; -fx-font-weight: 700;" text="Nome do funcionário" textAlignment="CENTER" textFill="WHITE" />
+      <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="121.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Aluguéis" textAlignment="CENTER" textFill="WHITE">
+         <items>
+            <MenuItem fx:id="menuClientes1" mnemonicParsing="false" onAction="#telaCadastrarClientes">
+               <graphic>
+                  <Label text="Cadastrar aluguel" />
+               </graphic>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false">
+               <graphic>
+                  <Label text="Pesquisar aluguel" />
+               </graphic>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false">
+               <graphic>
+                  <Label text="Cadastrar devolução" />
+               </graphic>
+            </MenuItem>
+         </items>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MenuButton>
       <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="150.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Clientes" textAlignment="CENTER" textFill="WHITE">
          <items>
-            <MenuItem mnemonicParsing="false">
+            <MenuItem fx:id="menuClientes" mnemonicParsing="false" onAction="#telaCadastrarClientes">
                <graphic>
                   <Label text="Cadastrar cliente" />
                </graphic>
             </MenuItem>
-            <MenuItem mnemonicParsing="false">
+            <MenuItem mnemonicParsing="false" onAction="#telaPesquisaClientes">
                <graphic>
                   <Label text="Pesquisar cliente" />
                </graphic>
             </MenuItem>
          </items>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </MenuButton>
       <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="179.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Funcionarios" textFill="WHITE">
          <items>
             <MenuItem mnemonicParsing="false">
                <graphic>
-                  <Label text="Cadastrar cliente" />
+                  <Label text="Cadastrar funcionário" />
                </graphic>
             </MenuItem>
-            <MenuItem mnemonicParsing="false" text="Unspecified Action">
+            <MenuItem mnemonicParsing="false">
                <graphic>
-                  <Label text="Pesquisar cliente" />
+                  <Label text="Pesquisar funcionário" />
                </graphic>
             </MenuItem>
          </items>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </MenuButton>
       <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="208.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Livros" textFill="WHITE">
          <items>
             <MenuItem mnemonicParsing="false">
                <graphic>
-                  <Label text="Cadastrar cliente" />
+                  <Label text="Cadastrar livro" />
                </graphic>
             </MenuItem>
-            <MenuItem mnemonicParsing="false" text="Unspecified Action">
+            <MenuItem mnemonicParsing="false">
                <graphic>
-                  <Label text="Pesquisar cliente" />
+                  <Label text="Pesquisar livro" />
                </graphic>
             </MenuItem>
          </items>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </MenuButton>
       <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="237.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Discos" textFill="WHITE">
          <items>
             <MenuItem mnemonicParsing="false">
                <graphic>
-                  <Label text="Cadastrar cliente" />
+                  <Label text="Cadastrar disco" />
                </graphic>
             </MenuItem>
-            <MenuItem mnemonicParsing="false" text="Unspecified Action">
+            <MenuItem mnemonicParsing="false">
                <graphic>
-                  <Label text="Pesquisar cliente" />
+                  <Label text="Pesquisar disco" />
                </graphic>
             </MenuItem>
          </items>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </MenuButton>
       <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="266.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Relatorios" textFill="WHITE">
          <items>
             <MenuItem mnemonicParsing="false">
                <graphic>
-                  <Label text="Cadastrar cliente" />
+                  <Label text="Relatorio de aluguéis" />
                </graphic>
             </MenuItem>
-            <MenuItem mnemonicParsing="false" text="Unspecified Action">
+            <MenuItem mnemonicParsing="false">
                <graphic>
-                  <Label text="Pesquisar cliente" />
+                  <Label text="Fatura mensal" />
                </graphic>
             </MenuItem>
          </items>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MenuButton>
+      <MenuButton alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="0.0" layoutY="570.0" mnemonicParsing="false" popupSide="LEFT" prefHeight="30.0" prefWidth="151.0" rotate="180.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" textFill="RED">
+         <graphic>
+            <Label rotate="180.0" text="Desconectar" textFill="RED" translateX="5.0" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </MenuButton>
    </children>
 </Pane>

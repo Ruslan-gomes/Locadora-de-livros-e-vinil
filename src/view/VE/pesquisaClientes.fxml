@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FrontController">
+   <children>
+      <Label opacity="0.7" prefHeight="60.0" prefWidth="650.0" style="-fx-alignment: center; -fx-background-color: b89465; -fx-text-fill: #FFFFFF; -fx-font-size: 25;" text="Locadora de livros &amp; vinil" />
+      <Label layoutX="185.0" layoutY="75.0" style="-fx-font-size: 35; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Pesquisar cliente" />
+      <TextField fx:id="cpf" layoutX="167.0" layoutY="145.0" prefHeight="35.0" prefWidth="315.0" promptText="CPF" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <Label layoutX="316.0" layoutY="191.0" text="OU" />
+      <TextField fx:id="nome" layoutX="167.0" layoutY="220.0" prefHeight="35.0" prefWidth="315.0" promptText="Nome" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <Button layoutX="276.0" layoutY="274.0" mnemonicParsing="false" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Pesquisar" />
+      <Separator layoutX="-1.0" layoutY="334.0" prefHeight="10.0" prefWidth="650.0" style="-fx-border-width: 2px; -fx-background-color: #B89465;" />
+      <TableView fx:id="tableClientes" layoutY="338.0" prefHeight="262.0" prefWidth="650.0">
+        <columns>
+          <TableColumn prefWidth="120.0" text="CPF" />
+          <TableColumn minWidth="0.0" prefWidth="220.0" text="Nome" />
+            <TableColumn minWidth="0.0" prefWidth="240.0" text="Endereço" />
+            <TableColumn minWidth="0.0" prefWidth="70.0" text="Ações" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>
