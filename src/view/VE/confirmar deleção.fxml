@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label prefHeight="40.0" prefWidth="400.0" style="-fx-alignment: center; -fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-size: 25;" text="Locadora de livros &amp; vinil" />
+      <Label layoutX="71.0" layoutY="75.0" style="-fx-text-fill: #B89465; -fx-font-size: 18px;" text="Esta açao não pode ser desfeita!" />
+      <Button fx:id="yesdelete" layoutX="87.0" layoutY="188.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="75.0" style="-fx-background-color: #008000; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 12; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="SIM" />
+      <Button fx:id="nodelete" layoutX="248.0" layoutY="188.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="75.0" style="-fx-background-color: #FF0000; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 12; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="NÂO" />
+      <Label layoutX="123.0" layoutY="129.0" style="-fx-text-fill: #B89465; -fx-font-size: 18px;" text="Tem certeza disso ?" />
+   </children>
+</Pane>
