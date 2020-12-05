@@ -39,13 +39,4 @@ public class FrontController {
 		}
 		
 	}//fim autenticar
-	
-	public void telaCadastrarClientes(ActionEvent event) throws Exception {
-		Telas.telaCadastrarClientes(painelConteudo);
-	}
-	
-	//@FXML private TableView<ClientesVO> tableClientes;
-	public void telaPesquisaClientes(ActionEvent event) throws Exception {
-		Telas.telaPesquisaClientes(painelConteudo);
-	}
 }
