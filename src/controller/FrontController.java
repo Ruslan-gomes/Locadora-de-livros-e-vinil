@@ -31,7 +31,6 @@ public class FrontController {
 				
 			}else if (usuarioAutenticado.getCargo().equals("Recepcionista")) {
 				//Abrir janela de recepcionista
-				
 			}
 		}catch(AutenticationException e) {
 			erroAut.setText("Usuário ou senha inválidos!");

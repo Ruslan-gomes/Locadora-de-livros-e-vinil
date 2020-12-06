@@ -124,6 +124,29 @@ public class Telas extends Application {
 		painelConteudo.getChildren().add(pane);
 	}
 	
+	//Aluguel
+	
+	public static void telaCadastraAluguel(Pane painelConteudo) throws Exception{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/cadastrar aluguel.fxml"));
+		
+		painelConteudo.getChildren().clear();
+		painelConteudo.getChildren().add(pane);
+	}
+	
+	public static void telaCadastraDevolucao(Pane painelConteudo) throws Exception{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/cadastrar devolucao.fxml"));
+		
+		painelConteudo.getChildren().clear();
+		painelConteudo.getChildren().add(pane);
+	}
+	
+	public static void telaListaAlugueis(Pane painelConteudo) throws Exception{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/listar alugueis.fxml"));
+		
+		painelConteudo.getChildren().clear();
+		painelConteudo.getChildren().add(pane);
+	}
+	
 	public static void main(String[] args) {
 		launch();
 	}
