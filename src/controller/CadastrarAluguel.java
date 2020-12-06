@@ -14,8 +14,8 @@ public class CadastrarAluguel {
 	@FXML private TextField dataemprestimo;
 	@FXML private TextField valortotal;
 	@FXML private Pane painelConteudo;
-	
 	public void telaCadastrarAluguel(ActionEvent event) throws Exception {
 		Telas.telaCadastraAluguel(painelConteudo);
 	}
+	
 }

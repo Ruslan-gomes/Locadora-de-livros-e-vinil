@@ -13,8 +13,4 @@ public class PesquisarCliente {
 	@FXML private TextField nome;
 	@FXML private Pane painelConteudo;
 	
-	//@FXML private TableView<ClientesVO> tableClientes;
-	public void telaPesquisaClientes(ActionEvent event) throws Exception {
-		Telas.telaPesquisaClientes(painelConteudo);
-	}
 }

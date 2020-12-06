@@ -43,8 +43,9 @@ public class Telas extends Application {
 		primaryStage.setScene(cena);
 	}
 	
+//---Clientes
 	public static void telaCadastrarClientes(Pane painelConteudo) throws Exception{
-		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/cadastar cliente.fxml"));
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/cadastrar cliente.fxml"));
 		
 		painelConteudo.getChildren().clear();
 		painelConteudo.getChildren().add(pane);

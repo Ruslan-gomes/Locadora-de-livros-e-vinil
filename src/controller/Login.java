@@ -10,7 +10,7 @@ import model.BO.PessoasBO;
 import model.VO.FuncionariosVO;
 import view.Telas;
 
-public class FrontController {
+public class Login {
 	@FXML private Label erroAut;
 	@FXML private TextField login;
 	@FXML private TextField senha;
