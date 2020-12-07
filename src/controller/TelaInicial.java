@@ -78,7 +78,9 @@ public class TelaInicial {
 		painelConteudo.getChildren().add(pane);*/
 	}
 	
-
+	public void telaRelatorioFatura(ActionEvent event) throws Exception{
+		Telas.telaRelatorioFatura(painelConteudo);
+	}
 	
 	public Pane pegaPainelConteudo() {
 		return painelConteudo;

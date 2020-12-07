@@ -15,17 +15,26 @@
          <items>
             <MenuItem fx:id="menuClientes1" mnemonicParsing="false" onAction="#telaCadastraAluguel">
                <graphic>
-                  <Label text="Cadastrar aluguel" />
+                  <Label text="Cadastrar aluguel">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
                </graphic>
             </MenuItem>
             <MenuItem mnemonicParsing="false" onAction="#telaListaAlugueis">
                <graphic>
-                  <Label text="Pesquisar aluguel" />
+                  <Label text="Pesquisar aluguel">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
                </graphic>
             </MenuItem>
             <MenuItem mnemonicParsing="false" onAction="#telaCadastraDevolucao">
                <graphic>
-                  <Label text="Cadastrar devolução" />
+                  <Label text="Cadastrar devolução">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
                </graphic>
             </MenuItem>
          </items>
@@ -37,12 +46,18 @@
          <items>
             <MenuItem fx:id="menuClientes" mnemonicParsing="false" onAction="#telaCadastrarClientes">
                <graphic>
-                  <Label text="Cadastrar cliente" />
+                  <Label text="Cadastrar cliente">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
                </graphic>
             </MenuItem>
             <MenuItem mnemonicParsing="false" onAction="#telaPesquisaClientes">
                <graphic>
-                  <Label text="Pesquisar cliente" />
+                  <Label text="Pesquisar cliente">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
                </graphic>
             </MenuItem>
          </items>
@@ -54,12 +69,18 @@
          <items>
             <MenuItem mnemonicParsing="false" onAction="#telaCadastraFuncionario">
                <graphic>
-                  <Label text="Cadastrar funcionário" />
+                  <Label text="Cadastrar funcionário">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
                </graphic>
             </MenuItem>
             <MenuItem mnemonicParsing="false" onAction="#telaPesquisaFuncionario">
                <graphic>
-                  <Label text="Pesquisar funcionário" />
+                  <Label text="Pesquisar funcionário">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
                </graphic>
             </MenuItem>
          </items>
@@ -71,12 +92,18 @@
          <items>
             <MenuItem mnemonicParsing="false" onAction="#telaCadastraLivro">
                <graphic>
-                  <Label text="Cadastrar livro" />
+                  <Label text="Cadastrar livro">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
                </graphic>
             </MenuItem>
             <MenuItem mnemonicParsing="false" onAction="#telaPesquisaLivro">
                <graphic>
-                  <Label text="Pesquisar livro" />
+                  <Label text="Pesquisar livro">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
                </graphic>
             </MenuItem>
          </items>
@@ -88,12 +115,18 @@
          <items>
             <MenuItem mnemonicParsing="false" onAction="#telaCadastraDisco">
                <graphic>
-                  <Label text="Cadastrar disco" />
+                  <Label text="Cadastrar disco">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
                </graphic>
             </MenuItem>
             <MenuItem mnemonicParsing="false" onAction="#telaPesquisaDisco">
                <graphic>
-                  <Label text="Pesquisar disco" />
+                  <Label text="Pesquisar disco">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
                </graphic>
             </MenuItem>
          </items>
@@ -105,12 +138,18 @@
          <items>
             <MenuItem mnemonicParsing="false" onAction="#telaRelatorioAlugueis">
                <graphic>
-                  <Label text="Relatorio de aluguéis" />
+                  <Label text="Relatorio de aluguéis">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
                </graphic>
             </MenuItem>
-            <MenuItem mnemonicParsing="false">
+            <MenuItem mnemonicParsing="false" onAction="#telaRelatorioFatura">
                <graphic>
-                  <Label text="Fatura mensal" />
+                  <Label text="Fatura mensal">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
                </graphic>
             </MenuItem>
          </items>

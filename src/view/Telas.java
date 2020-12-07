@@ -190,6 +190,13 @@ public class Telas extends Application {
 		painelConteudo.getChildren().add(pane);
 	}
 	
+	public static void telaRelatorioFatura(Pane painelConteudo) throws Exception{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/relatorio fatura.fxml"));
+		
+		painelConteudo.getChildren().clear();
+		painelConteudo.getChildren().add(pane);
+	}
+	
 	
 	//POP-UP de confirmação de deleção.
 	

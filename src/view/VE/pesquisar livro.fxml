@@ -23,5 +23,10 @@
       </TableView>
       <Label layoutX="320.0" layoutY="247.0" text="OU" />
       <TextField fx:id="anolancamento" layoutX="170.0" layoutY="268.0" prefHeight="35.0" prefWidth="315.0" promptText="Ano de lançamento" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-weight: 700; fx-background-radius: 10; -fx-font-size: 15;" text="voltar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </Pane>
