@@ -10,6 +10,6 @@ public class ListarFuncionarios {
 @FXML private Pane painelConteudo;
 	
 	public void telaListarFuncionario(ActionEvent event) throws Exception {
-		Telas.telaListaFuncionario(painelConteudo);
+		//Telas.telaListaFuncionario(painelConteudo);
 	}
 }

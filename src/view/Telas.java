@@ -1,5 +1,6 @@
 package view;
 
+import controller.RelatorioAlugueis;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -43,6 +44,29 @@ public class Telas extends Application {
 		primaryStage.setScene(cena);
 	}
 	
+//--Alugueis
+	public static void telaCadastraAluguel(Pane painelConteudo) throws Exception{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/cadastrar aluguel.fxml"));
+		
+		painelConteudo.getChildren().clear();
+		painelConteudo.getChildren().add(pane);
+	}
+	
+	public static void telaListaAlugueis(Pane painelConteudo) throws Exception{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/listar alugueis.fxml"));
+		
+		painelConteudo.getChildren().clear();
+		painelConteudo.getChildren().add(pane);
+	}
+	
+	public static void telaCadastraDevolucao(Pane painelConteudo) throws Exception{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/cadastrar devolucao.fxml"));
+		
+		painelConteudo.getChildren().clear();
+		painelConteudo.getChildren().add(pane);
+	}
+	
+	
 //---Clientes
 	public static void telaCadastrarClientes(Pane painelConteudo) throws Exception{
 		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/cadastrar cliente.fxml"));
@@ -58,7 +82,7 @@ public class Telas extends Application {
 		painelConteudo.getChildren().clear();
 		painelConteudo.getChildren().add(pane);
 	}
-	
+	/*
 	public static void telaEditaClientes(Pane painelConteudo) throws Exception{
 		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/editar cliente.fxml"));
 		
@@ -79,9 +103,9 @@ public class Telas extends Application {
 		painelConteudo.getChildren().clear();
 		painelConteudo.getChildren().add(pane);
 	}
+	*/
 	
-	//funcionário
-	
+//--Funcionários
 	public static void telaCadastraFuncionario(Pane painelConteudo) throws Exception{
 		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/cadastrar funcionario.fxml"));
 		
@@ -89,6 +113,13 @@ public class Telas extends Application {
 		painelConteudo.getChildren().add(pane);
 	}
 	
+	public static void telaPesquisaFuncionario(Pane painelConteudo) throws Exception{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/pesquisar funcionario.fxml"));
+		
+		painelConteudo.getChildren().clear();
+		painelConteudo.getChildren().add(pane);
+	}
+	/*
 	public static void telaDeletaFuncionario(Pane painelConteudo) throws Exception{
 		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/deletar funcionario.fxml"));
 		
@@ -109,13 +140,56 @@ public class Telas extends Application {
 		painelConteudo.getChildren().clear();
 		painelConteudo.getChildren().add(pane);
 	}
+	*/
 	
-	public static void telaPesquisaFuncionario(Pane painelConteudo) throws Exception{
-		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/pesquisar funcionario.fxml"));
+//--Livros
+	public static void telaCadastraLivro(Pane painelConteudo) throws Exception{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/cadastrar livro.fxml"));
 		
 		painelConteudo.getChildren().clear();
 		painelConteudo.getChildren().add(pane);
 	}
+	
+	public static void telaPesquisaLivro(Pane painelConteudo) throws Exception{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/pesquisar livro.fxml"));
+		
+		painelConteudo.getChildren().clear();
+		painelConteudo.getChildren().add(pane);
+	}
+	
+
+//--Discos
+	public static void telaCadastraDisco(Pane painelConteudo) throws Exception{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/cadastrar disco.fxml"));
+		
+		painelConteudo.getChildren().clear();
+		painelConteudo.getChildren().add(pane);
+	}
+	
+	public static void telaPesquisaDisco(Pane painelConteudo) throws Exception{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/pesquisar disco.fxml"));
+		
+		painelConteudo.getChildren().clear();
+		painelConteudo.getChildren().add(pane);
+	}
+	
+//--Relatórios
+	public static void telaRelatorioAlugueis(Pane painelConteudo) throws Exception{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/relatorio de alugueis todos.fxml"));
+	
+		
+		painelConteudo.getChildren().clear();
+		painelConteudo.getChildren().add(pane);
+		
+	}
+	
+	public static void telaRelatorioAlugueisCliente(Pane painelConteudo) throws Exception{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/relatorio de alugueis cliente.fxml"));
+		
+		painelConteudo.getChildren().clear();
+		painelConteudo.getChildren().add(pane);
+	}
+	
 	
 	//POP-UP de confirmação de deleção.
 	
@@ -125,28 +199,7 @@ public class Telas extends Application {
 		painelConteudo.getChildren().add(pane);
 	}
 	
-	//Aluguel
 	
-	public static void telaCadastraAluguel(Pane painelConteudo) throws Exception{
-		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/cadastrar aluguel.fxml"));
-		
-		painelConteudo.getChildren().clear();
-		painelConteudo.getChildren().add(pane);
-	}
-	
-	public static void telaCadastraDevolucao(Pane painelConteudo) throws Exception{
-		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/cadastrar devolucao.fxml"));
-		
-		painelConteudo.getChildren().clear();
-		painelConteudo.getChildren().add(pane);
-	}
-	
-	public static void telaListaAlugueis(Pane painelConteudo) throws Exception{
-		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/listar alugueis.fxml"));
-		
-		painelConteudo.getChildren().clear();
-		painelConteudo.getChildren().add(pane);
-	}
 	
 	public static void main(String[] args) {
 		launch();

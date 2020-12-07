@@ -14,6 +14,6 @@ public class EditarCliente {
 	@FXML private Pane painelConteudo;
 	
 	public void telaEditaClientes(ActionEvent event) throws Exception {
-		Telas.telaEditaClientes(painelConteudo);
+		//Telas.telaEditaClientes(painelConteudo);
 	}
 }

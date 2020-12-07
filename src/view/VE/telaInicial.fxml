@@ -13,17 +13,17 @@
       <Label alignment="CENTER" contentDisplay="CENTER" layoutY="20.0" prefHeight="17.0" prefWidth="151.0" style="-fx-font-family: Roboto; -fx-font-weight: 700;" text="Nome do funcionário" textAlignment="CENTER" textFill="WHITE" />
       <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="121.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Aluguéis" textAlignment="CENTER" textFill="WHITE">
          <items>
-            <MenuItem fx:id="menuClientes1" mnemonicParsing="false" onAction="#telaCadastrarClientes">
+            <MenuItem fx:id="menuClientes1" mnemonicParsing="false" onAction="#telaCadastraAluguel">
                <graphic>
                   <Label text="Cadastrar aluguel" />
                </graphic>
             </MenuItem>
-            <MenuItem mnemonicParsing="false">
+            <MenuItem mnemonicParsing="false" onAction="#telaListaAlugueis">
                <graphic>
                   <Label text="Pesquisar aluguel" />
                </graphic>
             </MenuItem>
-            <MenuItem mnemonicParsing="false">
+            <MenuItem mnemonicParsing="false" onAction="#telaCadastraDevolucao">
                <graphic>
                   <Label text="Cadastrar devolução" />
                </graphic>
@@ -52,12 +52,12 @@
       </MenuButton>
       <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="179.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Funcionarios" textFill="WHITE">
          <items>
-            <MenuItem mnemonicParsing="false">
+            <MenuItem mnemonicParsing="false" onAction="#telaCadastraFuncionario">
                <graphic>
                   <Label text="Cadastrar funcionário" />
                </graphic>
             </MenuItem>
-            <MenuItem mnemonicParsing="false">
+            <MenuItem mnemonicParsing="false" onAction="#telaPesquisaFuncionario">
                <graphic>
                   <Label text="Pesquisar funcionário" />
                </graphic>
@@ -69,12 +69,12 @@
       </MenuButton>
       <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="208.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Livros" textFill="WHITE">
          <items>
-            <MenuItem mnemonicParsing="false">
+            <MenuItem mnemonicParsing="false" onAction="#telaCadastraLivro">
                <graphic>
                   <Label text="Cadastrar livro" />
                </graphic>
             </MenuItem>
-            <MenuItem mnemonicParsing="false">
+            <MenuItem mnemonicParsing="false" onAction="#telaPesquisaLivro">
                <graphic>
                   <Label text="Pesquisar livro" />
                </graphic>
@@ -86,12 +86,12 @@
       </MenuButton>
       <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="237.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Discos" textFill="WHITE">
          <items>
-            <MenuItem mnemonicParsing="false">
+            <MenuItem mnemonicParsing="false" onAction="#telaCadastraDisco">
                <graphic>
                   <Label text="Cadastrar disco" />
                </graphic>
             </MenuItem>
-            <MenuItem mnemonicParsing="false">
+            <MenuItem mnemonicParsing="false" onAction="#telaPesquisaDisco">
                <graphic>
                   <Label text="Pesquisar disco" />
                </graphic>
@@ -103,7 +103,7 @@
       </MenuButton>
       <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="266.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Relatorios" textFill="WHITE">
          <items>
-            <MenuItem mnemonicParsing="false">
+            <MenuItem mnemonicParsing="false" onAction="#telaRelatorioAlugueis">
                <graphic>
                   <Label text="Relatorio de aluguéis" />
                </graphic>

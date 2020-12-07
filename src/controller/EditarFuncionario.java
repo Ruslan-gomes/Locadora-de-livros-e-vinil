@@ -16,6 +16,6 @@ public class EditarFuncionario {
 	@FXML private Pane painelConteudo;
 	
 	public void telaDeletarFuncionario(ActionEvent event) throws Exception {
-		Telas.telaDeletaFuncionario(painelConteudo);
+		//Telas.telaDeletaFuncionario(painelConteudo);
 	}
 }

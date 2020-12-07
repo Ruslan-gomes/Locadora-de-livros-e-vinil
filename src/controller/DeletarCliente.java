@@ -15,7 +15,7 @@ public class DeletarCliente {
 	
 	//@FXML private TableView<ClientesVO> tableClientes;
 	public void telaDeletarClientes(ActionEvent event) throws Exception {
-		Telas.telaDeletaClientes(painelConteudo);
+		//Telas.telaDeletaClientes(painelConteudo);
 	}
 
 }

@@ -10,21 +10,21 @@
    <children>
       <Label opacity="0.7" prefHeight="60.0" prefWidth="650.0" style="-fx-alignment: center; -fx-background-color: B89465; -fx-text-fill: #FFFFFF; -fx-font-size: 25;" text="Locadora de livros &amp; vinil" />
       <Label layoutX="136.0" layoutY="82.0" style="-fx-font-size: 40; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Relatório de aluguéis" />
-      <Separator layoutY="345.0" prefHeight="10.0" prefWidth="649.0" style="-fx-border-width: 2px; -fx-background-color: #B89465;" />
-      <TableView fx:id="tabelaalugueis" layoutY="350.0" prefHeight="250.0" prefWidth="649.0">
+      <Separator layoutY="324.0" prefHeight="8.0" prefWidth="649.0" style="-fx-border-width: 2px; -fx-background-color: #B89465;" />
+      <TableView fx:id="tabelaalugueis" layoutY="329.0" prefHeight="271.0" prefWidth="649.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
-      <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-weight: 700; fx-background-radius: 10; -fx-font-size: 15;" text="voltar">
+      <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-weight: 700; fx-background-radius: 10; -fx-font-size: 15;" text="Voltar">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="299.0" layoutY="300.0" mnemonicParsing="false" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="buscar" />
-      <TextField fx:id="datainicio" layoutX="76.0" layoutY="231.0" prefHeight="35.0" prefWidth="252.0" promptText="data de início" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <TextField fx:id="datafim" layoutX="354.0" layoutY="231.0" prefHeight="35.0" prefWidth="252.0" promptText="data de fim" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <ChoiceBox fx:id="escolha" layoutX="177.0" layoutY="148.0" prefHeight="25.0" prefWidth="315.0" />
+      <Button layoutX="285.0" layoutY="270.0" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Buscar" />
+      <TextField fx:id="datainicio" layoutX="61.0" layoutY="214.0" prefHeight="35.0" prefWidth="252.0" promptText="data de início" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <TextField fx:id="datafim" layoutX="353.0" layoutY="214.0" prefHeight="35.0" prefWidth="252.0" promptText="data de fim" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <ComboBox fx:id="escolha" layoutX="225.0" layoutY="158.0" onAction="#escolhaTipoRelatorio" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: b89465; -fx-border-radius: 15px; -fx-border-width: 2px;" stylesheets="@css/comboBoxCSS.css" />
    </children>
 </Pane>

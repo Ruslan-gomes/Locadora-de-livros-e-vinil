@@ -12,6 +12,6 @@ public class ListarClientes {
 	@FXML private Pane painelConteudo;
 	
 	public void telaListarClientes(ActionEvent event) throws Exception {
-		Telas.telaListaClientes(painelConteudo);
+		//Telas.telaListaClientes(painelConteudo);
 	}
 }

@@ -1,0 +1,11 @@
+.combo-box .list-view .list-cell
+ {
+	-fx-alignment: center;
+	-fx-font-weight: 700;
+ }
+
+
+.combo-box .cell:selected {
+	-fx-alignment: center;
+	-fx-font-weight: 700;
+}
