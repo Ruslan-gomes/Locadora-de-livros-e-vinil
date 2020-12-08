@@ -65,7 +65,9 @@ public class TelaInicial {
 //--Relatórios
 	
 	public void telaRelatorioAlugueis(ActionEvent event) throws Exception {
+		//System.out.println(painelConteudo);
 		Telas.telaRelatorioAlugueis(painelConteudo);
+		
 	}
 	
 	
@@ -73,15 +75,20 @@ public class TelaInicial {
 		//Telas.telaRelatorioAlugueisCliente(painelConteudo);
 		/*Pane pane = FXMLLoader.load(Telas.class.getResource("VE/relatorio de alugueis cliente.fxml"));
 		System.out.println(pane);
-		System.out.println(painelConteudo);
+		
 		painelConteudo.getChildren().clear();
 		painelConteudo.getChildren().add(pane);*/
+		System.out.println("Entrooooouuuu");
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/relatorio de alugueis cliente.fxml"));
+		
+		painelConteudo.getChildren().clear();
+		painelConteudo.getChildren().add(pane);
 	}
 	
 
 	
 	public Pane pegaPainelConteudo() {
-		return painelConteudo;
+		return this.painelConteudo;
 	}
 	
 }

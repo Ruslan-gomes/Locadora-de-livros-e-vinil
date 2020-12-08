@@ -177,13 +177,14 @@ public class Telas extends Application {
 	public static void telaRelatorioAlugueis(Pane painelConteudo) throws Exception{
 		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/relatorio de alugueis todos.fxml"));
 	
-		
+		System.out.println("ID: " + painelConteudo.getId());
+		System.out.println(painelConteudo);
 		painelConteudo.getChildren().clear();
 		painelConteudo.getChildren().add(pane);
 		
 	}
 	
-	public static void telaRelatorioAlugueisCliente(Pane painelConteudo) throws Exception{
+	public void telaRelatorioAlugueisCliente(Pane painelConteudo) throws Exception{
 		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/relatorio de alugueis cliente.fxml"));
 		
 		painelConteudo.getChildren().clear();
