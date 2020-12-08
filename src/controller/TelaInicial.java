@@ -36,6 +36,13 @@ public class TelaInicial {
 		Telas.telaCadastraDevolucao(painelConteudo);
 	}
 	
+	public void telaPesquisaAlugueis(ActionEvent event) throws Exception {
+		Telas.telaPesquisaAlugueis(painelConteudo);
+	}
+	
+	public void telaEditaAlugueis(ActionEvent event) throws Exception {
+		Telas.telaEditaAlugueis(painelConteudo);
+	}
 	
 //--Clientes
 	public void telaCadastrarClientes(ActionEvent event) throws Exception {
@@ -102,6 +109,12 @@ public class TelaInicial {
 	*/
 	public Pane pegaPainelConteudo() {
 		return this.painelConteudo;
+	}
+	
+	
+	public void Deslogar(ActionEvent event) throws Exception
+	{
+		Telas.telaLogin();
 	}
 	
 }
