@@ -21,7 +21,7 @@
                      </cursor></Label>
                </graphic>
             </MenuItem>
-            <MenuItem mnemonicParsing="false" onAction="#telaListaAlugueis">
+            <MenuItem mnemonicParsing="false" onAction="#telaPesquisaAlugueis">
                <graphic>
                   <Label text="Pesquisar aluguel">
                      <cursor>
@@ -157,7 +157,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </MenuButton>
-      <MenuButton alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="0.0" layoutY="570.0" mnemonicParsing="false" popupSide="LEFT" prefHeight="30.0" prefWidth="151.0" rotate="180.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" textFill="RED">
+      <MenuButton alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="0.0" layoutY="570.0" mnemonicParsing="false" onAction="#Deslogar" popupSide="LEFT" prefHeight="30.0" prefWidth="151.0" rotate="180.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" textFill="RED">
          <graphic>
             <Label rotate="180.0" text="Desconectar" textFill="RED" translateX="5.0" />
          </graphic>

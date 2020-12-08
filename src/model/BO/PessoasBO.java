@@ -16,20 +16,46 @@ public class PessoasBO<VO> implements PessoasInterBO<VO>{
 
 	@Override
 	public void cadastrarPessoa(VO vo) {
-		// TODO Auto-generated method stub
+		if(vo instanceof ClientesVO)
+		{
+			ClientesDAO dao = new ClientesDAO();
+			dao.Cadastrar((ClientesVO)vo);
+		}
+		else
+		{
+			FuncionariosDAO dao = new FuncionariosDAO();
+			dao.Cadastrar((FuncionariosVO)vo);
+		}
 		
 	}
 
 	@Override
-	public void deletarPessoa(PessoasVO pessoa) {
-		// TODO Auto-generated method stub
+	public void deletarPessoa(VO vo) {
+		if(vo instanceof ClientesVO)
+		{
+			ClientesDAO dao = new ClientesDAO();
+			dao.Deletar((ClientesVO)vo);
+		}
+		else
+		{
+			FuncionariosDAO dao = new FuncionariosDAO();
+			dao.Deletar((FuncionariosVO)vo);
+		}
 		
 	}
 
 	@Override
-	public void editarPessoa(PessoasVO pessoa) {
-		// TODO Auto-generated method stub
-		
+	public void editarPessoa(VO vo) {
+		if(vo instanceof ClientesVO)
+		{
+			ClientesDAO dao = new ClientesDAO();
+			dao.Editar((ClientesVO)vo);
+		}
+		else
+		{
+			FuncionariosDAO dao = new FuncionariosDAO();
+			dao.Editar((FuncionariosVO)vo);
+		}
 	}
 
 	@Override
