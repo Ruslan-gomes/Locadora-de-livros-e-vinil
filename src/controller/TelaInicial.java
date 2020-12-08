@@ -1,17 +1,30 @@
 package controller;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.Pane;
 import view.Telas;
 
 public class TelaInicial {
-	@FXML public Pane painelConteudo;
-
+	@FXML Pane painelConteudo;
 	
+	private Pane conteudo = painelConteudo;
+	
+	
+	public Pane getConteudo() {
+		return conteudo;
+	}
+
+	public void setConteudo(Pane conteudo) {
+		this.conteudo = conteudo;
+	}
+
 	//--Alugueis
 	public void telaCadastraAluguel(ActionEvent event) throws Exception {
+		System.out.println(painelConteudo);
 		Telas.telaCadastraAluguel(painelConteudo);
 	}
 	
@@ -63,32 +76,30 @@ public class TelaInicial {
 	}
 
 //--Relatórios
-	
 	public void telaRelatorioAlugueis(ActionEvent event) throws Exception {
-		//System.out.println(painelConteudo);
 		Telas.telaRelatorioAlugueis(painelConteudo);
-		
 	}
-	
 	
 	public void telaRelatorioAlugueisCliente(ActionEvent event) throws Exception {
-		//Telas.telaRelatorioAlugueisCliente(painelConteudo);
-		/*Pane pane = FXMLLoader.load(Telas.class.getResource("VE/relatorio de alugueis cliente.fxml"));
-		System.out.println(pane);
-		
-		painelConteudo.getChildren().clear();
-		painelConteudo.getChildren().add(pane);*/
-		System.out.println("Entrooooouuuu");
-		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/relatorio de alugueis cliente.fxml"));
-		
-		painelConteudo.getChildren().clear();
-		painelConteudo.getChildren().add(pane);
+		Telas.telaRelatorioAlugueisCliente(painelConteudo);
 	}
+	
 	
 	public void telaRelatorioFatura(ActionEvent event) throws Exception{
 		Telas.telaRelatorioFatura(painelConteudo);
 	}
-	
+	/*
+	public void escolhaTipoRelatorio(ActionEvent event) throws Exception {
+		System.out.println("Entrou na condição");
+		if(escolha.getValue().equalsIgnoreCase("Todos")) {
+			System.out.println(painelConteudo);
+			Telas.telaRelatorioAlugueis(this.TelaInicial.painelConteudo);
+		}else if(escolha.getValue().equalsIgnoreCase("Cliente")){
+			System.out.println(painelConteudo);
+			Telas.telaRelatorioAlugueisCliente(painelConteudo);
+		}
+	}
+	*/
 	public Pane pegaPainelConteudo() {
 		return this.painelConteudo;
 	}

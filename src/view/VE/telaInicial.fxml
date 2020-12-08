@@ -138,10 +138,19 @@
          <items>
             <MenuItem mnemonicParsing="false" onAction="#telaRelatorioAlugueis">
                <graphic>
-                  <Label text="Relatorio de aluguéis">
+                  <Label text="Todos os aluguéis">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Label>
+               </graphic>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#telaRelatorioAlugueisCliente">
+               <graphic>
+                  <Label text="Aluguéis por cliente">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
                </graphic>
             </MenuItem>
             <MenuItem mnemonicParsing="false" onAction="#telaRelatorioFatura">
