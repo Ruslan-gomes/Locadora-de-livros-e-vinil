@@ -1,7 +1,9 @@
 package controller;
 
+import java.text.SimpleDateFormat;
 //import java.sql.Date;
 import java.util.Calendar;
+import java.util.Date;
 
 //import java.util.ArrayList;
 //import java.util.List;
@@ -9,6 +11,7 @@ import java.util.Calendar;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.TableCell;
 //import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -39,11 +42,46 @@ public class PesquisarAlugueis {
         nomeProduto.setCellValueFactory(new PropertyValueFactory<>("nomeProduto"));
         quantidade.setCellValueFactory(new PropertyValueFactory<>("qtdAlugados"));
         dataEmprestimo.setCellValueFactory(new PropertyValueFactory<>("dataEmprestimo"));
+        dataEmprestimo.setCellFactory( cell -> {          
+            return new TableCell<AlugueisVO, Calendar>() {
+                SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+                
+                @Override
+                protected void updateItem( Calendar item, boolean empty) {
+                   super.updateItem(item, empty);
+                   
+                   if( !empty ) {
+                      setText( format.format(item.getTimeInMillis()));
+                   }else {
+                      setText("");
+                      setGraphic(null);
+                   }
+                }
+            };        
+         } );
         dataDevolucao.setCellValueFactory(new PropertyValueFactory<>("dataDevolucao"));
+        dataDevolucao.setCellFactory( cell -> {          
+            return new TableCell<AlugueisVO, Calendar>() {
+                SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+                
+                @Override
+                protected void updateItem( Calendar item, boolean empty) {
+                   super.updateItem(item, empty);
+                   
+                   if( !empty ) {
+                      setText( format.format(item.getTimeInMillis()));
+                   }else {
+                      setText("");
+                      setGraphic(null);
+                   }
+                }
+            };        
+         } );
         valorTotal.setCellValueFactory(new PropertyValueFactory<>("valorTotal"));
         
         tabelaalugueis.getColumns().addAll(cpfCliente, nomeProduto, quantidade, dataEmprestimo, dataDevolucao, valorTotal);
         
+        System.out.println(bo.listar());
         ObservableList<AlugueisVO> lista = FXCollections.observableArrayList(bo.listar());
         tabelaalugueis.setItems(lista);
 	}
