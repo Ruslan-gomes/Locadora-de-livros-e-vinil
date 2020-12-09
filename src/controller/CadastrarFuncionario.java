@@ -1,5 +1,8 @@
 package controller;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -18,7 +21,7 @@ public class CadastrarFuncionario {
 	
 	PessoasBO<FuncionariosVO> bo = new PessoasBO<FuncionariosVO>();
 	
-	public void cadastrarFuncionario(ActionEvent event) throws Exception{
+	public void cadastrarFuncionario(ActionEvent event) throws SQLException, IOException{
 		FuncionariosVO funcionario  = new FuncionariosVO();
 		funcionario.setCpf(cpf.getText());
 		funcionario.setNome(nome.getText());
@@ -30,15 +33,17 @@ public class CadastrarFuncionario {
 		try {
 			bo.cadastrarPessoa(funcionario);
 			
+			//Limpa os campos
 			cpf.setText("");
 			nome.setText("");
 			endereco.setText("");
 			login.setText("");
 			senha.setText("");
 			cargo.setText("");
-			System.out.println("Cadastrado!");
-		}catch(Exception e) {
-			Telas.telaErro();
+			
+			Telas.telaCadastroEfetuado();
+		}catch(Exception sql) {
+				Telas.telaErro();
 		}
 		
 		

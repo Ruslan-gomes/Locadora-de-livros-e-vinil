@@ -49,6 +49,6 @@ public class CadastrarAluguel {
 		
 		bo.cadastrarAluguel(vo);
 		
-		Telas.telaCadastroEfetuado(painelConteudo);
+		Telas.telaCadastroEfetuado();
 	}
 }

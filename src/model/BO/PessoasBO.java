@@ -14,18 +14,18 @@ import model.VO.FuncionariosVO;
 public class PessoasBO<VO> implements PessoasInterBO<VO>{
 
 	@Override
-	public void cadastrarPessoa(VO vo) throws Exception {
+	public void cadastrarPessoa(VO vo) throws SQLException {
 		if(vo instanceof ClientesVO){
 			if(((ClientesVO) vo).getCpf() != null && ((ClientesVO) vo).getNome() != null && ((ClientesVO) vo).getEndereco() != null) {
 				ClientesDAO dao = new ClientesDAO();
 				dao.Cadastrar((ClientesVO)vo);
-			}else throw new Exception();
+			}else throw new SQLException();
 		}
 		else {
 			if(((FuncionariosVO) vo).getCpf() != null && ((FuncionariosVO) vo).getNome() != null && ((FuncionariosVO) vo).getEndereco() != null && ((FuncionariosVO) vo).getLogin() != null && ((FuncionariosVO) vo).getSenha() != null && ((FuncionariosVO) vo).getCargo() != null){
 				FuncionariosDAO dao = new FuncionariosDAO();
 				dao.Cadastrar((FuncionariosVO)vo);
-			}else  throw new Exception();
+			}else  throw new SQLException();
 		}
 	}
 

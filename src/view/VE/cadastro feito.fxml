@@ -4,10 +4,10 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ConfirmarDelecao">
+<Pane fx:id="painel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ConfirmarDelecao">
    <children>
       <Label prefHeight="40.0" prefWidth="400.0" style="-fx-alignment: center; -fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-size: 25;" text="Locadora de livros &amp; vinil" />
       <Label layoutX="32.0" layoutY="115.0" style="-fx-text-fill: #B89465; -fx-font-size: 30px; -fx-font-weight: 700;" text="Cadastrado com sucesso!" />
-      <Button fx:id="yesdelete" layoutX="163.0" layoutY="199.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="75.0" style="-fx-background-color: #B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 12; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="OK" />
+      <Button fx:id="yesdelete" layoutX="163.0" layoutY="199.0" mnemonicParsing="false" onAction="#fechar" prefHeight="37.0" prefWidth="75.0" style="-fx-background-color: #B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 12; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="OK" />
    </children>
 </Pane>

@@ -6,6 +6,7 @@ import javafx.scene.control.TextField;
 //import javafx.scene.layout.Pane;
 import model.BO.PessoasBO;
 import model.VO.ClientesVO;
+import view.Telas;
 //import view.Telas;
 
 public class CadastrarCliente {
@@ -23,6 +24,18 @@ public class CadastrarCliente {
 		cliente.setNome(nome.getText());
 		cliente.setEndereco(endereco.getText());
 		
-		bo.cadastrarPessoa(cliente);
+		try {
+			bo.cadastrarPessoa(cliente);
+			
+			//limpa os campos
+			cpf.setText("");
+			nome.setText("");
+			endereco.setText("");
+			
+			Telas.telaCadastroEfetuado();
+		}catch(Exception e) {
+			Telas.telaErro();
+		}
+		
 	}
 }

@@ -10,7 +10,7 @@ import model.VO.ClientesVO;
 public class ClientesDAO extends BaseDAO implements ClientesInterDAO{
 
 	@Override
-	public void Cadastrar(ClientesVO vo) {
+	public void Cadastrar(ClientesVO vo) throws SQLException {
 		conn = getConnection();
 		String sql = "INSERT INTO Clientes (Cpf, Nome, Endereco) VALUES (?, ?, ?)";
 		PreparedStatement ptst;
@@ -22,8 +22,7 @@ public class ClientesDAO extends BaseDAO implements ClientesInterDAO{
 			ptst.execute();
 			System.out.println("Cliente Cadastrado");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new SQLException();
 		}
 	}
 

@@ -225,7 +225,7 @@ public class Telas extends Application {
 
 //--POP-UPs
 	public static void telaErro() throws IOException {
-		Parent root = FXMLLoader.load(Telas.class.getResource("VE/mensagem.fxml"));
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/mensagem erro.fxml"));
 	
 		Scene cena = new Scene(root);
 		Stage stage = new Stage();
@@ -247,10 +247,17 @@ public class Telas extends Application {
 	}
 	
 	//POP-UP de efetuação de cadastro
-	public static void telaCadastroEfetuado(Pane painelConteudo) throws Exception{
-		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/cadastro feito.fxml"));
+	public static void telaCadastroEfetuado() throws Exception{
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/cadastro feito.fxml"));
 	
-		painelConteudo.getChildren().add(pane);
+		Scene cena = new Scene(root);
+		Stage stage = new Stage();
+		stage.setScene(cena);
+		stage.setTitle("Sucesso!");
+		stage.setAlwaysOnTop(true);
+		
+		primaryStage.setOpacity(0);//para ficar somente a tela de pop-up
+		stage.show();
 	}
 	
 	
