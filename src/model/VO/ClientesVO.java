@@ -42,5 +42,9 @@ public class ClientesVO extends PessoasVO{
 		
 	}
 	
+	public String toString()
+	{
+		return this.getCpf();
+	}
 	
 }

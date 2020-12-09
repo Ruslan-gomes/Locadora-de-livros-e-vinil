@@ -11,12 +11,7 @@
       <Label opacity="0.7" prefHeight="60.0" prefWidth="650.0" style="-fx-alignment: center; -fx-background-color: B89465; -fx-text-fill: #FFFFFF; -fx-font-size: 25;" text="Locadora de livros &amp; vinil" />
       <Label layoutX="162.0" layoutY="80.0" style="-fx-font-size: 40; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Pesquisar aluguéis" />
       <Separator layoutY="324.0" prefHeight="8.0" prefWidth="649.0" style="-fx-border-width: 2px; -fx-background-color: #B89465;" />
-      <TableView fx:id="tabelaalugueis" layoutY="329.0" prefHeight="271.0" prefWidth="649.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
+      <TableView fx:id="tabelaalugueis" layoutY="329.0" prefHeight="271.0" prefWidth="649.0" />
       <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-weight: 700; fx-background-radius: 10; -fx-font-size: 15;" text="Voltar">
          <cursor>
             <Cursor fx:constant="HAND" />

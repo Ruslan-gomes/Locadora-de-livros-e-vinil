@@ -49,7 +49,7 @@ public class AlugueisBO implements AlugueisInterBO {
 	}
 	
 	@Override
-	public void pesquisarAluguel(Calendar dataInicio, Calendar dataFim) {
+	public List<AlugueisVO> pesquisarAluguel(Calendar dataInicio, Calendar dataFim) {
 		AlugueisDAO dao = new AlugueisDAO();
 		ResultSet rs = dao.pesquisarAluguel(dataInicio, dataFim);
 		
@@ -79,11 +79,11 @@ public class AlugueisBO implements AlugueisInterBO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		return alugueis;
 	}
 
 	@Override
-	public void pesquisarAluguelCliente(AlugueisVO aluguel, Calendar dataInicio, Calendar dataFim) {
+	public List<AlugueisVO> pesquisarAluguelCliente(AlugueisVO aluguel, Calendar dataInicio, Calendar dataFim) {
 		AlugueisDAO dao = new AlugueisDAO();
 		ResultSet rs = dao.pesquisarAluguelCliente(aluguel, dataInicio, dataFim);
 		
@@ -112,10 +112,11 @@ public class AlugueisBO implements AlugueisInterBO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return alugueis;
 	}
 
 	@Override
-	public void listar() {
+	public List<AlugueisVO> listar() {
 		AlugueisDAO dao = new AlugueisDAO();
 		ResultSet rs = dao.listar();
 		
@@ -148,6 +149,7 @@ public class AlugueisBO implements AlugueisInterBO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return alugueis;
 	}
 	
 	//Todos os clientes

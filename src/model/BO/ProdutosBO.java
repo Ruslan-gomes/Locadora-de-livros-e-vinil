@@ -72,7 +72,7 @@ public class ProdutosBO<VO> implements ProdutosInterBO<VO>{
 	}
 
 	@Override
-	public void pesquisarProduto(VO vo) {
+	public List<VO> pesquisarProduto(VO vo) {
 		//Pesquisa por livro
 		if(vo.getClass().getSimpleName().equals(LivrosVO.class.getSimpleName())) {
 			LivrosDAO dao = new LivrosDAO();
@@ -100,11 +100,7 @@ public class ProdutosBO<VO> implements ProdutosInterBO<VO>{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}	
-			
-			for(int c = 0; c < livros.size(); c++) {
-				LivrosVO livro = (LivrosVO) livros.get(c);
-				System.out.println(livro.getTitulo());
-			}
+			return (List<VO>)livros;
 		} //Fim Pesquisa por livro
 		
 		
@@ -131,16 +127,13 @@ public class ProdutosBO<VO> implements ProdutosInterBO<VO>{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			for(int c = 0; c < discos.size(); c++) {
-				DiscosVO livro = (DiscosVO) discos.get(c);
-				System.out.println(livro.getTitulo());
-			}
+			return (List<VO>)discos;
 		}//Fim pesquisar disco
 		
+		return null;
 	}//Fim pesquisar produto
 	
-	public void listarProduto(VO vo) {
+	public List<VO> listarProduto(VO vo) {
 		//Listar todos os livros
 		if(vo.getClass().getSimpleName().equals(LivrosVO.class.getSimpleName())) {
 			LivrosDAO dao = new LivrosDAO();
@@ -169,12 +162,7 @@ public class ProdutosBO<VO> implements ProdutosInterBO<VO>{
 				e.printStackTrace();
 			}	
 			
-			for(int c = 0; c < livros.size(); c++) {
-				LivrosVO livro = (LivrosVO) livros.get(c);
-				System.out.println(livro.getTitulo());
-			}
-			
-			
+			return (List<VO>)livros;
 		}//Fim listar livros
 		
 		//Listar todos os discos
@@ -201,12 +189,9 @@ public class ProdutosBO<VO> implements ProdutosInterBO<VO>{
 				e.printStackTrace();
 			}
 			
-			for(int c = 0; c < discos.size(); c++) {
-				DiscosVO livro = (DiscosVO) discos.get(c);
-				System.out.println(livro.getTitulo());
-			}
+			return (List<VO>)discos;
 		}//Fim listar discos
-		
+		return null;
 	}//Fim listar produto	
 }
 
