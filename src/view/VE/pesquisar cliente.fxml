@@ -13,12 +13,7 @@
       <TextField fx:id="cpf" layoutX="180.0" layoutY="177.0" prefHeight="35.0" prefWidth="315.0" promptText="CPF" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
       <Button layoutX="290.0" layoutY="240.0" mnemonicParsing="false" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Pesquisar" />
       <Separator layoutY="370.0" prefHeight="10.0" prefWidth="649.0" style="-fx-border-width: 2px; -fx-background-color: #B89465;" />
-      <TableView fx:id="tabelaclientes" layoutY="376.0" prefHeight="224.0" prefWidth="649.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
+      <TableView fx:id="tabelaclientes" layoutY="376.0" prefHeight="224.0" prefWidth="649.0" />
       <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-weight: 700; fx-background-radius: 10; -fx-font-size: 15;" text="voltar">
          <cursor>
             <Cursor fx:constant="HAND" />

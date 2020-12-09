@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import exception.AutenticationException;
+import javafx.scene.control.Button;
 import model.DAO.ClientesDAO;
 import model.DAO.FuncionariosDAO;
 import model.VO.ClientesVO;
@@ -111,7 +112,7 @@ public class PessoasBO<VO> implements PessoasInterBO<VO>{
 	}
 
 	@Override
-	public void ListarPessoa(VO vo) {
+	public List<VO> ListarPessoa(VO vo) {
 		if(vo instanceof ClientesVO)
 		{
 			ClientesDAO dao = new ClientesDAO();
@@ -123,15 +124,25 @@ public class PessoasBO<VO> implements PessoasInterBO<VO>{
 				while(rs.next())
 				{
 					ClientesVO cliente = new ClientesVO();
+					//Button editar = new Button();
+					//Button deletar = new Button();
+					
 					cliente.setCpf(rs.getString("Cpf"));
 					cliente.setNome(rs.getString("Nome"));
 					cliente.setEndereco(rs.getString("Endereco"));
+					
+					//setando os 2 botões
+					//cliente.setEditar(editar);
+					//cliente.setDeletar(deletar);
+					
+					//adicionando o objeto ao list
 					clientes.add(cliente);
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}	
+			return (List<VO>) clientes;
 		}
 		else
 		{
@@ -157,6 +168,7 @@ public class PessoasBO<VO> implements PessoasInterBO<VO>{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			return (List<VO>) funcionarios;
 		}
 	}
 	
