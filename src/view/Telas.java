@@ -1,16 +1,22 @@
 package view;
 
+import java.awt.event.FocusListener;
+import java.io.IOException;
+
 import controller.RelatorioAlugueis;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import sun.awt.RequestFocusController;
 
 public class Telas extends Application {
 	private static Stage primaryStage;
@@ -215,6 +221,20 @@ public class Telas extends Application {
 		
 		painelConteudo.getChildren().clear();
 		painelConteudo.getChildren().add(pane);
+	}
+
+//--POP-UPs
+	public static void telaErro() throws IOException {
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/mensagem.fxml"));
+	
+		Scene cena = new Scene(root);
+		Stage stage = new Stage();
+		stage.setScene(cena);
+		stage.setTitle("Erro");
+		stage.setAlwaysOnTop(true);
+		
+		primaryStage.setOpacity(0);//para ficar somente a tela de pop-up
+		stage.show();
 	}
 	
 	

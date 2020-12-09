@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane fx:id="painel" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Mensagem">
+   <children>
+      <Label fx:id="txt" alignment="CENTER" contentDisplay="CENTER" layoutY="83.0" prefHeight="17.0" prefWidth="400.0" style="-fx-font-family: Roboto; -fx-font-weight: 700; -fx-font-size: 13px;" text="Houve um erro. Verifique as informações e tente novamente!" textAlignment="CENTER" textFill="#b89465" />
+      <Button fx:id="ok" layoutX="175.0" layoutY="114.0" mnemonicParsing="false" onAction="#fechar" prefHeight="25.0" prefWidth="50.0" style="-fx-background-radius: 15px; -fx-background-color: b89465; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Ok" textFill="WHITE" />
+   </children>
+</Pane>

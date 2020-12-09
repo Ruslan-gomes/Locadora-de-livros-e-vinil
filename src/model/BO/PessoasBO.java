@@ -10,23 +10,23 @@ import model.DAO.ClientesDAO;
 import model.DAO.FuncionariosDAO;
 import model.VO.ClientesVO;
 import model.VO.FuncionariosVO;
-import model.VO.PessoasVO;
 
 public class PessoasBO<VO> implements PessoasInterBO<VO>{
 
 	@Override
-	public void cadastrarPessoa(VO vo) {
-		if(vo instanceof ClientesVO)
-		{
-			ClientesDAO dao = new ClientesDAO();
-			dao.Cadastrar((ClientesVO)vo);
+	public void cadastrarPessoa(VO vo) throws Exception {
+		if(vo instanceof ClientesVO){
+			if(((ClientesVO) vo).getCpf() != null && ((ClientesVO) vo).getNome() != null && ((ClientesVO) vo).getEndereco() != null) {
+				ClientesDAO dao = new ClientesDAO();
+				dao.Cadastrar((ClientesVO)vo);
+			}else throw new Exception();
 		}
-		else
-		{
-			FuncionariosDAO dao = new FuncionariosDAO();
-			dao.Cadastrar((FuncionariosVO)vo);
+		else {
+			if(((FuncionariosVO) vo).getCpf() != null && ((FuncionariosVO) vo).getNome() != null && ((FuncionariosVO) vo).getEndereco() != null && ((FuncionariosVO) vo).getLogin() != null && ((FuncionariosVO) vo).getSenha() != null && ((FuncionariosVO) vo).getCargo() != null){
+				FuncionariosDAO dao = new FuncionariosDAO();
+				dao.Cadastrar((FuncionariosVO)vo);
+			}else  throw new Exception();
 		}
-		
 	}
 
 	@Override
