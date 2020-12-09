@@ -1,19 +1,43 @@
 package controller;
 
+import java.sql.Date;
+import java.util.Calendar;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import model.BO.AlugueisBO;
+import model.VO.AlugueisVO;
+import model.VO.ClientesVO;
 import view.Telas;
 
 public class CadastrarDevolucao {
 	
 	@FXML private TextField cpfcliente;
 	@FXML private TextField nomeproduto;
-	@FXML private TextField datadevolucao;
+	@FXML private DatePicker datadevolucao;
 	@FXML private Pane painelConteudo;
+	
+	AlugueisBO bo = new AlugueisBO();
 	
 	public void telaCadastrarDevolucao(ActionEvent event) throws Exception {
 		Telas.telaCadastraDevolucao(painelConteudo);
+	}
+	
+	public void cadastrarDevolucao(ActionEvent event) throws Exception
+	{
+		AlugueisVO vo = new AlugueisVO();
+		ClientesVO cliente = new ClientesVO();
+		vo.setCliente(cliente);
+		vo.getCliente().setCpf(cpfcliente.getText());
+		vo.setNomeProduto(nomeproduto.getText());
+		
+		Calendar date = Calendar.getInstance();
+		date.setTime(Date.valueOf(datadevolucao.getValue()));
+		vo.setDataDevolucao(date);
+		
+		bo.cadastrarDevolucao(vo);
 	}
 }

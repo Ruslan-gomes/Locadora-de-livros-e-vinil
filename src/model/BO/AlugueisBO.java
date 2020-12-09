@@ -13,13 +13,29 @@ import model.VO.ClientesVO;
 public class AlugueisBO implements AlugueisInterBO {
 	
 	public void cadastrarAluguel(AlugueisVO aluguel) {
-		// Vai receber um objeto do tipo AlugueisVO e vai cadastrar esse aluguel no BD.
+		AlugueisDAO dao = new AlugueisDAO();
+		if(aluguel.getCliente().getCpf() != null && aluguel.getNomeProduto() != null && aluguel.getQtdAlugados() > 0 && aluguel.getDataEmprestimo() != null && aluguel.getValorTotal() > 0)
+		{
+			dao.cadastrarAluguel(aluguel);
+		}
+		else
+		{
+			System.out.println("Não foi possivel efetuar o cadastro");
+		}
+		
 	}
 	
 	public void cadastrarDevolucao(AlugueisVO aluguel) {
-		/* Vai receber um objeto do tipo AlugueisVO e vai cadastrar a data de devolução desse 
-		 * aluguel no BD.
-		 */
+		AlugueisDAO dao = new AlugueisDAO();
+		if(aluguel.getCliente().getCpf() != null && aluguel.getNomeProduto() != null && aluguel.getDataDevolucao() != null)
+		{
+			dao.cadastrarDevolucao(aluguel);
+		}
+		else
+		{
+			System.out.println("Não foi possivel efetuar o cadastro");
+		}
+		
 	}
 	
 	public void deletarAluguel(AlugueisVO aluguel) {
