@@ -15,37 +15,60 @@ import model.VO.ProdutosVO;
 public class ProdutosBO<VO> implements ProdutosInterBO<VO>{
 
 	@Override
-	public void cadastrarProduto(VO vo) {
+	public void cadastrarProduto(VO vo) throws SQLException {
 		
-		//Se for do tipo LivrosVO
-		if(vo.getClass().getSimpleName().equals(LivrosVO.class.getSimpleName())) {
+		if(vo instanceof LivrosVO)
+		{
+			if(((LivrosVO) vo).getTitulo() != null && ((LivrosVO) vo).getGenero() != null && ((LivrosVO) vo).getAnoLancamento() != null && ((LivrosVO) vo).getQtdPaginas() > 0 && ((LivrosVO) vo).getValorAluguel() > 0)
+			{
+				LivrosDAO dao = new LivrosDAO();
+				dao.cadastrar((LivrosVO)vo);
+			}
+			else
+			{
+				throw new SQLException();
+			}
+		}
+		else 
+		{
+			if(((DiscosVO)vo).getTitulo() != null && ((DiscosVO)vo).getEstilo() != null && ((DiscosVO)vo).getNomeBanda() != null && ((DiscosVO)vo).getValorAluguel() > 0)
+			{
+				DiscosDAO dao = new DiscosDAO();
+				dao.cadastrar(((DiscosVO)vo));
+			}
+			else
+			{
+				throw new SQLException();
+			}
+		}
+	}
+
+	@Override
+	public void deletarProduto(ProdutosVO vo) {
+		if(vo instanceof LivrosVO)
+		{
 			LivrosDAO dao = new LivrosDAO();
-			dao.cadastrar((LivrosVO)vo);
+			dao.deletar((LivrosVO)vo);
 		}
-		
-		//Se for do tipo DiscosVO
-		if(vo.getClass().getSimpleName().equals(DiscosVO.class.getSimpleName())) {
-			System.out.println("Tipo disco, entrou!");
+		else
+		{
+			DiscosDAO dao = new DiscosDAO();
+			dao.deletar((DiscosVO)vo);
 		}
-		
-		/*Se o VO for do tipo DiscosVO
-		Ai chama o DiscosDAO.cadastrar*/
-		
-		/*Se o VO for do tipo LivrosVO
-		Ai chama o LivrosDAO.cadastrar*/
-		
 	}
 
 	@Override
-	public void deletarProduto(ProdutosVO produto) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void editarProduto(ProdutosVO produto) {
-		// TODO Auto-generated method stub
-		
+	public void editarProduto(ProdutosVO vo) {
+		if(vo instanceof LivrosVO)
+		{
+			LivrosDAO dao = new LivrosDAO();
+			dao.editar((LivrosVO)vo);
+		}
+		else
+		{
+			DiscosDAO dao = new DiscosDAO();
+			dao.editar((DiscosVO)vo);
+		}
 	}
 
 	@Override

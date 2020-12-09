@@ -39,11 +39,13 @@ public class AlugueisBO implements AlugueisInterBO {
 	}
 	
 	public void deletarAluguel(AlugueisVO aluguel) {
-		// Vai receber um objeto do tipo AlugueisVO e vai deletar ele do BD.
+		AlugueisDAO dao = new AlugueisDAO();
+		dao.deletarAluguel(aluguel);
 	}
 	
 	public void editarAluguel(AlugueisVO aluguel) {
-		// Vai receber um objeto do tipo AlugueisVO contendo as alterações desejadas e vai adiciona-las no BD. 
+		AlugueisDAO dao = new AlugueisDAO();
+		dao.editarAluguel(aluguel); 
 	}
 	
 	@Override

@@ -15,7 +15,5 @@ public class EditarFuncionario {
 	@FXML private TextField cargo;
 	@FXML private Pane painelConteudo;
 	
-	public void telaDeletarFuncionario(ActionEvent event) throws Exception {
-		//Telas.telaDeletaFuncionario(painelConteudo);
-	}
+	
 }

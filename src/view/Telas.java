@@ -16,7 +16,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import sun.awt.RequestFocusController;
+//import sun.awt.RequestFocusController;
 
 public class Telas extends Application {
 	private static Stage primaryStage;
@@ -231,7 +231,7 @@ public class Telas extends Application {
 		Stage stage = new Stage();
 		stage.setScene(cena);
 		stage.setTitle("Erro");
-		stage.setAlwaysOnTop(true);
+		//stage.setAlwaysOnTop(true);
 		
 		primaryStage.setOpacity(0);//para ficar somente a tela de pop-up
 		stage.show();
@@ -254,7 +254,7 @@ public class Telas extends Application {
 		Stage stage = new Stage();
 		stage.setScene(cena);
 		stage.setTitle("Sucesso!");
-		stage.setAlwaysOnTop(true);
+		//stage.setAlwaysOnTop(true);
 		
 		primaryStage.setOpacity(0);//para ficar somente a tela de pop-up
 		stage.show();

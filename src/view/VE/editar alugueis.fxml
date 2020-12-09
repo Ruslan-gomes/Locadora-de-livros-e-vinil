@@ -15,16 +15,16 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="275.0" layoutY="263.0" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Buscar" />
+      <Button layoutX="275.0" layoutY="507.0" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Editar" />
       <TextField fx:id="cpfcliente" layoutX="199.0" layoutY="158.0" prefHeight="35.0" prefWidth="252.0" promptText="CPF do cliente" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
       <TextField fx:id="nomeproduto" layoutX="199.0" layoutY="215.0" prefHeight="35.0" prefWidth="252.0" promptText="Nome do produto" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
       <TextField fx:id="novonomeproduto" layoutX="104.0" layoutY="347.0" prefHeight="35.0" prefWidth="165.0" promptText="Nome produto" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
       <Label layoutX="102.0" layoutY="315.0" style="-fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Novo nome do produto" />
-      <TextField fx:id="dataemprestimo" layoutX="61.0" layoutY="436.0" prefHeight="35.0" prefWidth="252.0" promptText="Nova data empréstimo" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
       <Label layoutX="393.0" layoutY="404.0" style="-fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Novo valor total" />
       <TextField fx:id="valoraluguel" layoutX="358.0" layoutY="436.0" prefHeight="35.0" prefWidth="212.0" promptText="Valor aluguel" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
       <Label layoutX="94.0" layoutY="404.0" style="-fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Nova data de empréstimo" />
       <Label layoutX="384.0" layoutY="315.0" style="-fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Nova qtde alugada" />
       <TextField fx:id="quantidadealugada" layoutX="358.0" layoutY="347.0" prefHeight="35.0" prefWidth="212.0" promptText="Quantidade alugada" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <DatePicker fx:id="dataemprestimo" layoutX="104.0" layoutY="441.0" prefHeight="35.0" prefWidth="165.0" style="-fx-border-color: B89465; -fx-border-radius: 15; -fx-border-width: 2;" />
    </children>
 </Pane>

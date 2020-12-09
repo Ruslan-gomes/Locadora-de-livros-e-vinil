@@ -38,6 +38,17 @@ public class CadastrarDevolucao {
 		date.setTime(Date.valueOf(datadevolucao.getValue()));
 		vo.setDataDevolucao(date);
 		
-		bo.cadastrarDevolucao(vo);
+		try {
+			bo.cadastrarDevolucao(vo);
+			
+			cpfcliente.setText("");
+			nomeproduto.setText("");
+			datadevolucao.setValue(null);
+			
+			Telas.telaCadastroEfetuado();
+			
+		}catch(Exception e) {
+			Telas.telaErro();
+		}
 	}
 }

@@ -47,8 +47,21 @@ public class CadastrarAluguel {
 		double valor = Double.parseDouble(valortotal.getText());
 		vo.setValorTotal(valor);
 		
-		bo.cadastrarAluguel(vo);
 		
-		Telas.telaCadastroEfetuado();
+		
+		try {
+			bo.cadastrarAluguel(vo);
+			
+			Telas.telaCadastroEfetuado();
+			
+			cpfcliente.setText("");
+			nomeproduto.setText("");
+			quantidadealugada.setText("");
+			dataemprestimo.setValue(null);
+			valortotal.setText("");
+			
+		}catch(Exception e) {
+			Telas.telaErro();
+		}
 	}
 }
