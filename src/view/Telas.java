@@ -220,6 +220,13 @@ public class Telas extends Application {
 		painelConteudo.getChildren().add(pane);
 	}
 	
+	//POP-UP de efetuação de cadastro
+	public static void telaCadastroEfetuado(Pane painelConteudo) throws Exception{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/cadastro feito.fxml"));
+	
+		painelConteudo.getChildren().add(pane);
+	}
+	
 	
 	
 	public static void main(String[] args) {
