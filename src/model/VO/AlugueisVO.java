@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 public class AlugueisVO{
 	private ClientesVO cliente;
+	private String nomeProdutoAntigo;
 	private String nomeProduto;
 	private LivrosVO livro;
 	private DiscosVO disco;
@@ -23,6 +24,14 @@ public class AlugueisVO{
 		}else {
 			this.cliente = cliente;
 		}
+	}
+
+	public String getNomeProdutoAntigo() {
+		return nomeProdutoAntigo;
+	}
+
+	public void setNomeProdutoAntigo(String nomeProdutoAntigo) {
+		this.nomeProdutoAntigo = nomeProdutoAntigo;
 	}
 
 	public String getNomeProduto() {

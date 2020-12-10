@@ -53,7 +53,7 @@ public class PesquisarCliente {
         cliente.setEndereco("Rua tal");
         
         PessoasBO<ClientesVO> bo = new PessoasBO<ClientesVO>();
-        System.out.println(bo.ListarPessoa(cliente));
+        //System.out.println(bo.ListarPessoa(cliente));
         
         
         List<ClientesVO> arrayClientes = bo.ListarPessoa(cliente);

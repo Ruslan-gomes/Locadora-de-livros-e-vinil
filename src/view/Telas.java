@@ -85,11 +85,19 @@ public class Telas extends Application {
 		painelConteudo.getChildren().add(pane);
 	}
 	
-	public static void telaEditaAlugueis(Pane painelConteudo) throws Exception{
-		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/editar alugueis.fxml"));
+	public static void telaEditaAlugueis() throws Exception{
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/editar alugueis.fxml"));
 		
-		painelConteudo.getChildren().clear();
-		painelConteudo.getChildren().add(pane);
+		Scene cena = new Scene(root);
+		Stage stage = new Stage();
+		
+		stage.setOnCloseRequest(event -> primaryStage.setOpacity(1));//Volta a opacidade para o normal caso a tela seja fechada com o botão de fechar do SO
+		
+		stage.setScene(cena);
+		stage.setTitle("Edição de aluguéis");
+		
+		primaryStage.setOpacity(0);//para ficar somente a tela de pop-up
+		stage.show();
 	}
 	
 	

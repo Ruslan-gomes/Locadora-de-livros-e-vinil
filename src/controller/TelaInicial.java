@@ -41,7 +41,7 @@ public class TelaInicial {
 	}
 	
 	public void telaEditaAlugueis(ActionEvent event) throws Exception {
-		Telas.telaEditaAlugueis(painelConteudo);
+		Telas.telaEditaAlugueis();
 	}
 	
 //--Clientes

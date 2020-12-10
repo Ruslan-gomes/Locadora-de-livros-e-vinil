@@ -2,6 +2,7 @@ package model.VO;
 
 public abstract class PessoasVO {
 	protected String cpf;
+	protected String cpfAntigo;
 	protected String nome;
 	protected String endereco;
 	
@@ -35,6 +36,21 @@ public abstract class PessoasVO {
 		else
 		{
 			this.cpf = cpf;
+		}
+	}
+	
+	public String getCpfAntigo() {
+		return cpfAntigo;
+	}
+
+	public void setCpfAntigo(String cpf) {
+		if(cpf == null || cpf.isEmpty() || cpf.length() < 11)
+		{
+			System.out.println("CPF inválido!");
+		}
+		else
+		{
+			this.cpfAntigo = cpf;
 		}
 	}
 

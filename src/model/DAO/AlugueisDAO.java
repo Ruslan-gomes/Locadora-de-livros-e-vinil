@@ -92,8 +92,8 @@ public class AlugueisDAO extends BaseDAO implements AlugueisInterDAO{
 			ptst.setDate(4, data1);
 			ptst.setDouble(5, aluguel.getValorTotal());
 			
-			ptst.setString(6, aluguel.getCliente().getCpf());
-			ptst.setString(7, aluguel.getNomeProduto());
+			ptst.setString(6, aluguel.getCliente().getCpfAntigo());
+			ptst.setString(7, aluguel.getNomeProdutoAntigo());
 			ptst.executeUpdate();
 			System.out.println("Aluguel editado");
 		} catch (SQLException e) {
