@@ -18,6 +18,7 @@ import model.VO.FuncionariosVO;
 import view.Telas;
 
 public class PesquisarFuncionario {
+	
 	public static PesquisarFuncionario pesquisarFuncionario;
 	@FXML private TextField id;
 	@FXML private TextField login;
@@ -118,5 +119,12 @@ public class PesquisarFuncionario {
 			tabelafuncionarios.setItems(lista);
 			login.setText("");
 		}
+	}
+	
+	public void atualizaTableView() {
+		FuncionariosVO vo = new FuncionariosVO();
+		tabelafuncionarios.setItems(null);
+		lista = FXCollections.observableArrayList(bo.ListarPessoa(vo));
+        tabelafuncionarios.setItems(lista);
 	}
 }

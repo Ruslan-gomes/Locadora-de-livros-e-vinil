@@ -9,10 +9,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.BO.ProdutosBO;
-import model.VO.ClientesVO;
 import model.VO.DiscosVO;
+import view.Telas;
 
 public class PesquisarDisco {
+	public static PesquisarDisco pesquisarDisco;
 	
 	@FXML private TextField titulo;
 	@FXML private TextField nomebanda;
@@ -28,6 +29,7 @@ public class PesquisarDisco {
 	@FXML
 	void initialize()
 	{
+		pesquisarDisco = this;
 		DiscosVO vo = new DiscosVO();
 		
 		TableColumn<DiscosVO, String> colunaTitulo = new TableColumn<>("Título");
@@ -51,7 +53,13 @@ public class PesquisarDisco {
 		
 		Utils.initButtons(colunaEditar, 15, PEN_SOLID, "svg-gray", (DiscosVO DiscosVO, ActionEvent event) -> {
 			System.out.println("Você clicou para editar as informações de: " + DiscosVO.getTitulo());
-			// Aqui vai toda a lógica para editar a pessoa
+			try {
+				Telas.telaEditaDisco();
+				EditarDisco.editarDisco.insereTexto(DiscosVO);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		});
 		Utils.initButtons(colunaDeletar, 15, TRASH_SOLID, "svg-red", (DiscosVO DiscosVO, ActionEvent event) -> {
 			System.out.println("Você clicou para deletar as informações de: "+ DiscosVO.getTitulo());
@@ -87,5 +95,12 @@ public class PesquisarDisco {
 			tabeladiscos.setItems(lista);
 			estilo.setText("");
 		}
+	}
+	
+	public void atualizaTableView() {
+		DiscosVO vo = new DiscosVO();
+		tabeladiscos.setItems(null);
+		lista = FXCollections.observableArrayList(bo.listarProduto(vo));
+        tabeladiscos.setItems(lista);
 	}
 }

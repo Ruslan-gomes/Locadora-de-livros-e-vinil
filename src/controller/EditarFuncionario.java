@@ -12,13 +12,15 @@ import view.Telas;
 public class EditarFuncionario {
 	public static EditarFuncionario editarFuncionario;
 	
+	@FXML private Pane painel;
+	
 	@FXML private TextField cpf;
 	@FXML private TextField nome;
 	@FXML private TextField endereco;
 	@FXML private TextField login;
 	@FXML private TextField senha;
 	@FXML private TextField cargo;
-	@FXML private Pane painel;
+	@FXML private Pane painelConteudo;
 	
 	PessoasBO<FuncionariosVO> bo = new PessoasBO<FuncionariosVO>();
 	Long id;
@@ -53,6 +55,12 @@ public class EditarFuncionario {
 		//Telas.getPrimaryStage().setOpacity(1);
 		PesquisarFuncionario.pesquisarFuncionario.atualizaTableView();
 		stage.close();
+		
+		//fecha a tela
+				Stage stage = (Stage) painel.getScene().getWindow();
+				Telas.getPrimaryStage().setOpacity(1);
+				PesquisarFuncionario.pesquisarFuncionario.atualizaTableView();
+				stage.close();
 	}
 	
 	public void insereTexto(FuncionariosVO func)
