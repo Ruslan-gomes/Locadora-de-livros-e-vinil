@@ -53,20 +53,19 @@ public class EditarAlugueis {
 		aluguelEditado.setNomeProdutoAntigo(nomeProdutoAntigo);
 		aluguelEditado.setNomeProduto(nomeproduto.getText());
 		aluguelEditado.setQtdAlugados(Integer.parseInt(quantidadealugada.getText()));
+		
 		Calendar cal = Calendar.getInstance();
 		ZoneId defaultZoneId = ZoneId.systemDefault();
 		Date date = Date.from(dataemprestimo.getValue().atStartOfDay(defaultZoneId).toInstant());
 		cal.setTime(date);
-		
-		System.out.println(cal.getTime());
-		
 		aluguelEditado.setDataEmprestimo(cal);
-		Calendar cal2 = Calendar.getInstance();
-		Date date2 = Date.from(datadevolucao.getValue().atStartOfDay(defaultZoneId).toInstant());
-		cal.setTime(date2);
 		
-		System.out.println(cal2.getTime());
+		Calendar cal2 = Calendar.getInstance();
+		ZoneId defaultZoneId2 = ZoneId.systemDefault();
+		Date date2 = Date.from(datadevolucao.getValue().atStartOfDay(defaultZoneId2).toInstant());
+		cal2.setTime(date2);
 		aluguelEditado.setDataDevolucao(cal2);
+		
 		aluguelEditado.setValorTotal(Double.parseDouble(valoraluguel.getText()));
 		
 		AlugueisBO bo = new AlugueisBO();
@@ -95,7 +94,10 @@ public class EditarAlugueis {
 		ZoneId zid = tz == null ? ZoneId.systemDefault() : tz.toZoneId();
 		LocalDate localDate = LocalDateTime.ofInstant(aluguel.getDataEmprestimo().toInstant(), zid).toLocalDate();
 		dataemprestimo.setValue(localDate);
-		LocalDate localDate2 = LocalDateTime.ofInstant(aluguel.getDataDevolucao().toInstant(), zid).toLocalDate();
+		
+		TimeZone tz2 = aluguel.getDataDevolucao().getTimeZone();
+		ZoneId zid2 = tz2 == null ? ZoneId.systemDefault() : tz2.toZoneId();
+		LocalDate localDate2 = LocalDateTime.ofInstant(aluguel.getDataDevolucao().toInstant(), zid2).toLocalDate();
 		datadevolucao.setValue(localDate2);
 		valoraluguel.setText(""+ aluguel.getValorTotal());
 	}
