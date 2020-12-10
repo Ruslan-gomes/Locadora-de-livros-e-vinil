@@ -6,180 +6,21 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditarCliente">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditarCliente">
    <children>
-      <Label layoutX="151.0" prefHeight="60.0" prefWidth="665.0" style="-fx-alignment: center; -fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-size: 25;" text="Locadora de livros &amp; vinil" />
-      <Label layoutX="349.0" layoutY="121.0" style="-fx-font-size: 40; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Editar cliente" />
-      <TextField fx:id="cpf" layoutX="315.0" layoutY="207.0" prefHeight="35.0" prefWidth="315.0" promptText="CPF" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <TextField fx:id="endereco" layoutX="315.0" layoutY="454.0" prefHeight="35.0" prefWidth="315.0" promptText="Endereço" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <Button layoutX="435.0" layoutY="266.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="75.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 12; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Pesquisar" />
-      <MenuBar prefHeight="600.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: B89465;" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="9.0" prefHeight="17.0" prefWidth="151.0" style="-fx-font-family: Roboto; -fx-font-weight: 700;" text="Nome do funcionário" textAlignment="CENTER" textFill="WHITE" />
-      <TextField fx:id="nome" layoutX="315.0" layoutY="378.0" prefHeight="35.0" prefWidth="315.0" promptText="Nome" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <Button layoutX="435.0" layoutY="515.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="75.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Editar" />
-      <Label layoutX="427.0" layoutY="348.0" style="-fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Novo nome" />
-      <Label layoutX="418.0" layoutY="424.0" style="-fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Novo endereço" />
-      <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="219.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Clientes" textAlignment="CENTER" textFill="WHITE">
-         <items>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Cadastrar cliente" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Pesquisar cliente" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Editar cliente" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Deletar cliente" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Listar clientes" />
-               </graphic>
-            </MenuItem>
-         </items>
-      </MenuButton>
-      <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="249.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Funcionarios" textFill="WHITE">
-         <items>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Cadastrar funcionario" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Pesquisar funcionario" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Editar funcionário" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Deletar funcionário" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Listar funcionarios" />
-               </graphic>
-            </MenuItem>
-         </items>
-      </MenuButton>
-      <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="279.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Livros" textFill="WHITE">
-         <items>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Cadastrar livro" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Pesquisar livro" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Editar livro" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Deletar livro" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Listar livros" />
-               </graphic>
-            </MenuItem>
-         </items>
-      </MenuButton>
-      <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="309.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Discos" textFill="WHITE">
-         <items>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Cadastrar disco" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Pesquisar disco" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Editar disco" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Deletar disco" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Listar discos" />
-               </graphic>
-            </MenuItem>
-         </items>
-      </MenuButton>
-      <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="369.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Relatorios" textFill="WHITE">
-         <items>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false" text="Unspecified Action">
-               <graphic>
-                  <Label text="Pesquisar cliente" />
-               </graphic>
-            </MenuItem>
-         </items>
-      </MenuButton>
-      <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="339.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Alugueis" textFill="WHITE">
-         <items>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Cadastrar aluguel" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Pesquisar aluguel" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="Listar aluguéis" />
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false">
-               <graphic>
-                  <Label text="cadastrar devolução" />
-               </graphic>
-            </MenuItem>
-         </items>
-      </MenuButton>
-      <MenuButton alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="0.0" layoutY="550.0" mnemonicParsing="false" popupSide="LEFT" prefHeight="30.0" prefWidth="151.0" rotate="180.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" textFill="RED">
+      <Label opacity="0.7" prefHeight="60.0" prefWidth="650.0" style="-fx-alignment: center; -fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-size: 25;" text="Locadora de livros &amp; vinil" />
+      <Label layoutX="192.0" layoutY="92.0" style="-fx-font-size: 40; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Editar cliente" />
+      <TextField fx:id="cpf" layoutX="158.0" layoutY="164.0" prefHeight="35.0" prefWidth="315.0" promptText="CPF" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <TextField fx:id="endereco" layoutX="158.0" layoutY="283.0" prefHeight="35.0" prefWidth="315.0" promptText="Endereço" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <TextField fx:id="nome" layoutX="158.0" layoutY="222.0" prefHeight="35.0" prefWidth="315.0" promptText="Nome" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <Button layoutX="278.0" layoutY="348.0" mnemonicParsing="false" onAction="#editarCliente" prefHeight="37.0" prefWidth="75.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Editar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-weight: 700; fx-background-radius: 10; -fx-font-size: 15;" text="voltar">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-         <graphic>
-            <Label rotate="180.0" text="Desconectar" textFill="RED" translateX="5.0" />
-         </graphic>
-      </MenuButton>
+      </Button>
    </children>
 </Pane>

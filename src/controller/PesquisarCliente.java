@@ -24,6 +24,7 @@ import view.Telas;
 
 
 public class PesquisarCliente {
+	public static PesquisarCliente pesquisarCliente;
 	
 	@FXML private TextField cpf;
 	@FXML private TextField nome;
@@ -39,6 +40,7 @@ public class PesquisarCliente {
 	
 	@FXML
 	void initialize(){
+		pesquisarCliente = this;
 		
 		TableColumn<ClientesVO, String> colunaCpf = new TableColumn<>("CPF");
 		TableColumn<ClientesVO, String> colunaNome = new TableColumn<>("Nome");
@@ -70,7 +72,13 @@ public class PesquisarCliente {
 		// configura a coluna para editar e deleter uma pessoa
 		Utils.initButtons(colunaEditar, 15, PEN_SOLID, "svg-gray", (ClientesVO ClientesVO, ActionEvent event) -> {
 			System.out.println("Você clicou para editar as informações de: " + ClientesVO.getNome());
-			// Aqui vai toda a lógica para editar a pessoa
+			try {
+				Telas.telaEditaClientes();
+				EditarCliente.editarCliente.insereTexto(ClientesVO);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		});
 		Utils.initButtons(colunaDeletar, 15, TRASH_SOLID, "svg-red", (ClientesVO ClientesVO, ActionEvent event) -> {
 			System.out.println("Você clicou para deletar as informações de: "+ ClientesVO.getNome());
