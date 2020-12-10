@@ -10,11 +10,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import model.BO.PessoasBO;
+import model.VO.AlugueisVO;
 import model.VO.ClientesVO;
 import model.VO.FuncionariosVO;
 import view.Telas;
 
 public class PesquisarFuncionario {
+	public static PesquisarFuncionario pesquisarFuncionario;
 	
 	@FXML private TextField id;
 	@FXML private TextField login;
@@ -31,6 +33,7 @@ public class PesquisarFuncionario {
 	@FXML
 	public void initialize()
 	{
+		pesquisarFuncionario = this;
 		TableColumn<FuncionariosVO, String> colunaId = new TableColumn<>("ID");
 		TableColumn<FuncionariosVO, String> colunaCpf = new TableColumn<>("CPF");
 		TableColumn<FuncionariosVO, String> colunaEndereco = new TableColumn<>("endereço");
@@ -91,5 +94,12 @@ public class PesquisarFuncionario {
 			tabelafuncionarios.setItems(lista);
 			login.setText("");
 		}
+	}
+	
+	public void atualizaTableView() {
+		FuncionariosVO vo = new FuncionariosVO();
+		tabelafuncionarios.setItems(null);
+		lista = FXCollections.observableArrayList(bo.ListarPessoa(vo));
+        tabelafuncionarios.setItems(lista);
 	}
 }

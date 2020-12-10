@@ -12,11 +12,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.BO.ProdutosBO;
-import model.VO.ClientesVO;
-import model.VO.DiscosVO;
 import model.VO.LivrosVO;
+import view.Telas;
 
 public class PesquisarLivro {
+	public static PesquisarLivro pesquisarLivro;
 	
 	@FXML private TextField titulo;
 	@FXML private TextField genero;
@@ -32,6 +32,7 @@ public class PesquisarLivro {
 	@FXML
 	void initialize()
 	{
+		pesquisarLivro = this;
 		LivrosVO vo = new LivrosVO();
 		
 		TableColumn<LivrosVO, String> colunaTitulo = new TableColumn<>("Título");
@@ -57,7 +58,13 @@ public class PesquisarLivro {
 		
 		Utils.initButtons(colunaEditar, 15, PEN_SOLID, "svg-gray", (LivrosVO LivrosVO, ActionEvent event) -> {
 			System.out.println("Você clicou para editar as informações de: " + LivrosVO.getTitulo());
-			// Aqui vai toda a lógica para editar a pessoa
+			try {
+				Telas.telaEditaLivro();
+				EditarLivro.editarLivro.insereTexto(LivrosVO);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		});
 		Utils.initButtons(colunaDeletar, 15, TRASH_SOLID, "svg-red", (LivrosVO LivrosVO, ActionEvent event) -> {
 			System.out.println("Você clicou para deletar as informações de: "+ LivrosVO.getTitulo());
@@ -95,5 +102,12 @@ public class PesquisarLivro {
 			tabelalivros.setItems(lista);
 			anolancamento.setText("");
 		}
+	}
+	
+	public void atualizaTableView() {
+		LivrosVO vo = new LivrosVO();
+		tabelalivros.setItems(null);
+		lista = FXCollections.observableArrayList(bo.listarProduto(vo));
+        tabelalivros.setItems(lista);
 	}
 }

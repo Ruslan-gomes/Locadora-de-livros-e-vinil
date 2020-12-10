@@ -20,6 +20,7 @@ import javafx.util.Callback;
 import model.BO.PessoasBO;
 import model.VO.ClientesVO;
 import model.VO.DiscosVO;
+import model.VO.FuncionariosVO;
 import view.Telas;
 
 
@@ -106,6 +107,13 @@ public class PesquisarCliente {
 			tabelaclientes.setItems(listaClientes);
 			nome.setText("");
 		}
+	}
+	
+	public void atualizaTableView() {
+		ClientesVO cliente = new ClientesVO();
+		tabelaclientes.setItems(null);
+		listaClientes = FXCollections.observableArrayList(bo.ListarPessoa(cliente));
+        tabelaclientes.setItems(listaClientes);
 	}
 	
 }
