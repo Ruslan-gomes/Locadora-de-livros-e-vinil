@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import model.BO.PessoasBO;
+import model.BO.ProdutosBO;
 import model.VO.LivrosVO;
 import view.Telas;
 
@@ -13,7 +13,7 @@ public class EditarLivro {
 	public static EditarLivro editarLivro;
 	int id;
 	
-	PessoasBO<LivrosVO> bo = new PessoasBO<LivrosVO>();
+	ProdutosBO<LivrosVO> bo = new ProdutosBO<LivrosVO>();
 	
 	@FXML private Pane painel;
 	
@@ -39,7 +39,7 @@ public class EditarLivro {
 		vo.setQtdExemplares(Integer.parseInt(qtdexemplares.getText()));
 		vo.setValorAluguel(Double.parseDouble(valoraluguel.getText()));
 		
-		bo.editarPessoa(vo);
+		bo.editarProduto(vo);
 		//fecha a tela
 		Stage stage = (Stage) painel.getScene().getWindow();
 		Telas.getPrimaryStage().setOpacity(1);
