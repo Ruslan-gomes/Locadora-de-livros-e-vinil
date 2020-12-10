@@ -77,7 +77,7 @@ public class EditarAlugueis {
 		
 		//Abre a POP-UP confirmando a edição
 		Telas.telaCadastroEfetuado();
-		ConfirmarDelecao.confirmarDelecao.alteraTexto("Editado com sucesso!");
+		ConfirmarCadastro.confirmarCadastro.alteraTexto("Editado com sucesso!");
 		
 		//Telas.getPrimaryStage().setOpacity(1);
 		PesquisarAlugueis.pesquisarAlugueis.atualizaTableView();
