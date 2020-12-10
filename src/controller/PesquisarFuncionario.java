@@ -12,6 +12,7 @@ import javafx.scene.layout.Pane;
 import model.BO.PessoasBO;
 import model.VO.ClientesVO;
 import model.VO.FuncionariosVO;
+import view.Telas;
 
 public class PesquisarFuncionario {
 	
@@ -57,7 +58,13 @@ public class PesquisarFuncionario {
 		// configura a coluna para editar e deleter uma pessoa
 		Utils.initButtons(colunaEditar, 15, PEN_SOLID, "svg-gray", (FuncionariosVO FuncionariosVO, ActionEvent event) -> {
 			System.out.println("Você clicou para editar as informações de: " + FuncionariosVO.getNome());
-			// Aqui vai toda a lógica para editar a pessoa
+			try {
+				Telas.telaEditaFuncionario();
+				EditarFuncionario.editarFuncionario.insereTexto(FuncionariosVO);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		});
 		Utils.initButtons(colunaDeletar, 15, TRASH_SOLID, "svg-red", (FuncionariosVO FuncionariosVO, ActionEvent event) -> {
 			System.out.println("Você clicou para deletar as informações de: "+ FuncionariosVO.getNome());

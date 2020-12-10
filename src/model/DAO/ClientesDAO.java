@@ -50,8 +50,8 @@ public class ClientesDAO extends BaseDAO implements ClientesInterDAO{
 		PreparedStatement ptst;
 		try {
 			ptst = conn.prepareStatement(sql);
-			ptst.setNString(1, vo.getNome());
-			ptst.setNString(2, vo.getEndereco());
+			ptst.setString(1, vo.getNome());
+			ptst.setString(2, vo.getEndereco());
 			ptst.setString(3, vo.getCpf());
 			ptst.executeUpdate();
 			System.out.println("Cliente Atualizado");

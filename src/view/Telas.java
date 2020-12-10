@@ -117,28 +117,21 @@ public class Telas extends Application {
 		painelConteudo.getChildren().clear();
 		painelConteudo.getChildren().add(pane);
 	}
-	/*
-	public static void telaEditaClientes(Pane painelConteudo) throws Exception{
-		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/editar cliente.fxml"));
-		
-		painelConteudo.getChildren().clear();
-		painelConteudo.getChildren().add(pane);
-	}
 	
-	public static void telaDeletaClientes(Pane painelConteudo) throws Exception{
-		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/deletar cliente.fxml"));
+	public static void telaEditaClientes() throws Exception{
+		Pane root = FXMLLoader.load(Telas.class.getResource("VE/editar cliente.fxml"));
 		
-		painelConteudo.getChildren().clear();
-		painelConteudo.getChildren().add(pane);
-	}
-	
-	public static void telaListaClientes(Pane painelConteudo) throws Exception{
-		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/listar clientes.fxml"));
+		Scene cena = new Scene(root);
+		Stage stage = new Stage();
 		
-		painelConteudo.getChildren().clear();
-		painelConteudo.getChildren().add(pane);
+		stage.setOnCloseRequest(event -> primaryStage.setOpacity(1));//Volta a opacidade para o normal caso a tela seja fechada com o botão de fechar do SO
+		
+		stage.setScene(cena);
+		stage.setTitle("Edição de Clientes");
+		
+		primaryStage.setOpacity(0);//para ficar somente a tela de pop-up
+		stage.show();
 	}
-	*/
 	
 //--Funcionários
 	public static void telaCadastraFuncionario(Pane painelConteudo) throws Exception{
@@ -154,28 +147,22 @@ public class Telas extends Application {
 		painelConteudo.getChildren().clear();
 		painelConteudo.getChildren().add(pane);
 	}
-	/*
-	public static void telaDeletaFuncionario(Pane painelConteudo) throws Exception{
-		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/deletar funcionario.fxml"));
+
+	public static void telaEditaFuncionario() throws Exception{
+		Pane root = FXMLLoader.load(Telas.class.getResource("VE/editar funcionario.fxml"));
 		
-		painelConteudo.getChildren().clear();
-		painelConteudo.getChildren().add(pane);
+		Scene cena = new Scene(root);
+		Stage stage = new Stage();
+		
+		stage.setOnCloseRequest(event -> primaryStage.setOpacity(1));//Volta a opacidade para o normal caso a tela seja fechada com o botão de fechar do SO
+		
+		stage.setScene(cena);
+		stage.setTitle("Edição de Funcionários");
+		
+		primaryStage.setOpacity(0);//para ficar somente a tela de pop-up
+		stage.show();
 	}
 	
-	public static void telaEditaFuncionario(Pane painelConteudo) throws Exception{
-		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/editar funcionario.fxml"));
-		
-		painelConteudo.getChildren().clear();
-		painelConteudo.getChildren().add(pane);
-	}
-	
-	public static void telaListaFuncionario(Pane painelConteudo) throws Exception{
-		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/listar funcionarios.fxml"));
-		
-		painelConteudo.getChildren().clear();
-		painelConteudo.getChildren().add(pane);
-	}
-	*/
 	
 //--Livros
 	public static void telaCadastraLivro(Pane painelConteudo) throws Exception{
