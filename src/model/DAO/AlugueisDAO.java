@@ -201,4 +201,25 @@ public class AlugueisDAO extends BaseDAO implements AlugueisInterDAO{
 		return valorTotal;
 	}
 
+
+	@Override
+	public ResultSet PesquisarAluguel(AlugueisVO aluguel) {
+		conn = getConnection();
+		String sql = "SELECT * FROM alugueis WHERE cpf_cliente = ?";
+		PreparedStatement ptst;
+		ResultSet rs = null;
+		
+		try {
+			ptst = conn.prepareStatement(sql);
+			ptst.setString(1, aluguel.getCliente().getCpf());
+			rs = ptst.executeQuery();
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("Alugueis listados!");
+		return rs;
+	}
+
 }

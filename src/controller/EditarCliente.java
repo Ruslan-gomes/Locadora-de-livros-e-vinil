@@ -13,7 +13,5 @@ public class EditarCliente {
 	@FXML private TextField endereco;
 	@FXML private Pane painelConteudo;
 	
-	public void telaEditaClientes(ActionEvent event) throws Exception {
-		//Telas.telaEditaClientes(painelConteudo);
-	}
+	
 }

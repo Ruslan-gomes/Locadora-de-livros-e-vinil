@@ -17,7 +17,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="292.0" layoutY="229.0" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Buscar" />
+      <Button layoutX="292.0" layoutY="229.0" mnemonicParsing="false" onAction="#pesquisarAluguel" prefWidth="100.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Buscar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <TextField fx:id="cpfcliente" layoutX="216.0" layoutY="166.0" prefHeight="35.0" prefWidth="252.0" promptText="CPF do cliente" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
    </children>
 </Pane>

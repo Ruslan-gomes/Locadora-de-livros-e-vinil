@@ -134,7 +134,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </MenuButton>
-      <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="266.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Relatorios" textFill="WHITE">
+      <MenuButton fx:id="relatorios" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="266.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Relatorios" textFill="WHITE">
          <items>
             <MenuItem mnemonicParsing="false" onAction="#telaRelatorioAlugueis">
                <graphic>
@@ -166,9 +166,12 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </MenuButton>
-      <MenuButton alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="0.0" layoutY="570.0" mnemonicParsing="false" onAction="#Deslogar" popupSide="LEFT" prefHeight="30.0" prefWidth="151.0" rotate="180.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" textFill="RED">
+      <MenuButton alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="0.0" layoutY="570.0" mnemonicParsing="false" popupSide="LEFT" prefHeight="30.0" prefWidth="151.0" rotate="180.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" textFill="RED">
          <graphic>
-            <Label rotate="180.0" text="Desconectar" textFill="RED" translateX="5.0" />
+            <Label rotate="180.0" textFill="RED" translateX="5.0">
+               <graphic>
+                  <Button mnemonicParsing="false" onAction="#Deslogar" prefHeight="25.0" prefWidth="149.0" style="-fx-text-fill: #FF0000; -fx-border-radius: 700; -fx-background-color: B89465;" text="Deslogar" />
+               </graphic></Label>
          </graphic>
          <cursor>
             <Cursor fx:constant="HAND" />

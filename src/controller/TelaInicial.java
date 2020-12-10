@@ -5,11 +5,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.MenuButton;
 import javafx.scene.layout.Pane;
 import view.Telas;
 
 public class TelaInicial {
+	public static TelaInicial TelaInicial;
 	@FXML Pane painelConteudo;
+	@FXML MenuButton relatorios;
 	
 	private Pane conteudo = painelConteudo;
 	
@@ -22,6 +25,7 @@ public class TelaInicial {
 		this.conteudo = conteudo;
 	}
 
+	
 	//--Alugueis
 	public void telaCadastraAluguel(ActionEvent event) throws Exception {
 		System.out.println(painelConteudo);

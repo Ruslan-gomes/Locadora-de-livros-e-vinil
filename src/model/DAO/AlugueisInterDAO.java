@@ -10,6 +10,7 @@ public interface AlugueisInterDAO {
 	public void cadastrarDevolucao(AlugueisVO aluguel);
 	public void deletarAluguel(AlugueisVO aluguel);
 	public void editarAluguel(AlugueisVO aluguel);
+	public ResultSet PesquisarAluguel(AlugueisVO aluguel);
 	public ResultSet pesquisarAluguel(Calendar dataInicio, Calendar dataFim);
 	public ResultSet pesquisarAluguelCliente(AlugueisVO aluguel, Calendar dataInicio, Calendar dataFim);
 	public ResultSet listar();

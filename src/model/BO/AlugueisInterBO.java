@@ -12,6 +12,7 @@ public interface AlugueisInterBO {
 	public void cadastrarDevolucao(AlugueisVO aluguel);
 	public void deletarAluguel(AlugueisVO aluguel);
 	public void editarAluguel(AlugueisVO aluguel);
+	public List<AlugueisVO> pesquisarAluguel(AlugueisVO aluguel);
 	public List<AlugueisVO> pesquisarAluguel(Calendar dataInicio, Calendar dataFim);
 	public List<AlugueisVO> pesquisarAluguelCliente(AlugueisVO aluguel, Calendar dataInicio, Calendar dataFim);
 	public List<AlugueisVO> listar();

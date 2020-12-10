@@ -4,6 +4,7 @@ import java.awt.event.FocusListener;
 import java.io.IOException;
 
 import controller.RelatorioAlugueis;
+import controller.TelaInicial;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

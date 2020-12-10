@@ -174,4 +174,41 @@ public class AlugueisBO implements AlugueisInterBO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<AlugueisVO> pesquisarAluguel(AlugueisVO aluguel) {
+		AlugueisDAO dao = new AlugueisDAO();
+		ResultSet rs = dao.PesquisarAluguel(aluguel);
+		
+		List<AlugueisVO> alugueis = new ArrayList<AlugueisVO>();
+		
+		try {
+			while(rs.next()) {
+				AlugueisVO vo = new AlugueisVO();
+				ClientesVO cliente = new ClientesVO();
+				cliente.setCpf(rs.getString("cpf_cliente"));
+				vo.setCliente(cliente);
+				vo.setNomeProduto(rs.getString("nome_produto"));
+				vo.setQtdAlugados(rs.getInt("qtd_alugada"));
+				
+				Calendar dataCalendar = Calendar.getInstance();
+				//Date date = new Date(dataCalendar.getTimeInMillis());
+				dataCalendar.setTime(rs.getDate("data_emprestimo"));
+				vo.setDataEmprestimo(dataCalendar);
+				
+				Calendar dataCalendar2 = Calendar.getInstance();
+				//Date date2 = new Date(dataCalendar2.getTimeInMillis());
+				dataCalendar2.setTime(rs.getDate("data_devolucao"));
+				vo.setDataDevolucao(dataCalendar2);
+				
+				vo.setValorTotal(rs.getDouble("valor_total"));
+				
+				alugueis.add(vo);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return alugueis;
+	}
 }
