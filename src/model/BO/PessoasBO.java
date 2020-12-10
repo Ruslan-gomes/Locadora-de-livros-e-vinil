@@ -60,7 +60,7 @@ public class PessoasBO<VO> implements PessoasInterBO<VO>{
 	}
 
 	@Override
-	public void pesquisarPessoa(VO vo) {
+	public List<VO> pesquisarPessoa(VO vo) {
 		
 		if(vo instanceof ClientesVO)
 		{
@@ -82,6 +82,7 @@ public class PessoasBO<VO> implements PessoasInterBO<VO>{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			return (List<VO>)clientes;
 		}
 		else
 		{
@@ -107,6 +108,7 @@ public class PessoasBO<VO> implements PessoasInterBO<VO>{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			return (List<VO>)funcionarios;
 		}
 		
 	}

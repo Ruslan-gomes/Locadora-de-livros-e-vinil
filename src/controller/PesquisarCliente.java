@@ -19,14 +19,20 @@ import javafx.scene.layout.Pane;
 import javafx.util.Callback;
 import model.BO.PessoasBO;
 import model.VO.ClientesVO;
+import model.VO.DiscosVO;
 import view.Telas;
 
 
 public class PesquisarCliente {
 	
 	@FXML private TextField cpf;
+	@FXML private TextField nome;
 	@FXML private TableView<ClientesVO> tabelaclientes;
 	@FXML private Pane painelConteudo;
+	
+	
+	PessoasBO<ClientesVO> bo = new PessoasBO<ClientesVO>();
+	ObservableList<ClientesVO> listaClientes;
 	
 	public static final String PEN_SOLID = "M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z";
 	public static final String TRASH_SOLID = "M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z";
@@ -52,12 +58,12 @@ public class PesquisarCliente {
         cliente.setNome("Edmundo");
         cliente.setEndereco("Rua tal");
         
-        PessoasBO<ClientesVO> bo = new PessoasBO<ClientesVO>();
+        
         System.out.println(bo.ListarPessoa(cliente));
         
         
         List<ClientesVO> arrayClientes = bo.ListarPessoa(cliente);
-        ObservableList<ClientesVO> listaClientes = FXCollections.observableArrayList(arrayClientes);
+        listaClientes = FXCollections.observableArrayList(arrayClientes);
 		tabelaclientes.setItems(listaClientes);
 		
 		// BOTÕES COM ÍCONES EM SVG
@@ -70,6 +76,28 @@ public class PesquisarCliente {
 			System.out.println("Você clicou para deletar as informações de: "+ ClientesVO.getNome());
 			// Aqui vai toda a lógica para deletar a pessoa
 		});
+	}
+	
+	
+	public void pesquisarCliente(ActionEvent event) throws Exception
+	{
+		ClientesVO vo = new ClientesVO();
+		if(cpf.getText() != null && !cpf.getText().isEmpty())
+		{
+			vo.setCpf(cpf.getText());
+			
+			listaClientes = FXCollections.observableArrayList(bo.pesquisarPessoa(vo));
+			tabelaclientes.setItems(listaClientes);
+			cpf.setText("");
+		}
+		else if(nome.getText() != null && !nome.getText().isEmpty())
+		{
+			vo.setNome(nome.getText());
+			
+			listaClientes = FXCollections.observableArrayList(bo.pesquisarPessoa(vo));
+			tabelaclientes.setItems(listaClientes);
+			nome.setText("");
+		}
 	}
 	
 }
