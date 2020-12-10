@@ -74,7 +74,12 @@ public class EditarAlugueis {
 		
 		//fecha a tela
 		Stage stage = (Stage) painel.getScene().getWindow();
-		Telas.getPrimaryStage().setOpacity(1);
+		
+		//Abre a POP-UP confirmando a edição
+		Telas.telaCadastroEfetuado();
+		ConfirmarDelecao.confirmarDelecao.alteraTexto("Editado com sucesso!");
+		
+		//Telas.getPrimaryStage().setOpacity(1);
 		PesquisarAlugueis.pesquisarAlugueis.atualizaTableView();
 		stage.close();
 		

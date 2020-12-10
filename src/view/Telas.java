@@ -249,10 +249,16 @@ public class Telas extends Application {
 	
 	//POP-UP de confirmação de deleção.
 	
-	public static void telaConfirmaDelecao(Pane painelConteudo) throws Exception{
-		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/confirmar delecao.fxml"));
-	
-		painelConteudo.getChildren().add(pane);
+	public static void telaConfirmaDelecao() throws Exception{
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/confirmar delecao.fxml"));
+		
+		Scene cena = new Scene(root);
+		Stage stage = new Stage();
+		stage.setScene(cena);
+		stage.setTitle("Deleção");
+		
+		primaryStage.setOpacity(0);//para ficar somente a tela de pop-up
+		stage.show();
 	}
 	
 	//POP-UP de efetuação de cadastro
