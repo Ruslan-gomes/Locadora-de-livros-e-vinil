@@ -1,5 +1,7 @@
 package controller;
 
+import java.io.IOException;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,12 +12,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import model.BO.PessoasBO;
+import model.VO.AlugueisVO;
 import model.VO.ClientesVO;
 import model.VO.FuncionariosVO;
 import view.Telas;
 
 public class PesquisarFuncionario {
-	
+	public static PesquisarFuncionario pesquisarFuncionario;
 	@FXML private TextField id;
 	@FXML private TextField login;
 	@FXML private TableView<FuncionariosVO> tabelafuncionarios;
@@ -31,26 +34,27 @@ public class PesquisarFuncionario {
 	@FXML
 	public void initialize()
 	{
+		pesquisarFuncionario = this;
 		TableColumn<FuncionariosVO, String> colunaId = new TableColumn<>("ID");
 		TableColumn<FuncionariosVO, String> colunaCpf = new TableColumn<>("CPF");
-		TableColumn<FuncionariosVO, String> colunaEndereco = new TableColumn<>("endereço");
 		TableColumn<FuncionariosVO, String> colunaNome = new TableColumn<>("nome");
 		TableColumn<FuncionariosVO, String> colunaLogin = new TableColumn<>("login");
 		TableColumn<FuncionariosVO, String> colunaSenha = new TableColumn<>("senha");
 		TableColumn<FuncionariosVO, String> colunaCargo = new TableColumn<>("cargo");
+		TableColumn<FuncionariosVO, String> colunaEndereco = new TableColumn<>("endereço");
 		TableColumn<FuncionariosVO, FuncionariosVO> colunaEditar = new TableColumn<>("");
 		TableColumn<FuncionariosVO, FuncionariosVO> colunaDeletar = new TableColumn<>("");
 		
 		colunaId.setCellValueFactory(new PropertyValueFactory<>("id"));
 		colunaCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
-		colunaEndereco.setCellValueFactory(new PropertyValueFactory<>("endereco"));
 		colunaNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		colunaLogin.setCellValueFactory(new PropertyValueFactory<>("login"));
 		colunaSenha.setCellValueFactory(new PropertyValueFactory<>("senha"));
 		colunaCargo.setCellValueFactory(new PropertyValueFactory<>("cargo"));
+		colunaEndereco.setCellValueFactory(new PropertyValueFactory<>("endereco"));
 		
 		FuncionariosVO vo = new FuncionariosVO();
-		tabelafuncionarios.getColumns().addAll(colunaId, colunaCpf,colunaEndereco, colunaNome, colunaLogin, colunaSenha, colunaCargo, colunaEditar, colunaDeletar);
+		tabelafuncionarios.getColumns().addAll(colunaId, colunaCpf, colunaNome, colunaLogin, colunaSenha, colunaCargo, colunaEndereco, colunaEditar, colunaDeletar);
 		lista = FXCollections.observableArrayList(bo.ListarPessoa(vo));
 		tabelafuncionarios.setItems(lista);
 		
@@ -58,18 +62,41 @@ public class PesquisarFuncionario {
 		// configura a coluna para editar e deleter uma pessoa
 		Utils.initButtons(colunaEditar, 15, PEN_SOLID, "svg-gray", (FuncionariosVO FuncionariosVO, ActionEvent event) -> {
 			System.out.println("Você clicou para editar as informações de: " + FuncionariosVO.getNome());
+			// Aqui vai toda a lógica para editar a pessoa
 			try {
 				Telas.telaEditaFuncionario();
 				EditarFuncionario.editarFuncionario.insereTexto(FuncionariosVO);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				try {
+					Telas.telaErro();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		Utils.initButtons(colunaDeletar, 15, TRASH_SOLID, "svg-red", (FuncionariosVO FuncionariosVO, ActionEvent event) -> {
 			System.out.println("Você clicou para deletar as informações de: "+ FuncionariosVO.getNome());
 			// Aqui vai toda a lógica para deletar a pessoa
+			try {
+				Telas.telaConfirmaDelecao();
+				ConfirmarDelecao.confirmarDelecao.setFuncionario(FuncionariosVO);
+			} catch (Exception e) {
+				try {
+					Telas.telaErro();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
 		});
+	}
+	
+	public void atualizaTableView() {
+		tabelafuncionarios.setItems(null);
+		FuncionariosVO vo = new FuncionariosVO();
+		lista = FXCollections.observableArrayList(bo.ListarPessoa(vo));
+		tabelafuncionarios.setItems(lista);
 	}
 	
 	public void pesquisarFuncionario(ActionEvent event) throws Exception {

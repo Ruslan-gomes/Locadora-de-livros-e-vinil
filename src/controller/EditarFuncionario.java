@@ -4,8 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import model.BO.PessoasBO;
 import model.VO.FuncionariosVO;
+import view.Telas;
 
 public class EditarFuncionario {
 	public static EditarFuncionario editarFuncionario;
@@ -16,7 +18,7 @@ public class EditarFuncionario {
 	@FXML private TextField login;
 	@FXML private TextField senha;
 	@FXML private TextField cargo;
-	@FXML private Pane painelConteudo;
+	@FXML private Pane painel;
 	
 	PessoasBO<FuncionariosVO> bo = new PessoasBO<FuncionariosVO>();
 	Long id;
@@ -28,7 +30,7 @@ public class EditarFuncionario {
 	}
 	
 	
-	public void editarFunionario(ActionEvent event) throws Exception
+	public void editarFuncionario(ActionEvent event) throws Exception
 	{
 		FuncionariosVO func = new FuncionariosVO();
 		func.setId(id);
@@ -40,6 +42,17 @@ public class EditarFuncionario {
 		func.setCargo(cargo.getText());
 		
 		bo.editarPessoa(func);
+		
+		//fecha a tela
+		Stage stage = (Stage) painel.getScene().getWindow();
+		
+		//Abre a POP-UP confirmando a edição
+		Telas.telaCadastroEfetuado();
+		ConfirmarCadastro.confirmarCadastro.alteraTexto("Editado com sucesso!");
+		
+		//Telas.getPrimaryStage().setOpacity(1);
+		PesquisarFuncionario.pesquisarFuncionario.atualizaTableView();
+		stage.close();
 	}
 	
 	public void insereTexto(FuncionariosVO func)
