@@ -1,5 +1,6 @@
 package controller;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 //import java.sql.Date;
 import java.util.Calendar;
@@ -106,13 +107,29 @@ public class PesquisarAlugueis {
 					Telas.telaEditaAlugueis();
 					EditarAlugueis.editarAluguel.insereTexto(AlugueisVO);
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					try {
+						Telas.telaErro();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 		});
 		Utils.initButtons(colunaDeletar, 15, TRASH_SOLID, "svg-red", (AlugueisVO AlugueisVO, ActionEvent event) -> {
 			System.out.println("Você clicou para deletar as informações de: "+ AlugueisVO.getNomeProduto());
 			// Aqui vai toda a lógica para deletar 
+			try {
+				Telas.telaConfirmaDelecao();
+				ConfirmarDelecao.confirmarDelecao.setAluguel(AlugueisVO);
+			} catch (Exception e) {
+				try {
+					Telas.telaErro();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+			
 		});
 	}
 	
