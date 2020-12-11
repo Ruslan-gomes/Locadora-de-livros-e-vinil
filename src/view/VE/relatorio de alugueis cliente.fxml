@@ -24,8 +24,8 @@
       </Button>
       <Button layoutX="299.0" layoutY="300.0" mnemonicParsing="false" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="buscar" />
       <TextField fx:id="nomecliente" layoutX="177.0" layoutY="198.0" prefHeight="35.0" prefWidth="315.0" promptText="Nome" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <ChoiceBox layoutX="177.0" layoutY="138.0" prefHeight="25.0" prefWidth="315.0" />
-      <TextField fx:id="datainicio1" layoutX="66.0" layoutY="251.0" prefHeight="35.0" prefWidth="252.0" promptText="data de início" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <TextField fx:id="datainicio" layoutX="66.0" layoutY="251.0" prefHeight="35.0" prefWidth="252.0" promptText="data de início" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
       <TextField fx:id="datafim" layoutX="353.0" layoutY="251.0" prefHeight="35.0" prefWidth="252.0" promptText="data de fim" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <ComboBox fx:id="escolha" layoutX="230.0" layoutY="151.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: b89465; -fx-border-radius: 15px; -fx-border-width: 2px;" stylesheets="@css/comboBoxCSS.css" />
    </children>
 </Pane>
