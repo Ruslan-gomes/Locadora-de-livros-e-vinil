@@ -91,7 +91,7 @@ public class RelatorioAlugueis{
         tabelaalugueis.setItems(lista);
     }
 	
-	void pesquisarRelatorio(ActionEvent event) throws Exception
+	public void pesquisarRelatorio(ActionEvent event) throws Exception
 	{
 		Calendar inicio = Calendar.getInstance();
 		Calendar fim = Calendar.getInstance();
@@ -100,6 +100,7 @@ public class RelatorioAlugueis{
 		fim.setTime(Date.valueOf(datafim.getValue()));
 		
 		lista = FXCollections.observableArrayList(bo.pesquisarAluguel(inicio, fim));
+		tabelaalugueis.setItems(lista);
 		datainicio.setValue(null);
 		datafim.setValue(null);
 	}

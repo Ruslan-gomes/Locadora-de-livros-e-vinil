@@ -32,7 +32,7 @@ public class RelatorioAlugueisClientes {
 	ObservableList<AlugueisVO> lista;
 	
 	@FXML
-	void initialize()
+	public void initialize()
 	{
 		relatorioAlugueisClientes = this;
 		TableColumn<AlugueisVO, String> cpfCliente = new TableColumn<>("cpf_cliente");
