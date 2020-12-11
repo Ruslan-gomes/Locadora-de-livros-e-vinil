@@ -127,7 +127,8 @@ public class PesquisarLivro {
 		else if(anolancamento.getText() != null && !anolancamento.getText().isEmpty())
 		{
 			Calendar data = Calendar.getInstance();
-			data.setTime(Date.valueOf(anolancamento.getText()));
+			int a = Integer.parseInt(anolancamento.getText());
+			data.set(Calendar.YEAR, a);
 			vo.setAnoLancamento(data);
 			
 			lista = FXCollections.observableArrayList(bo.pesquisarProduto(vo));
