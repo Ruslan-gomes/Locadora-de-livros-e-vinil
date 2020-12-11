@@ -6,24 +6,29 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RelatorioAlugueisClientes">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RelatorioAlugueisClientes">
    <children>
-      <Label opacity="0.7" prefHeight="60.0" prefWidth="650.0" style="-fx-alignment: center; -fx-background-color: B89465; -fx-text-fill: #FFFFFF; -fx-font-size: 25;" text="Locadora de livros &amp; vinil" />
-      <Label layoutX="131.0" layoutY="80.0" style="-fx-font-size: 40; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Relatório de aluguéis" />
-      <Separator layoutY="345.0" prefHeight="10.0" prefWidth="649.0" style="-fx-border-width: 2px; -fx-background-color: #B89465;" />
-      <TableView fx:id="tabelaalugueis" layoutY="350.0" prefHeight="250.0" prefWidth="649.0" />
+      <Label opacity="0.7" prefHeight="60.0" prefWidth="850.0" style="-fx-alignment: center; -fx-background-color: B89465; -fx-text-fill: #FFFFFF; -fx-font-size: 25;" text="Locadora de livros &amp; vinil" />
+      <Label layoutX="226.0" layoutY="79.0" style="-fx-font-size: 40; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Relatório de aluguéis" />
+      <Separator layoutY="345.0" prefHeight="10.0" prefWidth="850.0" style="-fx-border-width: 2px; -fx-background-color: #B89465;" />
+      <TableView fx:id="tabelaalugueis" layoutY="350.0" prefHeight="250.0" prefWidth="850.0" />
       <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-weight: 700; fx-background-radius: 10; -fx-font-size: 15;" text="voltar">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="299.0" layoutY="300.0" mnemonicParsing="false" onAction="#pesquisarRelatorioCliente" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="buscar">
+      <Button layoutX="389.0" layoutY="300.0" mnemonicParsing="false" onAction="#pesquisarRelatorioCliente" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="buscar">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <TextField fx:id="cpfcliente" layoutX="177.0" layoutY="198.0" prefHeight="35.0" prefWidth="315.0" promptText="CPF do cliente" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <ComboBox fx:id="escolha" layoutX="230.0" layoutY="151.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: b89465; -fx-border-radius: 15px; -fx-border-width: 2px;" stylesheets="@css/comboBoxCSS.css" />
-      <DatePicker fx:id="datainicio" layoutX="141.0" layoutY="256.0" promptText="Data de Inicio" style="-fx-border-color: B89465; -fx-border-width: 2; -fx-border-radius: 10;" />
-      <DatePicker fx:id="datafim" layoutX="358.0" layoutY="256.0" promptText="Data de fim" style="-fx-border-color: B89465; -fx-border-width: 2; -fx-border-radius: 10;" />
+      <TextField fx:id="cpfcliente" layoutX="268.0" layoutY="195.0" prefHeight="35.0" prefWidth="315.0" promptText="CPF do cliente" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <ComboBox fx:id="escolha" layoutX="335.0" layoutY="145.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: b89465; -fx-border-radius: 15px; -fx-border-width: 2px;" stylesheets="@css/comboBoxCSS.css" />
+      <DatePicker fx:id="datainicio" layoutX="226.0" layoutY="256.0" promptText="Data de Inicio" style="-fx-border-color: B89465; -fx-border-width: 2; -fx-border-radius: 10;" />
+      <DatePicker fx:id="datafim" layoutX="435.0" layoutY="256.0" promptText="Data de fim" style="-fx-border-color: B89465; -fx-border-width: 2; -fx-border-radius: 10;" />
+      <Button layoutX="787.0" layoutY="319.0" mnemonicParsing="false" onAction="#limparPesquisa" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 10px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Limpar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </Pane>

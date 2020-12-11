@@ -121,4 +121,8 @@ public class PesquisarFuncionario {
 		}
 	}
 	
+	public void limparPesquisa(ActionEvent event) throws Exception
+	{
+		this.atualizaTableView();
+	}
 }

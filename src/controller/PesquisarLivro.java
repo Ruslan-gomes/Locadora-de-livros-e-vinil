@@ -143,4 +143,9 @@ public class PesquisarLivro {
 		lista = FXCollections.observableArrayList(bo.listarProduto(vo));
         tabelalivros.setItems(lista);
 	}
+	
+	public void limparPesquisa(ActionEvent event) throws Exception
+	{
+		this.atualizaTableView();
+	}
 }

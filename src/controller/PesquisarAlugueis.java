@@ -220,4 +220,9 @@ public class PesquisarAlugueis {
 			tabelaalugueis.setItems(lista);
 		}
 	}
+	
+	public void limparPesquisa(ActionEvent event) throws Exception
+	{
+		this.atualizaTableView();
+	}
 }

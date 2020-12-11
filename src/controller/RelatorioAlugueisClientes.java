@@ -111,4 +111,15 @@ public class RelatorioAlugueisClientes {
 		datainicio.setValue(null);
 		datafim.setValue(null);
 	}
+	
+	public void atualizaTableView() {
+		tabelaalugueis.setItems(null);
+		ObservableList<AlugueisVO> lista = FXCollections.observableArrayList(bo.listar());
+        tabelaalugueis.setItems(lista);
+	}
+	
+	public void limparPesquisa(ActionEvent event) throws Exception
+	{
+		this.atualizaTableView();
+	}
 }

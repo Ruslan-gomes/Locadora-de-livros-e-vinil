@@ -6,25 +6,25 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="painel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditarFuncionario">
+<Pane fx:id="painel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditarFuncionario">
    <children>
-      <Label opacity="0.7" prefHeight="60.0" prefWidth="650.0" style="-fx-alignment: center; -fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-size: 25;" text="Locadora de livros &amp; vinil" />
-      <Label layoutX="179.0" layoutY="70.0" style="-fx-font-size: 40; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Editar funcionário" />
-      <TextField fx:id="id" layoutX="179.0" layoutY="154.0" prefHeight="35.0" prefWidth="137.0" promptText="ID" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <TextField fx:id="endereco" layoutX="179.0" layoutY="283.0" prefHeight="35.0" prefWidth="315.0" promptText="Endereço" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <TextField fx:id="nome" layoutX="183.0" layoutY="218.0" prefHeight="35.0" prefWidth="315.0" promptText="Nome" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <Button layoutX="312.0" layoutY="549.0" mnemonicParsing="false" onAction="#editarFuncionario" prefHeight="37.0" prefWidth="75.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Editar">
+      <Label opacity="0.7" prefHeight="60.0" prefWidth="850.0" style="-fx-alignment: center; -fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-size: 25;" text="Locadora de livros &amp; vinil" />
+      <Label layoutX="264.0" layoutY="78.0" style="-fx-font-size: 40; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Editar funcionário" />
+      <TextField fx:id="id" layoutX="250.0" layoutY="154.0" prefHeight="35.0" prefWidth="137.0" promptText="ID" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <TextField fx:id="endereco" layoutX="275.0" layoutY="283.0" prefHeight="35.0" prefWidth="315.0" promptText="Endereço" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <TextField fx:id="nome" layoutX="275.0" layoutY="221.0" prefHeight="35.0" prefWidth="315.0" promptText="Nome" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <Button layoutX="396.0" layoutY="536.0" mnemonicParsing="false" onAction="#editarFuncionario" prefHeight="37.0" prefWidth="75.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Editar">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <TextField fx:id="cpf" layoutX="340.0" layoutY="154.0" prefHeight="35.0" prefWidth="167.0" promptText="CPF" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <TextField fx:id="login" layoutX="245.0" layoutY="351.0" prefHeight="35.0" prefWidth="210.0" promptText="Login" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <TextField fx:id="cpf" layoutX="455.0" layoutY="154.0" prefHeight="35.0" prefWidth="167.0" promptText="CPF" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <TextField fx:id="login" layoutX="328.0" layoutY="356.0" prefHeight="35.0" prefWidth="210.0" promptText="Login" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
       <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-weight: 700; fx-background-radius: 10; -fx-font-size: 15;" text="voltar">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <TextField fx:id="senha" layoutX="243.0" layoutY="418.0" prefHeight="35.0" prefWidth="210.0" promptText="Senha" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <TextField fx:id="cargo" layoutX="245.0" layoutY="486.0" prefHeight="35.0" prefWidth="210.0" promptText="Cargo" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <TextField fx:id="senha" layoutX="328.0" layoutY="419.0" prefHeight="35.0" prefWidth="210.0" promptText="Senha" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <TextField fx:id="cargo" layoutX="328.0" layoutY="480.0" prefHeight="35.0" prefWidth="210.0" promptText="Cargo" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
    </children>
 </Pane>

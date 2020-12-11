@@ -6,21 +6,26 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PesquisarAlugueis">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PesquisarAlugueis">
    <children>
-      <Label opacity="0.7" prefHeight="60.0" prefWidth="650.0" style="-fx-alignment: center; -fx-background-color: B89465; -fx-text-fill: #FFFFFF; -fx-font-size: 25;" text="Locadora de livros &amp; vinil" />
-      <Label layoutX="162.0" layoutY="80.0" style="-fx-font-size: 40; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Pesquisar aluguéis" />
-      <Separator layoutY="324.0" prefHeight="8.0" prefWidth="649.0" style="-fx-border-width: 2px; -fx-background-color: #B89465;" />
-      <TableView fx:id="tabelaalugueis" layoutY="329.0" prefHeight="271.0" prefWidth="649.0" />
+      <Label opacity="0.7" prefHeight="60.0" prefWidth="850.0" style="-fx-alignment: center; -fx-background-color: B89465; -fx-text-fill: #FFFFFF; -fx-font-size: 25;" text="Locadora de livros &amp; vinil" />
+      <Label layoutX="252.0" layoutY="84.0" style="-fx-font-size: 40; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Pesquisar aluguéis" />
+      <Separator layoutY="324.0" prefHeight="8.0" prefWidth="850.0" style="-fx-border-width: 2px; -fx-background-color: #B89465;" />
+      <TableView fx:id="tabelaalugueis" layoutY="329.0" prefHeight="271.0" prefWidth="850.0" />
       <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-weight: 700; fx-background-radius: 10; -fx-font-size: 15;" text="Voltar">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="292.0" layoutY="229.0" mnemonicParsing="false" onAction="#pesquisarAluguel" prefWidth="100.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Buscar">
+      <Button layoutX="375.0" layoutY="224.0" mnemonicParsing="false" onAction="#pesquisarAluguel" prefWidth="100.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Buscar">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <TextField fx:id="cpfcliente" layoutX="216.0" layoutY="166.0" prefHeight="35.0" prefWidth="252.0" promptText="CPF do cliente" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <TextField fx:id="cpfcliente" layoutX="299.0" layoutY="160.0" prefHeight="35.0" prefWidth="252.0" promptText="CPF do cliente" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <Button layoutX="787.0" layoutY="300.0" mnemonicParsing="false" onAction="#limparPesquisa" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 10px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Limpar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </Pane>

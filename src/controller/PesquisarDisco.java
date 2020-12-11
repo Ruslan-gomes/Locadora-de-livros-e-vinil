@@ -120,4 +120,9 @@ public class PesquisarDisco {
 		lista = FXCollections.observableArrayList(bo.listarProduto(vo));
         tabeladiscos.setItems(lista);
 	}
+	
+	public void limparPesquisa(ActionEvent event) throws Exception
+	{
+		this.atualizaTableView();
+	}
 }

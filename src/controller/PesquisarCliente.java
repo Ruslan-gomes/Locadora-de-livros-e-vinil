@@ -132,4 +132,9 @@ public class PesquisarCliente {
         tabelaclientes.setItems(listaClientes);
 	}
 	
+	public void limparPesquisa(ActionEvent event) throws Exception
+	{
+		this.atualizaTableView();
+	}
+	
 }
