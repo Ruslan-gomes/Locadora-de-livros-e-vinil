@@ -1,17 +1,21 @@
 package controller;
 
+import java.io.IOException;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.BO.ProdutosBO;
+import model.VO.AlugueisVO;
 import model.VO.LivrosVO;
 import view.Telas;
 
@@ -37,7 +41,7 @@ public class PesquisarLivro {
 		
 		TableColumn<LivrosVO, String> colunaTitulo = new TableColumn<>("Título");
 		TableColumn<LivrosVO, String> colunaGenero = new TableColumn<>("Gênero");
-		TableColumn<LivrosVO, String> colunaAnoLancamento = new TableColumn<>("Ano de lançamento");
+		TableColumn<LivrosVO, Calendar> colunaAnoLancamento = new TableColumn<>("Ano de lançamento");
 		TableColumn<LivrosVO, String> colunaPaginas = new TableColumn<>("Qtd páginas");
 		TableColumn<LivrosVO, String> colunaExemplares = new TableColumn<>("qtde exemplares");
 		TableColumn<LivrosVO, Double> colunaValorAluguel = new TableColumn<>("Valor aluguel");
@@ -47,6 +51,23 @@ public class PesquisarLivro {
 		colunaTitulo.setCellValueFactory(new PropertyValueFactory<>("titulo"));
 		colunaGenero.setCellValueFactory(new PropertyValueFactory<>("genero"));
 		colunaAnoLancamento.setCellValueFactory(new PropertyValueFactory<>("anoLancamento"));
+		colunaAnoLancamento.setCellFactory( cell -> {          
+            return new TableCell<LivrosVO, Calendar>() {
+                SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+                
+                @Override
+                protected void updateItem(Calendar item, boolean empty) {
+                   super.updateItem(item, empty);
+                   
+                   if( !empty ) {
+                	   setText(""+item.getWeekYear());
+                   }else {
+                      setText("");
+                      setGraphic(null);
+                   }
+                }
+            };        
+         } );
 		colunaPaginas.setCellValueFactory(new PropertyValueFactory<>("qtdPaginas"));
 		colunaExemplares.setCellValueFactory(new PropertyValueFactory<>("qtdExemplares"));
 		colunaValorAluguel.setCellValueFactory(new PropertyValueFactory<>("valorAluguel"));
@@ -68,7 +89,18 @@ public class PesquisarLivro {
 		});
 		Utils.initButtons(colunaDeletar, 15, TRASH_SOLID, "svg-red", (LivrosVO LivrosVO, ActionEvent event) -> {
 			System.out.println("Você clicou para deletar as informações de: "+ LivrosVO.getTitulo());
-			// Aqui vai toda a lógica para deletar a pessoa
+			// Aqui vai toda a lógica para deletar o livro
+			try {
+				Telas.telaConfirmaDelecao();
+				ConfirmarDelecao.confirmarDelecao.setLivro(LivrosVO);
+			} catch (Exception e) {
+				try {
+					Telas.telaErro();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
 		});
 	}
 	

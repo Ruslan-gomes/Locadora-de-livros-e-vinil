@@ -33,7 +33,7 @@ public class LivrosDAO extends BaseDAO implements LivrosInterDAO{
 	//deletar livro
 	public void deletar(LivrosVO vo) {
 		conn = getConnection();
-		String sql = "DELETE FROM livros WHERE id = ?";
+		String sql = "DELETE FROM livros WHERE id_livro = ?";
 		PreparedStatement ptst;
 		try {
 			ptst = conn.prepareStatement(sql);

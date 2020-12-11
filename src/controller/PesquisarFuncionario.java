@@ -121,10 +121,4 @@ public class PesquisarFuncionario {
 		}
 	}
 	
-	public void atualizaTableView() {
-		FuncionariosVO vo = new FuncionariosVO();
-		tabelafuncionarios.setItems(null);
-		lista = FXCollections.observableArrayList(bo.ListarPessoa(vo));
-        tabelafuncionarios.setItems(lista);
-	}
 }

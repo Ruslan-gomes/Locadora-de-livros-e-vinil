@@ -29,7 +29,7 @@ public class DiscosDAO extends BaseDAO implements DiscosInterDAO{
 	
 	public void deletar(DiscosVO vo) {
 		conn = getConnection();
-		String sql = "DELETE FROM livros WHERE id_disco = ?";
+		String sql = "DELETE FROM discos WHERE id_disco = ?";
 		PreparedStatement ptst;
 		try {
 			ptst = conn.prepareStatement(sql);

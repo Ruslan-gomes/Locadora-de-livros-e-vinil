@@ -1,5 +1,6 @@
 package controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,13 +78,28 @@ public class PesquisarCliente {
 				Telas.telaEditaClientes();
 				EditarCliente.editarCliente.insereTexto(ClientesVO);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				try {
+					Telas.telaErro();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		Utils.initButtons(colunaDeletar, 15, TRASH_SOLID, "svg-red", (ClientesVO ClientesVO, ActionEvent event) -> {
 			System.out.println("Você clicou para deletar as informações de: "+ ClientesVO.getNome());
 			// Aqui vai toda a lógica para deletar a pessoa
+			try {
+				Telas.telaConfirmaDelecao();
+				ConfirmarDelecao.confirmarDelecao.setCliente(ClientesVO);
+			} catch (Exception e) {
+				try {
+					Telas.telaErro();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
 		});
 	}
 	

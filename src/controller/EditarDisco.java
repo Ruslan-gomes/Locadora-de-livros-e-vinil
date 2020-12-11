@@ -40,9 +40,14 @@ public class EditarDisco {
 		vo.setValorAluguel(Double.parseDouble(valoraluguel.getText()));
 		
 		bo.editarProduto(vo);
+		
 		//fecha a tela
 		Stage stage = (Stage) painel.getScene().getWindow();
-		Telas.getPrimaryStage().setOpacity(1);
+		
+		//Abre a POP-UP confirmando a edição
+		Telas.telaCadastroEfetuado();
+		ConfirmarCadastro.confirmarCadastro.alteraTexto("Editado com sucesso!");
+		
 		PesquisarDisco.pesquisarDisco.atualizaTableView();
 		stage.close();
 	}

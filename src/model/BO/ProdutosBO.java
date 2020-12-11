@@ -46,7 +46,7 @@ public class ProdutosBO<VO> implements ProdutosInterBO<VO>{
 	@Override
 	public void deletarProduto(ProdutosVO vo) {
 		if(vo instanceof LivrosVO)
-		{
+		{	
 			LivrosDAO dao = new LivrosDAO();
 			dao.deletar((LivrosVO)vo);
 		}
@@ -139,11 +139,12 @@ public class ProdutosBO<VO> implements ProdutosInterBO<VO>{
 			LivrosDAO dao = new LivrosDAO();
 			ResultSet rs = dao.listar();
 			
-			Calendar dataCalendar = Calendar.getInstance();
+			
 			
 			List<LivrosVO> livros = new ArrayList<LivrosVO>();
 			try {
 				while(rs.next()) {
+					Calendar dataCalendar = Calendar.getInstance();
 					LivrosVO livro = new LivrosVO();
 					//adicionando o resultado ao objeto livro
 					livro.setId(rs.getInt("id_livro"));
@@ -154,6 +155,7 @@ public class ProdutosBO<VO> implements ProdutosInterBO<VO>{
 					livro.setQtdPaginas(rs.getInt("qtd_paginas"));
 					livro.setQtdExemplares(rs.getInt("qtd_exemplares"));
 					livro.setValorAluguel(rs.getDouble("valor_aluguel"));
+					
 					
 					livros.add(livro);
 				}

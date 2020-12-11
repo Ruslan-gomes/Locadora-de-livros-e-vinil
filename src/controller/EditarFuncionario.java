@@ -56,11 +56,13 @@ public class EditarFuncionario {
 		PesquisarFuncionario.pesquisarFuncionario.atualizaTableView();
 		stage.close();
 		
+		/*
 		//fecha a tela
 				Stage stage = (Stage) painel.getScene().getWindow();
 				Telas.getPrimaryStage().setOpacity(1);
 				PesquisarFuncionario.pesquisarFuncionario.atualizaTableView();
 				stage.close();
+			*/
 	}
 	
 	public void insereTexto(FuncionariosVO func)

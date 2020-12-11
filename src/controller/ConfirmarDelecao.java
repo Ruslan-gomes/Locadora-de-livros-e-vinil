@@ -6,7 +6,11 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import model.BO.AlugueisBO;
 import model.BO.PessoasBO;
+import model.BO.ProdutosBO;
 import model.VO.AlugueisVO;
+import model.VO.ClientesVO;
+import model.VO.DiscosVO;
+import model.VO.LivrosVO;
 import model.VO.FuncionariosVO;
 import view.Telas;
 
@@ -16,6 +20,9 @@ public class ConfirmarDelecao {
 	
 	AlugueisVO aluguel = new AlugueisVO();
 	FuncionariosVO funcionario = new FuncionariosVO();
+	ClientesVO cliente = new ClientesVO();
+	LivrosVO livro = new LivrosVO();
+	DiscosVO disco = new DiscosVO();
 	
 	@FXML
     private Label labelTexto;
@@ -28,11 +35,41 @@ public class ConfirmarDelecao {
 	public void setAluguel(AlugueisVO aluguelDeletar) {
 		aluguel = aluguelDeletar;
 		funcionario = null;
+		cliente = null;
+		livro = null;
+		disco = null;
 	}
 	
 	public void setFuncionario(FuncionariosVO funcionarioDeletar) {
-		aluguel = null;
 		funcionario = funcionarioDeletar;
+		aluguel = null;
+		cliente = null;
+		livro = null;
+		disco = null;
+	}
+	
+	public void setCliente(ClientesVO clienteDeletar) {
+		cliente = clienteDeletar;
+		aluguel = null;
+		funcionario = null;
+		livro = null;
+		disco = null;
+	}
+	
+	public void setLivro(LivrosVO livroDeletar) {
+		livro = livroDeletar;
+		aluguel = null;
+		funcionario = null;
+		cliente = null;
+		disco = null;
+	}
+	
+	public void setDisco(DiscosVO discoDeletar) {
+		disco = discoDeletar;
+		livro = null;
+		aluguel = null;
+		funcionario = null;
+		cliente = null;
 	}
 	
 	
@@ -67,6 +104,55 @@ public class ConfirmarDelecao {
 			
 			//Atualiza a tableview
 			PesquisarFuncionario.pesquisarFuncionario.atualizaTableView();
+			
+			//fecha a pop-up de confirmação de deleção
+			stage.close();
+		}
+	//Deleção de funcionário
+		else if(cliente != null) {
+			PessoasBO<ClientesVO> bo = new PessoasBO<ClientesVO>();
+			bo.deletarPessoa(cliente);
+			
+			Telas.telaCadastroEfetuado();
+			ConfirmarCadastro.confirmarCadastro.alteraTexto("Deletado com sucesso!");
+			
+			Stage stage = (Stage) painel.getScene().getWindow();
+			
+			//Atualiza a tableview
+			PesquisarCliente.pesquisarCliente.atualizaTableView();
+			
+			//fecha a pop-up de confirmação de deleção
+			stage.close();
+		}
+	//Deleção de livros
+		else if(livro != null) {
+			ProdutosBO<LivrosVO> bo = new ProdutosBO<LivrosVO>();
+			bo.deletarProduto(livro);
+			
+			Telas.telaCadastroEfetuado();
+			ConfirmarCadastro.confirmarCadastro.alteraTexto("Deletado com sucesso!");
+			
+			Stage stage = (Stage) painel.getScene().getWindow();
+			
+			//Atualiza a tableview
+			PesquisarLivro.pesquisarLivro.atualizaTableView();
+			
+			//fecha a pop-up de confirmação de deleção
+			stage.close();
+		}
+		
+	//Deleção de disco
+		else if(disco != null) {
+			ProdutosBO<DiscosVO> bo = new ProdutosBO<DiscosVO>();
+			bo.deletarProduto(disco);
+			
+			Telas.telaCadastroEfetuado();
+			ConfirmarCadastro.confirmarCadastro.alteraTexto("Deletado com sucesso!");
+			
+			Stage stage = (Stage) painel.getScene().getWindow();
+			
+			//Atualiza a tableview
+			PesquisarDisco.pesquisarDisco.atualizaTableView();
 			
 			//fecha a pop-up de confirmação de deleção
 			stage.close();

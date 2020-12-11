@@ -1,5 +1,7 @@
 package controller;
 
+import java.io.IOException;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -57,13 +59,28 @@ public class PesquisarDisco {
 				Telas.telaEditaDisco();
 				EditarDisco.editarDisco.insereTexto(DiscosVO);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				try {
+					Telas.telaErro();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		Utils.initButtons(colunaDeletar, 15, TRASH_SOLID, "svg-red", (DiscosVO DiscosVO, ActionEvent event) -> {
 			System.out.println("Você clicou para deletar as informações de: "+ DiscosVO.getTitulo());
-			// Aqui vai toda a lógica para deletar a pessoa
+			// Aqui vai toda a lógica para deletar 
+			try {
+				Telas.telaConfirmaDelecao();
+				ConfirmarDelecao.confirmarDelecao.setDisco(DiscosVO);
+			} catch (Exception e) {
+				try {
+					Telas.telaErro();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
 		});
 	}
 	

@@ -27,7 +27,7 @@ public class LivrosVO extends ProdutosVO {
 	}
 
 	public void setAnoLancamento(Calendar anoLancamento) {
-		if(anoLancamento != null)
+		if(anoLancamento == null)
 		{
 			System.out.println("Ano de lançamento inválido!");
 		}

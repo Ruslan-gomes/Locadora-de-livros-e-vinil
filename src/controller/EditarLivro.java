@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.Calendar;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -19,6 +21,7 @@ public class EditarLivro {
 	
 	@FXML private TextField titulo;
 	@FXML private TextField genero;
+	@FXML private TextField ano;
 	@FXML private TextField qtdpaginas;
 	@FXML private TextField qtdexemplares;
 	@FXML private TextField valoraluguel;
@@ -35,15 +38,23 @@ public class EditarLivro {
 		vo.setId(id);
 		vo.setTitulo(titulo.getText());
 		vo.setGenero(genero.getText());
+		Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.YEAR, Integer.parseInt(ano.getText()));
+		vo.setAnoLancamento(cal);
 		vo.setQtdPaginas(Integer.parseInt(qtdpaginas.getText()));
 		vo.setQtdExemplares(Integer.parseInt(qtdexemplares.getText()));
 		vo.setValorAluguel(Double.parseDouble(valoraluguel.getText()));
 		
 		bo.editarProduto(vo);
+				
 		//fecha a tela
 		Stage stage = (Stage) painel.getScene().getWindow();
-		Telas.getPrimaryStage().setOpacity(1);
+		
+		//Abre a POP-UP confirmando a edição
+		Telas.telaCadastroEfetuado();
+		ConfirmarCadastro.confirmarCadastro.alteraTexto("Editado com sucesso!");
 		PesquisarLivro.pesquisarLivro.atualizaTableView();
+		
 		stage.close();
 	}
 	
@@ -52,6 +63,7 @@ public class EditarLivro {
 		id = livro.getId();
 		titulo.setText(livro.getTitulo());
 		genero.setText(livro.getGenero());
+		ano.setText(""+livro.getAnoLancamento().getWeekYear());
 		qtdpaginas.setText(Integer.toString(livro.getQtdPaginas()));
 		qtdexemplares.setText(Integer.toString(livro.getQtdExemplares()));
 		valoraluguel.setText(Double.toString(livro.getValorAluguel()));
