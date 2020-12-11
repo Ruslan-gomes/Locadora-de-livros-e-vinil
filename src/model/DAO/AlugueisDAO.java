@@ -170,12 +170,11 @@ public class AlugueisDAO extends BaseDAO implements AlugueisInterDAO{
 		return rs;
 	}
 	
-	public double faturaMensal(Calendar mes) {
-		double valorTotal = 0;
+	public ResultSet faturaMensal(Calendar mes) {
 		conn = getConnection();
-		String sql = "SELECT valor_total FROM relatorio WHERE data_emprestimo >= ? and data_emprestimo <= ?";
+		String sql = "SELECT valor_total(?, ?), qtd_alugado(?, ?);";
 		PreparedStatement ptst;
-		ResultSet rs;
+		ResultSet rs = null;
 		
 		Calendar cal1 = Calendar.getInstance();
 		cal1.set(mes.get(Calendar.YEAR), mes.get(Calendar.MONTH), 1);
@@ -189,16 +188,15 @@ public class AlugueisDAO extends BaseDAO implements AlugueisInterDAO{
 			ptst = conn.prepareStatement(sql);
 			ptst.setDate(1, dataInicio);
 			ptst.setDate(2, dataFim);
+			ptst.setDate(3, dataInicio);
+			ptst.setDate(4, dataFim);
 			rs = ptst.executeQuery();
-			while(rs.next()) {
-				valorTotal += rs.getDouble("valor_total");
-			}
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 		
 		System.out.println("Fatura mensal calculada!");
-		return valorTotal;
+		return rs;
 	}
 
 

@@ -18,5 +18,5 @@ public interface AlugueisInterBO {
 	public List<AlugueisVO> listar();
 	public AlugueisVO [] relatorioAlugados(ClientesVO cliente, Calendar dataInicio, Calendar dataFim);
 	public AlugueisVO [] relatorioAlugados(Calendar dataInicio, Calendar dataFim);
-	public AlugueisVO [] relatorioFaturaMensal(Calendar mes);
+	public AlugueisVO relatorioFaturaMensal(Calendar mes);
 }

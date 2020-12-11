@@ -162,11 +162,23 @@ public class AlugueisBO implements AlugueisInterBO {
 		return relatorio;
 	}
 	
-	public AlugueisVO [] relatorioFaturaMensal(Calendar mes) {
-		// Vai receber um mês como parâmentro e vai retornar um array com todos os alugueis daquele mês
+	public AlugueisVO relatorioFaturaMensal(Calendar mes) {
+		AlugueisDAO dao = new AlugueisDAO();
+		ResultSet rs = dao.faturaMensal(mes);
+		AlugueisVO vo = new AlugueisVO();
 		
-		AlugueisVO [] relatorio = new AlugueisVO[1];// Apenas para tirar o erro de retorno
-		return relatorio;
+		List<AlugueisVO> alugueis = new ArrayList<AlugueisVO>();
+		try {
+			while(rs.next())
+			{
+				vo.setValorTotal(rs.getDouble("valor_total"));
+				vo.setQtdAlugados(rs.getInt("qtd_alugado"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return vo;
 	}
 
 	@Override

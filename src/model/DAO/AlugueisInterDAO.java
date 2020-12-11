@@ -14,5 +14,5 @@ public interface AlugueisInterDAO {
 	public ResultSet pesquisarAluguel(Calendar dataInicio, Calendar dataFim);
 	public ResultSet pesquisarAluguelCliente(AlugueisVO aluguel, Calendar dataInicio, Calendar dataFim);
 	public ResultSet listar();
-	public double faturaMensal(Calendar mes);
+	public ResultSet faturaMensal(Calendar mes);
 }
