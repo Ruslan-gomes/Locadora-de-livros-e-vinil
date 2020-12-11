@@ -7,21 +7,21 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Login">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Login">
    <children>
-      <ImageView fitHeight="600.0" fitWidth="400.0" layoutX="400.0" pickOnBounds="true">
+      <ImageView fitHeight="600.0" fitWidth="600.0" layoutX="400.0" pickOnBounds="true">
          <image>
             <Image url="@Direita%20da%20tela.png" />
          </image>
       </ImageView>
-      <Label layoutX="144.0" layoutY="161.0" style="-fx-font-family: Roboto; -fx-font-size: 40px; -fx-font-weight: 700;" text="Login" textFill="#b89465" />
-      <TextField fx:id="login" alignment="CENTER" blendMode="MULTIPLY" layoutX="82.0" layoutY="241.0" prefHeight="35.0" prefWidth="230.0" promptText="Login" style="-fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15px;">
+      <Label layoutX="159.0" layoutY="152.0" style="-fx-font-family: Roboto; -fx-font-size: 40px; -fx-font-weight: 700;" text="Login" textFill="#b89465" />
+      <TextField fx:id="login" alignment="CENTER" blendMode="MULTIPLY" layoutX="97.0" layoutY="265.0" prefHeight="35.0" prefWidth="230.0" promptText="Login" style="-fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15px;">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </TextField>
-      <PasswordField fx:id="senha" alignment="CENTER" layoutX="82.0" layoutY="301.0" prefHeight="35.0" prefWidth="230.0" promptText="Senha" style="-fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15px;" />
-      <Button layoutX="147.0" layoutY="362.0" mnemonicParsing="false" onAction="#autenticar" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-font-size: 16px;" text="Entrar" textFill="WHITE">
+      <PasswordField fx:id="senha" alignment="CENTER" layoutX="97.0" layoutY="339.0" prefHeight="35.0" prefWidth="230.0" promptText="Senha" style="-fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15px;" />
+      <Button layoutX="162.0" layoutY="410.0" mnemonicParsing="false" onAction="#autenticar" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-font-size: 16px;" text="Entrar" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>

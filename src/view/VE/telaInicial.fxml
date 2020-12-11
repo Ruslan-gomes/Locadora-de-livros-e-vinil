@@ -6,9 +6,9 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaInicial">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaInicial">
    <children>
-      <Pane fx:id="painelConteudo" layoutX="151.0" prefHeight="600.0" prefWidth="650.0" style="-fx-background-color: white;" />
+      <Pane fx:id="painelConteudo" layoutX="151.0" prefHeight="600.0" prefWidth="850.0" style="-fx-background-color: white;" />
       <MenuBar prefHeight="600.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: B89465;" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutY="20.0" prefHeight="17.0" prefWidth="151.0" style="-fx-font-family: Roboto; -fx-font-weight: 700;" text="Nome do funcionário" textAlignment="CENTER" textFill="WHITE" />
       <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="121.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Aluguéis" textAlignment="CENTER" textFill="WHITE">
@@ -166,7 +166,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </MenuButton>
-      <MenuButton alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="0.0" layoutY="570.0" mnemonicParsing="false" popupSide="LEFT" prefHeight="30.0" prefWidth="151.0" rotate="180.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" textFill="RED">
+      <MenuButton alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="0.0" layoutY="560.0" mnemonicParsing="false" popupSide="LEFT" prefHeight="30.0" prefWidth="151.0" rotate="180.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" textFill="RED">
          <graphic>
             <Label rotate="180.0" textFill="RED" translateX="5.0">
                <graphic>
