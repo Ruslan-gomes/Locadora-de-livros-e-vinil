@@ -1,10 +1,12 @@
 package controller;
 
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -16,14 +18,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import model.BO.AlugueisBO;
 import model.VO.AlugueisVO;
+import model.VO.ClientesVO;
 
 public class RelatorioAlugueisClientes {
 	public static RelatorioAlugueisClientes relatorioAlugueisClientes;
 	
 	@FXML Pane painelconteudo;
-	
+	@FXML private TextField cpfcliente;
 	@FXML private ComboBox escolha;
-	@FXML private TextField nomecliente;
 	@FXML private DatePicker datainicio;
 	@FXML private DatePicker datafim;
 	@FXML private TableView<AlugueisVO> tabelaalugueis;
@@ -90,4 +92,23 @@ public class RelatorioAlugueisClientes {
         tabelaalugueis.setItems(lista);
 	}
 
+	
+	public void pesquisarRelatorioCliente(ActionEvent event) throws Exception
+	{
+		ClientesVO cliente = new ClientesVO();
+		cliente.setCpfAntigo(cpfcliente.getText());
+		
+		AlugueisVO vo = new AlugueisVO();
+		vo.setCliente(cliente);
+		Calendar inicio = Calendar.getInstance();
+		Calendar fim = Calendar.getInstance();
+		
+		inicio.setTime(Date.valueOf(datainicio.getValue()));
+		fim.setTime(Date.valueOf(datafim.getValue()));
+		
+		lista = FXCollections.observableArrayList(bo.pesquisarAluguelCliente(vo,inicio, fim));
+		tabelaalugueis.setItems(lista);
+		datainicio.setValue(null);
+		datafim.setValue(null);
+	}
 }
