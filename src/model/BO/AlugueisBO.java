@@ -1,10 +1,24 @@
 package model.BO;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 
 import model.DAO.AlugueisDAO;
 import model.VO.AlugueisVO;
@@ -17,6 +31,7 @@ public class AlugueisBO implements AlugueisInterBO {
 		if(aluguel.getCliente().getCpf() != null && aluguel.getNomeProduto() != null && aluguel.getQtdAlugados() > 0 && aluguel.getDataEmprestimo() != null && aluguel.getValorTotal() > 0)
 		{
 			dao.cadastrarAluguel(aluguel);
+			gerarPDF(aluguel);
 		}
 		else
 		{
@@ -222,5 +237,77 @@ public class AlugueisBO implements AlugueisInterBO {
 			e.printStackTrace();
 		}
 		return alugueis;
+	}
+	
+	public static void gerarPDF(AlugueisVO aluguel) {
+		Document doc = new Document();
+		String arquivoPDF = "notaFiscal.pdf";
+		
+		try{
+			//Criando o arquivo
+			PdfWriter.getInstance(doc, new FileOutputStream(arquivoPDF));
+			doc.open();
+
+			Paragraph p = new Paragraph("LOCADORA DE LIVROS & VINIL");
+			p.setAlignment(1);
+			doc.add(p);
+			p = new Paragraph(" "); //Paragrafo para pular linha
+			doc.add(p);
+			p = new Paragraph("Comprovante de aluguel");
+			p.setAlignment(1);
+			doc.add(p);
+			p = new Paragraph(" "); //Paragrafo para pular linha
+			doc.add(p);
+		
+			p = new Paragraph(new Phrase("CPF do cliente: ", FontFactory.getFont(FontFactory.TIMES_BOLD)));
+			p.add(new Phrase(aluguel.getCliente().getCpf(), FontFactory.getFont(FontFactory.TIMES)));
+			doc.add(p);
+			
+			p = new Paragraph(new Phrase("Produto: ", FontFactory.getFont(FontFactory.TIMES_BOLD)));
+			p.add(new Phrase(aluguel.getNomeProduto(), FontFactory.getFont(FontFactory.TIMES)));
+			doc.add(p);
+			
+			p = new Paragraph(new Phrase("Quantidade: ", FontFactory.getFont(FontFactory.TIMES_BOLD)));
+			p.add(new Phrase(aluguel.getQtdAlugados()+"", FontFactory.getFont(FontFactory.TIMES)));
+			doc.add(p);
+			
+			SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+			p = new Paragraph(new Phrase("Data do emprestimo: ", FontFactory.getFont(FontFactory.TIMES_BOLD)));
+			p.add(new Phrase(format.format(aluguel.getDataEmprestimo().getTimeInMillis()), FontFactory.getFont(FontFactory.TIMES)));
+			doc.add(p);
+			
+			p = new Paragraph(new Phrase("Valor total: ", FontFactory.getFont(FontFactory.TIMES_BOLD)));
+			DecimalFormat df = new DecimalFormat("0.00");
+		    df.setMaximumFractionDigits(2);
+		    String vFormatado = df.format(aluguel.getValorTotal());
+			p.add(new Phrase("R$"+vFormatado, FontFactory.getFont(FontFactory.TIMES)));
+			doc.add(p);
+			
+			p = new Paragraph(" "); //Paragrafo para pular linha
+			doc.add(p);
+			
+			p = new Paragraph("Não tem valor fiscal", FontFactory.getFont(FontFactory.TIMES));
+			p.setAlignment(1);
+			doc.add(p);
+			
+			Calendar cal = Calendar.getInstance();
+			p = new Paragraph(new Phrase(format.format(cal.getTimeInMillis()), FontFactory.getFont(FontFactory.TIMES)));
+			p.setAlignment(1);
+			doc.add(p);
+			
+			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+			Date hora = Calendar.getInstance().getTime();
+			String dataFormatada = sdf.format(hora);
+			p = new Paragraph(new Phrase(dataFormatada, FontFactory.getFont(FontFactory.TIMES)));
+			p.setAlignment(1);
+			doc.add(p);
+			
+			doc.close();
+			System.out.println("Terminou");
+			Desktop.getDesktop().open(new File(arquivoPDF));
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
