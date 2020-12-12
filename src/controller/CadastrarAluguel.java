@@ -6,6 +6,7 @@ import java.util.Calendar;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -15,7 +16,7 @@ import model.VO.ClientesVO;
 import view.Telas;
 
 public class CadastrarAluguel {
-	
+	@FXML private Button btnVoltar;
 	@FXML private TextField cpfcliente;
 	@FXML private TextField nomeproduto;
 	@FXML private TextField quantidadealugada;
@@ -64,4 +65,9 @@ public class CadastrarAluguel {
 			Telas.telaErro();
 		}
 	}
+	
+	public void voltar(ActionEvent event) throws Exception{
+		TelaInicial.TelaInicial.telaLogo();
+	}
+	
 }

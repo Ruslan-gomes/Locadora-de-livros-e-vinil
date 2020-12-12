@@ -16,11 +16,6 @@
             <Cursor fx:constant="HAND" />
          </cursor></Button>
       <TextField fx:id="nomeproduto" layoutX="275.0" layoutY="236.0" prefHeight="35.0" prefWidth="315.0" promptText="Nome do produto" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-weight: 700; fx-background-radius: 10; -fx-font-size: 15;" text="voltar">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <DatePicker fx:id="datadevolucao" layoutX="275.0" layoutY="300.0" prefHeight="35.0" prefWidth="315.0" promptText="Dats de devolução" style="-fx-border-color: B89465; -fx-border-width: 2; -fx-border-radius: 15;" />
+      <DatePicker fx:id="datadevolucao" layoutX="275.0" layoutY="300.0" prefHeight="35.0" prefWidth="315.0" promptText="Data de devolução" style="-fx-border-color: B89465; -fx-border-width: 2; -fx-border-radius: 15;" />
    </children>
 </Pane>

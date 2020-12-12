@@ -96,7 +96,7 @@ public class RelatorioAlugueisClientes {
 	public void pesquisarRelatorioCliente(ActionEvent event) throws Exception
 	{
 		ClientesVO cliente = new ClientesVO();
-		cliente.setCpfAntigo(cpfcliente.getText());
+		cliente.setCpf(cpfcliente.getText());
 		
 		AlugueisVO vo = new AlugueisVO();
 		vo.setCliente(cliente);
@@ -108,6 +108,7 @@ public class RelatorioAlugueisClientes {
 		
 		lista = FXCollections.observableArrayList(bo.pesquisarAluguelCliente(vo,inicio, fim));
 		tabelaalugueis.setItems(lista);
+		cpfcliente.setText(null);
 		datainicio.setValue(null);
 		datafim.setValue(null);
 	}

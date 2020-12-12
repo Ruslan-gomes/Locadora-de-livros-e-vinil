@@ -12,16 +12,10 @@
       <Label layoutX="226.0" layoutY="82.0" style="-fx-font-size: 40; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Relatório de aluguéis" />
       <Separator layoutY="324.0" prefHeight="8.0" prefWidth="850.0" style="-fx-border-width: 2px; -fx-background-color: #B89465;" />
       <TableView fx:id="tabelaalugueis" layoutY="329.0" prefHeight="271.0" prefWidth="850.0" />
-      <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-weight: 700; fx-background-radius: 10; -fx-font-size: 15;" text="Voltar">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <ComboBox fx:id="escolha" layoutX="325.0" layoutY="154.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: b89465; -fx-border-radius: 15px; -fx-border-width: 2px;" stylesheets="@css/comboBoxCSS.css" />
-      <DatePicker fx:id="datainicio" layoutX="236.0" layoutY="214.0" promptText="Data de ínicio" style="-fx-border-color: B89465; -fx-border-radius: 10; -fx-border-width: 2;" />
-      <DatePicker fx:id="datafim" layoutX="436.0" layoutY="214.0" promptText="Data de fim" style="-fx-border-color: B89465; -fx-border-radius: 10; -fx-border-width: 2;" />
-      <Button layoutX="386.0" layoutY="269.0" mnemonicParsing="false" onAction="#pesquisarRelatorio" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-background-radius: 15; -fx-border-width: 2; -fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Buscar" />
-      <Button layoutX="787.0" layoutY="300.0" mnemonicParsing="false" onAction="#limparPesquisa" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 10px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Limpar">
+      <DatePicker fx:id="datainicio" layoutX="236.0" layoutY="180.0" promptText="Data de ínicio" style="-fx-border-color: B89465; -fx-border-radius: 10; -fx-border-width: 2;" />
+      <DatePicker fx:id="datafim" layoutX="436.0" layoutY="180.0" promptText="Data de fim" style="-fx-border-color: B89465; -fx-border-radius: 10; -fx-border-width: 2;" />
+      <Button layoutX="304.0" layoutY="245.0" mnemonicParsing="false" onAction="#pesquisarRelatorio" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-background-radius: 10; -fx-border-width: 2; -fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Buscar" />
+      <Button layoutX="446.0" layoutY="245.0" mnemonicParsing="false" onAction="#limparPesquisa" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 15px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Limpar busca">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

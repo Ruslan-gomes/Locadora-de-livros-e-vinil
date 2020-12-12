@@ -70,13 +70,13 @@ public class AlugueisBO implements AlugueisInterBO {
 		
 		List<AlugueisVO> alugueis = new ArrayList<AlugueisVO>();
 		
-		Calendar dataCalendar1 = Calendar.getInstance();
-		Calendar dataCalendar2 = Calendar.getInstance();
+		
 		
 		try {
 			while(rs.next())
 			{
-				
+				Calendar dataCalendar1 = Calendar.getInstance();
+				Calendar dataCalendar2 = Calendar.getInstance();
 				AlugueisVO vo = new AlugueisVO();
 				ClientesVO cliente = new ClientesVO();
 				cliente.setCpf(rs.getString("Cpf_cliente"));
@@ -104,12 +104,11 @@ public class AlugueisBO implements AlugueisInterBO {
 		
 		List<AlugueisVO> alugueis = new ArrayList<AlugueisVO>();
 		
-		Calendar dataCalendar1 = Calendar.getInstance();
-		Calendar dataCalendar2 = Calendar.getInstance();
-		
 		try {
 			while(rs.next())
 			{
+				Calendar dataCalendar1 = Calendar.getInstance();
+				Calendar dataCalendar2 = Calendar.getInstance();
 				AlugueisVO vo = new AlugueisVO();
 				ClientesVO cliente = new ClientesVO();
 				cliente.setCpf(rs.getString("Cpf_cliente"));
@@ -121,6 +120,9 @@ public class AlugueisBO implements AlugueisInterBO {
 				dataCalendar2.setTime(rs.getDate("Data_devolucao"));
 				vo.setDataDevolucao(dataCalendar2);
 				vo.setValorTotal(rs.getDouble("valor_total"));
+				
+				System.out.println(dataCalendar1.getTime());
+				System.out.println(dataCalendar2.getTime());
 				alugueis.add(vo);
 			}
 		} catch (SQLException e) {

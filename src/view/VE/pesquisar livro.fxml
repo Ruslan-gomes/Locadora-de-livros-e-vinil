@@ -10,23 +10,18 @@
    <children>
       <Label opacity="0.7" prefHeight="60.0" prefWidth="850.0" style="-fx-alignment: center; -fx-background-color: B89465; -fx-text-fill: #FFFFFF; -fx-font-size: 25;" text="Locadora de livros &amp; vinil" />
       <Label layoutX="280.0" layoutY="72.0" style="-fx-font-size: 40; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Pesquisar livro" />
-      <TextField fx:id="titulo" layoutX="254.0" layoutY="130.0" prefHeight="35.0" prefWidth="315.0" promptText="Título" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <TextField fx:id="genero" layoutX="254.0" layoutY="205.0" prefHeight="35.0" prefWidth="315.0" promptText="Gênero" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <Button layoutX="371.0" layoutY="319.0" mnemonicParsing="false" onAction="#pesquisarLivro" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Pesquisar">
+      <TextField fx:id="titulo" layoutX="257.0" layoutY="130.0" prefHeight="35.0" prefWidth="315.0" promptText="Título" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <TextField fx:id="genero" layoutX="257.0" layoutY="197.0" prefHeight="35.0" prefWidth="315.0" promptText="Gênero" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <Button layoutX="294.0" layoutY="320.0" mnemonicParsing="false" onAction="#pesquisarLivro" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Pesquisar">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Label layoutX="409.0" layoutY="176.0" text="OU" />
+      <Label layoutX="403.0" layoutY="172.0" text="OU" />
       <Separator layoutY="370.0" prefHeight="10.0" prefWidth="850.0" style="-fx-border-width: 2px; -fx-background-color: #B89465;" />
       <TableView fx:id="tabelalivros" layoutY="376.0" prefHeight="224.0" prefWidth="850.0" />
-      <Label layoutX="408.0" layoutY="251.0" text="OU" />
-      <TextField fx:id="anolancamento" layoutX="259.0" layoutY="275.0" prefHeight="35.0" prefWidth="315.0" promptText="Ano de lançamento" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-weight: 700; fx-background-radius: 10; -fx-font-size: 15;" text="voltar">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Button layoutX="787.0" layoutY="344.0" mnemonicParsing="false" onAction="#limparPesquisa" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 10px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Limpar">
+      <Label layoutX="403.0" layoutY="240.0" text="OU" />
+      <TextField fx:id="anolancamento" layoutX="257.0" layoutY="265.0" prefHeight="35.0" prefWidth="315.0" promptText="Ano de lançamento" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <Button layoutX="420.0" layoutY="320.0" mnemonicParsing="false" onAction="#limparPesquisa" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 15px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Limpar busca">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

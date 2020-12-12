@@ -1,23 +1,12 @@
 package view;
 
-import java.awt.event.FocusListener;
 import java.io.IOException;
-
-import controller.RelatorioAlugueis;
-import controller.TelaInicial;
 import javafx.application.Application;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventType;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
 import javafx.scene.layout.Pane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-//import sun.awt.RequestFocusController;
 
 public class Telas extends Application {
 	private static Stage primaryStage;
@@ -40,7 +29,6 @@ public class Telas extends Application {
 	}
 	
 	
-	
 	public static void telaLogin() throws Exception{
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/login.fxml"));
 		
@@ -55,6 +43,12 @@ public class Telas extends Application {
 		Scene cena = new Scene(root);
 		
 		primaryStage.setScene(cena);
+	}
+	
+	public static void telaLogo(Pane painelConteudo) throws IOException{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/logo.fxml"));
+		painelConteudo.getChildren().clear();
+		painelConteudo.getChildren().add(pane);
 	}
 	
 //--Alugueis

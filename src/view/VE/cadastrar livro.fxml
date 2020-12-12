@@ -9,21 +9,16 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadastrarLivro">
    <children>
       <Label opacity="0.7" prefHeight="60.0" prefWidth="850.0" style="-fx-alignment: center; -fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-size: 25;" text="Locadora de livros &amp; vinil" />
-      <Label layoutX="295.0" layoutY="100.0" style="-fx-font-size: 40; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Cadastrar livro" />
-      <TextField fx:id="titulo" layoutX="271.0" layoutY="177.0" prefHeight="35.0" prefWidth="315.0" promptText="Título" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <Label layoutX="298.0" layoutY="99.0" style="-fx-font-size: 40; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Cadastrar livro" />
+      <TextField fx:id="titulo" layoutX="260.0" layoutY="177.0" prefHeight="35.0" prefWidth="340.0" promptText="Título" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
       <TextField fx:id="qtdpaginas" layoutX="260.0" layoutY="307.0" prefHeight="35.0" prefWidth="198.0" promptText="Quantidade de páginas" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <Button layoutX="394.0" layoutY="446.0" mnemonicParsing="false" onAction="#cadastrarLivro" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Cadastrar">
+      <Button layoutX="384.0" layoutY="439.0" mnemonicParsing="false" onAction="#cadastrarLivro" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Cadastrar">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <TextField fx:id="genero" layoutX="271.0" layoutY="243.0" prefHeight="35.0" prefWidth="315.0" promptText="Gênero" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <TextField fx:id="genero" layoutX="260.0" layoutY="243.0" prefHeight="35.0" prefWidth="340.0" promptText="Gênero" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
       <TextField fx:id="anolancamento" layoutX="472.0" layoutY="307.0" prefHeight="35.0" prefWidth="128.0" promptText="Ano lançamento" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <TextField fx:id="valoraluguel" layoutX="476.0" layoutY="369.0" prefHeight="35.0" prefWidth="120.0" promptText="Valor aluguel" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <TextField fx:id="valoraluguel" layoutX="472.0" layoutY="369.0" prefHeight="35.0" prefWidth="128.0" promptText="Valor aluguel" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
       <TextField fx:id="qtdexemplares" layoutX="260.0" layoutY="369.0" prefHeight="35.0" prefWidth="198.0" promptText="Quantidade de exemplares" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-weight: 700; fx-background-radius: 10; -fx-font-size: 15;" text="voltar">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
    </children>
 </Pane>

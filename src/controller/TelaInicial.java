@@ -1,34 +1,50 @@
 package controller;
 
-import javafx.collections.ObservableList;
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.layout.Pane;
 import view.Telas;
 
 public class TelaInicial {
 	public static TelaInicial TelaInicial;
-	@FXML Pane painelConteudo;
+	@FXML public Pane painelConteudo;
 	@FXML MenuButton relatorios;
+	@FXML private Label funcionario;
 	
-	private Pane conteudo = painelConteudo;
+	@FXML
+	void initialize() {
+		try {
+			telaLogo();
+			funcionario.setText(Login.funcionarioLogado.getNome());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
-	
-	public Pane getConteudo() {
-		return conteudo;
+	public Pane getPainelConteudo() {
+		return painelConteudo;
 	}
 
-	public void setConteudo(Pane conteudo) {
-		this.conteudo = conteudo;
+	public void setPainelConteudo(Pane conteudo) {
+		painelConteudo = conteudo;
 	}
-
+	
+	public void telaLogo() throws IOException {
+		Telas.telaLogo(painelConteudo);
+	}
+	
+	@FXML
+    void inicio(ActionEvent event) throws IOException {
+		Telas.telaLogo(painelConteudo);
+    }
+	
 	
 	//--Alugueis
 	public void telaCadastraAluguel(ActionEvent event) throws Exception {
-		System.out.println(painelConteudo);
 		Telas.telaCadastraAluguel(painelConteudo);
 	}
 	
@@ -98,21 +114,6 @@ public class TelaInicial {
 	
 	public void telaRelatorioFatura(ActionEvent event) throws Exception{
 		Telas.telaRelatorioFatura(painelConteudo);
-	}
-	/*
-	public void escolhaTipoRelatorio(ActionEvent event) throws Exception {
-		System.out.println("Entrou na condição");
-		if(escolha.getValue().equalsIgnoreCase("Todos")) {
-			System.out.println(painelConteudo);
-			Telas.telaRelatorioAlugueis(this.TelaInicial.painelConteudo);
-		}else if(escolha.getValue().equalsIgnoreCase("Cliente")){
-			System.out.println(painelConteudo);
-			Telas.telaRelatorioAlugueisCliente(painelConteudo);
-		}
-	}
-	*/
-	public Pane pegaPainelConteudo() {
-		return this.painelConteudo;
 	}
 	
 	

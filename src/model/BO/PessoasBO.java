@@ -188,9 +188,7 @@ public class PessoasBO<VO> implements PessoasInterBO<VO>{
 				funcionario.setCargo(rs.getString("cargo"));
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			//throw new AutenticationException();
+			throw new AutenticationException();
 		}
 		
 		if(usuario.getLogin().equals(funcionario.getLogin()) && usuario.getSenha().equals(funcionario.getSenha())){

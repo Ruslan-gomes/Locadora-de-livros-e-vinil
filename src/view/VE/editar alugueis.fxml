@@ -9,22 +9,19 @@
 <Pane fx:id="painel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditarAlugueis">
    <children>
       <Label opacity="0.7" prefHeight="60.0" prefWidth="850.0" style="-fx-alignment: center; -fx-background-color: B89465; -fx-text-fill: #FFFFFF; -fx-font-size: 25;" text="Locadora de livros &amp; vinil" />
-      <Label layoutX="286.0" layoutY="89.0" style="-fx-font-size: 40; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Editar aluguéis" />
-      <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #B89465; -fx-text-fill: #FFFFFF; -fx-font-weight: 700; fx-background-radius: 10; -fx-font-size: 15;" text="Voltar">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Button layoutX="275.0" layoutY="507.0" mnemonicParsing="false" onAction="#editarAluguel" prefWidth="100.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Editar" />
-      <TextField fx:id="cpfcliente" layoutX="299.0" layoutY="165.0" prefHeight="35.0" prefWidth="252.0" promptText="CPF do cliente" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <TextField fx:id="nomeproduto" layoutX="299.0" layoutY="230.0" prefHeight="35.0" prefWidth="252.0" promptText="Nome do produto" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <Label layoutX="277.0" layoutY="311.0" style="-fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Data devolução" />
-      <Label layoutX="527.0" layoutY="404.0" style="-fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Valor total" />
-      <TextField fx:id="valoraluguel" layoutX="445.0" layoutY="441.0" prefHeight="35.0" prefWidth="212.0" promptText="Valor aluguel" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <Label layoutX="281.0" layoutY="404.0" style="-fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Data empréstimo" />
-      <Label layoutX="484.0" layoutY="311.0" style="-fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Quantidade alugada" />
-      <TextField fx:id="quantidadealugada" layoutX="445.0" layoutY="347.0" prefHeight="35.0" prefWidth="212.0" promptText="Quantidade alugada" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <DatePicker fx:id="dataemprestimo" layoutX="260.0" layoutY="441.0" prefHeight="35.0" prefWidth="165.0" style="-fx-border-color: B89465; -fx-border-radius: 15; -fx-border-width: 2;" />
-      <DatePicker fx:id="datadevolucao" layoutX="260.0" layoutY="347.0" prefHeight="35.0" prefWidth="165.0" style="-fx-border-color: B89465; -fx-border-radius: 15; -fx-border-width: 2;" />
+      <Label layoutX="291.0" layoutY="90.0" style="-fx-font-size: 40; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Editar aluguéis" />
+      <Button layoutX="375.0" layoutY="476.0" mnemonicParsing="false" onAction="#editarAluguel" prefWidth="100.0" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Editar" />
+      <TextField fx:id="cpfcliente" layoutX="245.0" layoutY="186.0" prefHeight="35.0" prefWidth="360.0" promptText="CPF do cliente" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <TextField fx:id="nomeproduto" layoutX="245.0" layoutY="261.0" prefHeight="35.0" prefWidth="360.0" promptText="Nome do produto" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <Label layoutX="458.0" layoutY="306.0" style="-fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Data devolução" />
+      <Label layoutX="488.0" layoutY="386.0" style="-fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Valor total" />
+      <TextField fx:id="valoraluguel" layoutX="441.0" layoutY="416.0" prefHeight="35.0" prefWidth="165.0" promptText="Valor aluguel" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <Label layoutX="270.0" layoutY="306.0" style="-fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Data empréstimo" />
+      <Label layoutX="260.0" layoutY="386.0" style="-fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Quantidade alugada" />
+      <TextField fx:id="quantidadealugada" layoutX="245.0" layoutY="416.0" prefHeight="35.0" prefWidth="165.0" promptText="Quantidade alugada" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <DatePicker fx:id="dataemprestimo" layoutX="245.0" layoutY="336.0" prefHeight="35.0" prefWidth="165.0" style="-fx-border-color: B89465; -fx-border-radius: 15; -fx-border-width: 2;" />
+      <DatePicker fx:id="datadevolucao" layoutX="441.0" layoutY="336.0" prefHeight="35.0" prefWidth="165.0" style="-fx-border-color: B89465; -fx-border-radius: 15; -fx-border-width: 2;" />
+      <Label layoutX="376.0" layoutY="156.0" style="-fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="CPF do cliente" />
+      <Label layoutX="366.0" layoutY="231.0" style="-fx-font-size: 15; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Nome do produto" />
    </children>
 </Pane>
