@@ -32,10 +32,9 @@ public class CadastrarLivro {
 		int paginas = Integer.parseInt(qtdpaginas.getText());
 		vo.setQtdPaginas(paginas);
 		
-		SimpleDateFormat sdf = new SimpleDateFormat();
-		Date date = sdf.parse(anolancamento.getText());
+		int a = Integer.parseInt(anolancamento.getText());
 		Calendar data = Calendar.getInstance();
-		data.setTime(date);
+		data.set(Calendar.YEAR, a);
 		vo.setAnoLancamento(data);
 		
 		double valor = Double.parseDouble(valoraluguel.getText());
