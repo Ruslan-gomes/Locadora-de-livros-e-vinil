@@ -45,6 +45,7 @@ public class Login {
 					//Abrir janela de recepcionista
 					funcionarioLogado = usuarioAutenticado;
 					Telas.telaInicial();
+					TelaInicial.telaInicial.Restricao();
 				}
 			}
 			

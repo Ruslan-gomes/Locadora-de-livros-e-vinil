@@ -9,13 +9,14 @@ import javafx.scene.layout.Pane;
 import view.Telas;
 
 public class TelaInicial {
-	public static TelaInicial TelaInicial;
+	public static TelaInicial telaInicial;
 	@FXML public Pane painelConteudo;
 	@FXML MenuButton relatorios;
 	@FXML private Label funcionario;
 	
 	@FXML
 	void initialize() {
+		telaInicial = this;
 		try {
 			telaLogo();
 			funcionario.setText(Login.funcionarioLogado.getNome());
@@ -23,6 +24,11 @@ public class TelaInicial {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public void Restricao()
+	{
+		relatorios.setVisible(false);
 	}
 	
 	public Pane getPainelConteudo() {

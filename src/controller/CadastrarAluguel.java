@@ -67,7 +67,7 @@ public class CadastrarAluguel {
 	}
 	
 	public void voltar(ActionEvent event) throws Exception{
-		TelaInicial.TelaInicial.telaLogo();
+		TelaInicial.telaInicial.telaLogo();
 	}
 	
 }
