@@ -95,6 +95,15 @@
                      </cursor></Label>
                </graphic>
             </MenuItem>
+            <MenuItem fx:id="exfunc" mnemonicParsing="false" onAction="#telaExFuncionarios">
+               <graphic>
+                  <Label text="Ex-funcionários">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </graphic>
+            </MenuItem>
          </items>
          <cursor>
             <Cursor fx:constant="HAND" />

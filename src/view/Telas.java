@@ -158,6 +158,13 @@ public class Telas extends Application {
 	}
 	
 	
+	public static void telaExFuncionarios(Pane painelConteudo) throws Exception{
+		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/exfuncionarios.fxml"));
+		
+		painelConteudo.getChildren().clear();
+		painelConteudo.getChildren().add(pane);
+	}
+	
 //--Livros
 	public static void telaCadastraLivro(Pane painelConteudo) throws Exception{
 		Pane pane = FXMLLoader.load(Telas.class.getResource("VE/cadastrar livro.fxml"));

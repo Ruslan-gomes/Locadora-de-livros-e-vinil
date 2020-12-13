@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.Pane;
 import view.Telas;
 
@@ -12,6 +13,7 @@ public class TelaInicial {
 	public static TelaInicial telaInicial;
 	@FXML public Pane painelConteudo;
 	@FXML MenuButton relatorios;
+	@FXML MenuItem exfunc;
 	@FXML private Label funcionario;
 	
 	@FXML
@@ -29,6 +31,7 @@ public class TelaInicial {
 	public void Restricao()
 	{
 		relatorios.setVisible(false);
+		exfunc.setVisible(false);
 	}
 	
 	public Pane getPainelConteudo() {
@@ -87,6 +90,11 @@ public class TelaInicial {
 	
 	public void telaPesquisaFuncionario(ActionEvent event) throws Exception {
 		Telas.telaPesquisaFuncionario(painelConteudo);
+	}
+	
+	public void telaExFuncionarios(ActionEvent event) throws Exception
+	{
+		Telas.telaExFuncionarios(painelConteudo);
 	}
 	
 	
