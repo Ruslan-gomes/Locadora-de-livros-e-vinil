@@ -32,11 +32,13 @@ public class Utils {
 					@Override
 					public void updateItem(T item, boolean empty) {
 						super.updateItem(item, empty);
-						if (empty) {
-							setGraphic(null);
-						} else {
-							setGraphic(btn);
-						}
+						//if(Login.funcionarioLogado.getCargo().equals("Supervisor")) {
+							if (empty) {
+								setGraphic(null);
+							} else {
+								setGraphic(btn);
+							}
+						//}
 					}
 
 					{
@@ -66,6 +68,7 @@ public class Utils {
 		path.getStyleClass().add(colorClassName); // define a cor do ícone
 
 		Button button = new Button();
+		button.setId("btnDeletar");
 		button.setPickOnBounds(true); // Garente que o botão terá o fundo transparente
 		button.setGraphic(path); // inseri o ícone gerado pelo svg no botão
 		button.setAlignment(Pos.CENTER);

@@ -251,7 +251,7 @@ public class Telas extends Application {
 		Stage stage = new Stage();
 		stage.setScene(cena);
 		stage.setTitle("Erro");
-		//stage.setAlwaysOnTop(true);
+		stage.setOnCloseRequest(event -> primaryStage.setOpacity(1));
 		
 		primaryStage.setOpacity(0);//para ficar somente a tela de pop-up
 		stage.show();
@@ -267,6 +267,7 @@ public class Telas extends Application {
 		Stage stage = new Stage();
 		stage.setScene(cena);
 		stage.setTitle("Deleção");
+		stage.setOnCloseRequest(event -> primaryStage.setOpacity(1));
 		
 		primaryStage.setOpacity(0);//para ficar somente a tela de pop-up
 		stage.show();
@@ -280,7 +281,7 @@ public class Telas extends Application {
 		Stage stage = new Stage();
 		stage.setScene(cena);
 		stage.setTitle("Sucesso!");
-		//stage.setAlwaysOnTop(true);
+		stage.setOnCloseRequest(event -> primaryStage.setOpacity(1));
 		
 		primaryStage.setOpacity(0);//para ficar somente a tela de pop-up
 		stage.show();
