@@ -1,10 +1,13 @@
 package model.VO;
 
+import java.util.Calendar;
+
 public class FuncionariosVO extends PessoasVO{
 	private Long id;
 	private String login;
 	private String senha;
 	private String cargo;
+	private Calendar data_demissao;
 	
 	
 	public Long getId() {
@@ -49,6 +52,18 @@ public class FuncionariosVO extends PessoasVO{
 			System.out.println("[ERRO] Cargo vazio");
 		}else {
 			this.cargo = cargo;
+		}
+	}
+
+	public Calendar getData_demissao() {
+		return data_demissao;
+	}
+
+	public void setData_demissao(Calendar data_demissao) {
+		if(data_demissao == null) {
+			System.out.println("[ERRO] Data demissão vazia");
+		}else {
+			this.data_demissao = data_demissao;
 		}
 	}
 	

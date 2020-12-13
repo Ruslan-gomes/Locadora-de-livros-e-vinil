@@ -10,4 +10,5 @@ public interface FuncionariosInterDAO {
 	public void Editar(FuncionariosVO vo);
 	public ResultSet Pesquisar(FuncionariosVO vo);
 	public ResultSet Listar();
+	public ResultSet ListarExFuncionarios();
 }

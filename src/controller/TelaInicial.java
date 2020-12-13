@@ -15,6 +15,7 @@ public class TelaInicial {
 	@FXML MenuButton relatorios;
 	@FXML MenuItem exfunc;
 	@FXML private Label funcionario;
+	@FXML private MenuButton funcionarios;
 	
 	@FXML
 	void initialize() {
@@ -32,6 +33,7 @@ public class TelaInicial {
 	{
 		relatorios.setVisible(false);
 		exfunc.setVisible(false);
+		funcionarios.setVisible(false);
 	}
 	
 	public Pane getPainelConteudo() {

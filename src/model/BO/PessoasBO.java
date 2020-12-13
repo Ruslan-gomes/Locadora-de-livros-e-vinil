@@ -3,6 +3,7 @@ package model.BO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import exception.AutenticationException;
@@ -172,6 +173,36 @@ public class PessoasBO<VO> implements PessoasInterBO<VO>{
 			}
 			return (List<VO>) funcionarios;
 		}
+	}
+	
+	public List<VO> ListarExFuncionarios(){
+		FuncionariosDAO dao = new FuncionariosDAO();
+		ResultSet rs = dao.ListarExFuncionarios();
+		
+		List<FuncionariosVO> ExFuncionarios = new ArrayList<FuncionariosVO>();
+		
+		try {
+			while(rs.next())
+			{
+				Calendar dataCalendar = Calendar.getInstance();
+				FuncionariosVO func = new FuncionariosVO();
+				
+				func.setCpf(rs.getString("Cpf"));
+				func.setNome(rs.getString("Nome"));
+				func.setEndereco(rs.getString("Endereco"));
+				func.setLogin(rs.getString("Login"));
+				func.setSenha(rs.getString("Senha"));
+				func.setCargo(rs.getString("Cargo"));
+				dataCalendar.setTime(rs.getDate("data_demissao"));
+				func.setData_demissao(dataCalendar);
+				func.setId(rs.getLong("Id_func"));
+				ExFuncionarios.add(func);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return (List<VO>) ExFuncionarios;
 	}
 	
 	public FuncionariosVO autenticar(FuncionariosVO usuario) throws AutenticationException{

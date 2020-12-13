@@ -116,5 +116,21 @@ public class FuncionariosDAO extends BaseDAO implements FuncionariosInterDAO{
 		System.out.println("Funcionários listados");
 		return rs;
 	}
+	
+	public ResultSet ListarExFuncionarios() {
+		conn = getConnection();
+		String sql = "SELECT * FROM ex_funcionarios";
+		Statement st;
+		ResultSet rs = null;
+		try {
+			st = conn.createStatement();
+			rs = st.executeQuery(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("Ex-funcionários listados");
+		return rs;
+	}
 
 }

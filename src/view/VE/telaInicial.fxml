@@ -77,7 +77,53 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </MenuButton>
-      <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="179.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Funcionarios" textFill="WHITE">
+      <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="179.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Livros" textFill="WHITE">
+         <items>
+            <MenuItem mnemonicParsing="false" onAction="#telaCadastraLivro">
+               <graphic>
+                  <Label text="Cadastrar livro">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
+               </graphic>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#telaPesquisaLivro">
+               <graphic>
+                  <Label text="Pesquisar livro">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
+               </graphic>
+            </MenuItem>
+         </items>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MenuButton>
+      <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="208.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Discos" textFill="WHITE">
+         <items>
+            <MenuItem mnemonicParsing="false" onAction="#telaCadastraDisco">
+               <graphic>
+                  <Label text="Cadastrar disco">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
+               </graphic>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#telaPesquisaDisco">
+               <graphic>
+                  <Label text="Pesquisar disco">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Label>
+               </graphic>
+            </MenuItem>
+         </items>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MenuButton>
+      <MenuButton fx:id="funcionarios" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="237.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Funcionarios" textFill="WHITE">
          <items>
             <MenuItem mnemonicParsing="false" onAction="#telaCadastraFuncionario">
                <graphic>
@@ -102,52 +148,6 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-               </graphic>
-            </MenuItem>
-         </items>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </MenuButton>
-      <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="208.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Livros" textFill="WHITE">
-         <items>
-            <MenuItem mnemonicParsing="false" onAction="#telaCadastraLivro">
-               <graphic>
-                  <Label text="Cadastrar livro">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></Label>
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false" onAction="#telaPesquisaLivro">
-               <graphic>
-                  <Label text="Pesquisar livro">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></Label>
-               </graphic>
-            </MenuItem>
-         </items>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </MenuButton>
-      <MenuButton alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="237.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="151.0" style="-fx-background-color: B89465; -fx-border-color: white; -fx-font-family: Roboto; -fx-font-weight: 700;" text="Discos" textFill="WHITE">
-         <items>
-            <MenuItem mnemonicParsing="false" onAction="#telaCadastraDisco">
-               <graphic>
-                  <Label text="Cadastrar disco">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></Label>
-               </graphic>
-            </MenuItem>
-            <MenuItem mnemonicParsing="false" onAction="#telaPesquisaDisco">
-               <graphic>
-                  <Label text="Pesquisar disco">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></Label>
                </graphic>
             </MenuItem>
          </items>

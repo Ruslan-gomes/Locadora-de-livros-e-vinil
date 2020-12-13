@@ -13,5 +13,6 @@ public interface PessoasInterBO<VO> {
 	public void editarPessoa(VO vo);
 	public List<VO> pesquisarPessoa(VO vo);
 	public List<VO> ListarPessoa(VO vo);
+	public List<VO> ListarExFuncionarios();
 	public FuncionariosVO autenticar(FuncionariosVO usuario) throws AutenticationException;
 }
