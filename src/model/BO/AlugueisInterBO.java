@@ -1,14 +1,16 @@
 package model.BO;
 
+import java.io.IOException;
 //import java.sql.ResultSet;
 import java.util.Calendar;
 import java.util.List;
 
+import exception.ErroCadastroAluguel;
 import model.VO.AlugueisVO;
 import model.VO.ClientesVO;
 
 public interface AlugueisInterBO {
-	public void cadastrarAluguel(AlugueisVO aluguel);
+	public void cadastrarAluguel(AlugueisVO aluguel) throws ErroCadastroAluguel, IOException;
 	public void cadastrarDevolucao(AlugueisVO aluguel);
 	public void deletarAluguel(AlugueisVO aluguel);
 	public void editarAluguel(AlugueisVO aluguel);

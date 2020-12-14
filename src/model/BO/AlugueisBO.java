@@ -3,6 +3,7 @@ package model.BO;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
@@ -20,24 +21,72 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
+import exception.ErroCadastroAluguel;
 import model.DAO.AlugueisDAO;
 import model.VO.AlugueisVO;
 import model.VO.ClientesVO;
+import model.VO.DiscosVO;
+import model.VO.LivrosVO;
 
 public class AlugueisBO implements AlugueisInterBO {
 	
-	public void cadastrarAluguel(AlugueisVO aluguel) {
+	public void cadastrarAluguel(AlugueisVO aluguel) throws ErroCadastroAluguel, IOException {
 		AlugueisDAO dao = new AlugueisDAO();
 		if(aluguel.getCliente().getCpf() != null && aluguel.getNomeProduto() != null && aluguel.getQtdAlugados() > 0 && aluguel.getDataEmprestimo() != null && aluguel.getValorTotal() > 0)
 		{
-			dao.cadastrarAluguel(aluguel);
-			gerarPDF(aluguel);
-		}
-		else
-		{
-			System.out.println("Não foi possivel efetuar o cadastro");
-		}
-		
+			LivrosVO livro = new LivrosVO();
+			livro.setTitulo(aluguel.getNomeProduto());
+			DiscosVO disco = new DiscosVO();
+			disco.setTitulo(aluguel.getNomeProduto());
+			
+			ProdutosBO<LivrosVO> livroBO = new ProdutosBO<LivrosVO>();
+			ProdutosBO<DiscosVO> discoBO = new ProdutosBO<DiscosVO>();
+			List<LivrosVO> listLivro = livroBO.pesquisarProduto(livro);
+			List<DiscosVO> listDisco = discoBO.pesquisarProduto(disco);
+			
+			PessoasBO<ClientesVO> clienteBO = new PessoasBO<ClientesVO>();
+			List<ClientesVO> listCliente = clienteBO.pesquisarPessoa(aluguel.getCliente());
+			
+			//Se for difetente de vazio é pq encontrou o cliente
+			if(!listCliente.isEmpty()) {
+				if(listCliente.get(0).getCpf().equals(aluguel.getCliente().getCpf())) {
+					//Testes para quantidade válida de livro
+					if(!listLivro.isEmpty()) {
+						aluguel.setLivro(listLivro.get(0));
+						if(aluguel.getLivro().getQtdExemplares() - aluguel.getQtdAlugados() >= 0){
+							//Faz o cadastro
+							dao.cadastrarAluguel(aluguel);
+							
+							//Seta a nova quantidade dispoível de exemplares
+							aluguel.getLivro().setQtdExemplares(aluguel.getLivro().getQtdExemplares() - aluguel.getQtdAlugados());
+							//Edita a nova quantidade disponível no BD
+							livroBO.editarProduto(aluguel.getLivro());
+							
+							//Gera o PDF com o comprovante
+							gerarPDF(aluguel);
+						}else {
+							throw new ErroCadastroAluguel("Quantidade inválida. Maior do que a quantidade disponível!");
+						}
+					}
+					//Testes para quantidade válida de disco
+					else if(!listDisco.isEmpty()) {
+						aluguel.setDisco(listDisco.get(0));
+						if(aluguel.getDisco().getQtdExemplares() - aluguel.getQtdAlugados() >= 0){
+							//Faz o cadastro
+							dao.cadastrarAluguel(aluguel);
+							
+							//Seta a nova quantidade dispoível de exemplares
+							aluguel.getDisco().setQtdExemplares(aluguel.getDisco().getQtdExemplares() - aluguel.getQtdAlugados());
+							//Edita a nova quantidade disponível no BD
+							discoBO.editarProduto(aluguel.getDisco());
+							
+							//Gera o PDF com o comprovante
+							gerarPDF(aluguel);
+						}else throw new ErroCadastroAluguel("Quantidade inválida. Maior do que a quantidade disponível!");
+					}else throw new ErroCadastroAluguel("Produto não cadastrado ou inválido!");
+				}else throw new ErroCadastroAluguel("Cliente não cadastrado ou CPF inválido!");
+			}else throw new ErroCadastroAluguel("Cliente não cadastrado ou CPF inválido!!");
+		}else throw new ErroCadastroAluguel("Não foi possível realizar o cadastro");
 	}
 	
 	public void cadastrarDevolucao(AlugueisVO aluguel) {
