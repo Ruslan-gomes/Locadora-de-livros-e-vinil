@@ -1,13 +1,9 @@
 package controller;
 
-import java.awt.event.ActionEvent;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import model.BO.AlugueisBO;
-import model.VO.AlugueisVO;
 import view.Telas;
 
 public class ConfirmarCadastro {

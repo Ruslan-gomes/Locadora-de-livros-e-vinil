@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 //import java.sql.Date;
 import java.util.Calendar;
-import java.util.Date;
 
 //import java.util.ArrayList;
 //import java.util.List;
@@ -44,7 +43,7 @@ public class PesquisarAlugueis {
 	 void initialize()
 	{
 		pesquisarAlugueis = this;
-		TableColumn<AlugueisVO, String> cpfCliente = new TableColumn<>("cpf_cliente");
+		TableColumn<AlugueisVO, String> cpfCliente = new TableColumn<>("Cpf do cliente");
 		TableColumn<AlugueisVO, String> nomeProduto = new TableColumn<>("nome_produto");
 		TableColumn<AlugueisVO, String> quantidade = new TableColumn<>("quantidade");
 		TableColumn<AlugueisVO, Calendar> dataEmprestimo = new TableColumn<>("Data emprestimo");

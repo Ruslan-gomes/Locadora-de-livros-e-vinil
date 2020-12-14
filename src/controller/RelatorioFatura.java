@@ -1,7 +1,6 @@
 package controller;
 
 import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import javafx.event.ActionEvent;

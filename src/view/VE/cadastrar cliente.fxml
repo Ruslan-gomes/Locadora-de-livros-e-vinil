@@ -14,5 +14,6 @@
       <TextField fx:id="endereco" layoutX="267.0" layoutY="306.0" prefHeight="35.0" prefWidth="315.0" promptText="Endereço" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
       <Button layoutX="379.0" layoutY="388.0" mnemonicParsing="false" onAction="#cadastrarCliente" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Cadastrar" />
       <TextField fx:id="nome" layoutX="268.0" layoutY="244.0" prefHeight="35.0" prefWidth="315.0" promptText="Nome" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <Label fx:id="mensagem" layoutX="377.0" layoutY="356.0" style="-fx-text-fill: #FF0000;" text="Erro! campo vazio." visible="false" />
    </children>
 </Pane>

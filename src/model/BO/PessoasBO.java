@@ -7,7 +7,6 @@ import java.util.Calendar;
 import java.util.List;
 
 import exception.AutenticationException;
-import javafx.scene.control.Button;
 import model.DAO.ClientesDAO;
 import model.DAO.FuncionariosDAO;
 import model.VO.ClientesVO;

@@ -12,12 +12,13 @@
       <Label layoutX="281.0" layoutY="101.0" style="-fx-font-size: 40; -fx-font-family: Roboto; -fx-font-weight: 700; -fx-text-fill: #b89465;" text="Cadastrar disco" />
       <TextField fx:id="titulo" layoutX="268.0" layoutY="186.0" prefHeight="35.0" prefWidth="315.0" promptText="Título" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
       <TextField fx:id="qtdexemplares" layoutX="268.0" layoutY="372.0" prefHeight="35.0" prefWidth="150.0" promptText="Quant. Exemplares" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
-      <Button layoutX="379.0" layoutY="438.0" mnemonicParsing="false" onAction="#cadastrarDisco" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Cadastrar">
+      <Button layoutX="379.0" layoutY="458.0" mnemonicParsing="false" onAction="#cadastrarDisco" style="-fx-background-color: B89465; -fx-background-radius: 10px; -fx-font-family: Roboto; -fx-font-size: 16px; -fx-font-weight: 700; -fx-text-fill: #FFFFFF;" text="Cadastrar">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
       <TextField fx:id="nomebanda" layoutX="268.0" layoutY="248.0" prefHeight="35.0" prefWidth="315.0" promptText="Nome da banda" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
       <TextField fx:id="valoraluguel" layoutX="433.0" layoutY="372.0" prefHeight="35.0" prefWidth="150.0" promptText="Valor aluguel" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
       <TextField fx:id="estilo" layoutX="268.0" layoutY="306.0" prefHeight="35.0" prefWidth="315.0" promptText="Estilo musical" style="-fx-alignment: center; -fx-background-color: fff; -fx-border-color: B89465; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-font-family: Roboto; -fx-font-size: 15;" />
+      <Label fx:id="mensagem" layoutX="377.0" layoutY="429.0" style="-fx-text-fill: #FF0000;" text="Erro! campo vazio." visible="false" />
    </children>
 </Pane>
