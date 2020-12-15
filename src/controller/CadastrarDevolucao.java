@@ -30,12 +30,13 @@ public class CadastrarDevolucao {
 	
 	public void cadastrarDevolucao(ActionEvent event) throws Exception
 	{
-		if(cpfcliente.getText().isEmpty() || nomeproduto.getText().isEmpty() || datadevolucao.getValue() == null)
+		if(cpfcliente.getText().equals("") || nomeproduto.getText().isEmpty() || datadevolucao.getValue() == null)
 		{
 			mensagem.setVisible(true);
 		}
 		else
 		{
+			
 			AlugueisVO vo = new AlugueisVO();
 			ClientesVO cliente = new ClientesVO();
 			vo.setCliente(cliente);

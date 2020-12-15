@@ -11,7 +11,7 @@ import model.VO.ClientesVO;
 
 public interface AlugueisInterBO {
 	public void cadastrarAluguel(AlugueisVO aluguel) throws ErroCadastroAluguel, IOException;
-	public void cadastrarDevolucao(AlugueisVO aluguel);
+	public void cadastrarDevolucao(AlugueisVO aluguel) throws ErroCadastroAluguel, IOException;
 	public void deletarAluguel(AlugueisVO aluguel);
 	public void editarAluguel(AlugueisVO aluguel);
 	public List<AlugueisVO> pesquisarAluguel(AlugueisVO aluguel);
@@ -21,4 +21,5 @@ public interface AlugueisInterBO {
 	public AlugueisVO [] relatorioAlugados(ClientesVO cliente, Calendar dataInicio, Calendar dataFim);
 	public AlugueisVO [] relatorioAlugados(Calendar dataInicio, Calendar dataFim);
 	public AlugueisVO relatorioFaturaMensal(Calendar mes);
+	public List<AlugueisVO> pesquisarAluguelDevolvido(AlugueisVO aluguel);
 }

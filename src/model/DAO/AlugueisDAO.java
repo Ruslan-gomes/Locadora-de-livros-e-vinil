@@ -1,5 +1,6 @@
 package model.DAO;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Calendar;
 
+import exception.ErroCadastroAluguel;
 import model.VO.AlugueisVO;
 //import model.VO.ClientesVO;
 
@@ -37,7 +39,7 @@ public class AlugueisDAO extends BaseDAO implements AlugueisInterDAO{
 	
 
 	@Override
-	public void cadastrarDevolucao(AlugueisVO aluguel) {
+	public void cadastrarDevolucao(AlugueisVO aluguel) throws ErroCadastroAluguel, IOException {
 		conn = getConnection();
 		String sql = "UPDATE Alugueis SET Data_devolucao = ? WHERE Cpf_cliente = ? AND Nome_produto = ?";
 		PreparedStatement ptst;
@@ -49,7 +51,10 @@ public class AlugueisDAO extends BaseDAO implements AlugueisInterDAO{
 			ptst.setDate(1, data);
 			ptst.setString(2, aluguel.getCliente().getCpf());
 			ptst.setString(3, aluguel.getNomeProduto());
-			ptst.executeUpdate();
+			int registrosAfetados = ptst.executeUpdate();
+			if(registrosAfetados == 0) {
+				throw new ErroCadastroAluguel("Aluguel não encontrado ou informações inválidas!");
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -220,4 +225,24 @@ public class AlugueisDAO extends BaseDAO implements AlugueisInterDAO{
 		return rs;
 	}
 
+	public ResultSet PesquisarAluguelDevolvido(AlugueisVO aluguel) {
+		conn = getConnection();
+		String sql = "SELECT * FROM alugueis WHERE cpf_cliente = ? AND nome_produto = ? AND data_devolucao = ?";
+		PreparedStatement ptst;
+		ResultSet rs = null;
+		
+		try {
+			ptst = conn.prepareStatement(sql);
+			ptst.setString(1, aluguel.getCliente().getCpf());
+			ptst.setString(2, aluguel.getNomeProduto());
+			Date data = new Date(aluguel.getDataDevolucao().getTimeInMillis());
+			ptst.setDate(3, data);
+			rs = ptst.executeQuery();
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return rs;
+	}
 }

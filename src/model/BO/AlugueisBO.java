@@ -87,17 +87,39 @@ public class AlugueisBO implements AlugueisInterBO {
 		}else throw new ErroCadastroAluguel("Não foi possível realizar o cadastro");
 	}
 	
-	public void cadastrarDevolucao(AlugueisVO aluguel) {
+	public void cadastrarDevolucao(AlugueisVO aluguel) throws ErroCadastroAluguel, IOException {
 		AlugueisDAO dao = new AlugueisDAO();
 		if(aluguel.getCliente().getCpf() != null && aluguel.getNomeProduto() != null && aluguel.getDataDevolucao() != null)
 		{
+			//Cadastra a devolução atualizando a data de devolução na tabela alugueis
 			dao.cadastrarDevolucao(aluguel);
-		}
-		else
-		{
-			System.out.println("Não foi possivel efetuar o cadastro");
-		}
-		
+			
+			//Adicionar devolta ao estoque a quantidade que foi devolvida
+			LivrosVO livro = new LivrosVO();
+			livro.setTitulo(aluguel.getNomeProduto());
+			DiscosVO disco = new DiscosVO();
+			disco.setTitulo(aluguel.getNomeProduto());
+			
+			ProdutosBO<LivrosVO> livroBO = new ProdutosBO<LivrosVO>();
+			ProdutosBO<DiscosVO> discoBO = new ProdutosBO<DiscosVO>();
+			List<LivrosVO> listLivro = livroBO.pesquisarProduto(livro);
+			List<DiscosVO> listDisco = discoBO.pesquisarProduto(disco);
+			
+			//Pesquisa as informações do aluguel devolvido para atualizar a quantidade devolvida
+			List<AlugueisVO> aluguelDevolvido = pesquisarAluguelDevolvido(aluguel);
+			
+			//Se o produto for um livro
+			if(!listLivro.isEmpty()) {
+				//Soma a quantidade de exemplares com a quantidade que foi devolvida e edita o produto com a quantidade total atualizada
+				listLivro.get(0).setQtdExemplares(listLivro.get(0).getQtdExemplares() + aluguelDevolvido.get(0).getQtdAlugados());
+				livroBO.editarProduto(listLivro.get(0));
+			}
+			//Se o produto for um disco
+			else if(!listDisco.isEmpty()) {
+				listDisco.get(0).setQtdExemplares(listDisco.get(0).getQtdExemplares() + aluguelDevolvido.get(0).getQtdAlugados());
+				discoBO.editarProduto(listDisco.get(0));
+			}else throw new ErroCadastroAluguel("Houve um erro. Verifique as informações e tente novamente!");
+		}else throw new ErroCadastroAluguel("Houve um erro. Verifique as informações e tente novamente!");
 	}
 	
 	public void deletarAluguel(AlugueisVO aluguel) {
@@ -255,6 +277,43 @@ public class AlugueisBO implements AlugueisInterBO {
 	public List<AlugueisVO> pesquisarAluguel(AlugueisVO aluguel) {
 		AlugueisDAO dao = new AlugueisDAO();
 		ResultSet rs = dao.PesquisarAluguel(aluguel);
+		
+		List<AlugueisVO> alugueis = new ArrayList<AlugueisVO>();
+		
+		try {
+			while(rs.next()) {
+				AlugueisVO vo = new AlugueisVO();
+				ClientesVO cliente = new ClientesVO();
+				cliente.setCpf(rs.getString("cpf_cliente"));
+				vo.setCliente(cliente);
+				vo.setNomeProduto(rs.getString("nome_produto"));
+				vo.setQtdAlugados(rs.getInt("qtd_alugada"));
+				
+				Calendar dataCalendar = Calendar.getInstance();
+				//Date date = new Date(dataCalendar.getTimeInMillis());
+				dataCalendar.setTime(rs.getDate("data_emprestimo"));
+				vo.setDataEmprestimo(dataCalendar);
+				
+				Calendar dataCalendar2 = Calendar.getInstance();
+				//Date date2 = new Date(dataCalendar2.getTimeInMillis());
+				dataCalendar2.setTime(rs.getDate("data_devolucao"));
+				vo.setDataDevolucao(dataCalendar2);
+				
+				vo.setValorTotal(rs.getDouble("valor_total"));
+				
+				alugueis.add(vo);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return alugueis;
+	}
+	
+	@Override
+	public List<AlugueisVO> pesquisarAluguelDevolvido(AlugueisVO aluguel) {
+		AlugueisDAO dao = new AlugueisDAO();
+		ResultSet rs = dao.PesquisarAluguelDevolvido(aluguel);
 		
 		List<AlugueisVO> alugueis = new ArrayList<AlugueisVO>();
 		
