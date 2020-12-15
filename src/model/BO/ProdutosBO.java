@@ -1,11 +1,13 @@
 package model.BO;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import exception.ErroCadastroAluguel;
 import model.DAO.DiscosDAO;
 import model.DAO.LivrosDAO;
 import model.VO.DiscosVO;
@@ -15,14 +17,18 @@ import model.VO.ProdutosVO;
 public class ProdutosBO<VO> implements ProdutosInterBO<VO>{
 
 	@Override
-	public void cadastrarProduto(VO vo) throws SQLException {
+	public void cadastrarProduto(VO vo) throws SQLException, ErroCadastroAluguel, IOException {
 		
 		if(vo instanceof LivrosVO)
 		{
 			if(((LivrosVO) vo).getTitulo() != null && ((LivrosVO) vo).getGenero() != null && ((LivrosVO) vo).getAnoLancamento() != null && ((LivrosVO) vo).getQtdPaginas() > 0 && ((LivrosVO) vo).getValorAluguel() > 0)
 			{
 				LivrosDAO dao = new LivrosDAO();
-				dao.cadastrar((LivrosVO)vo);
+				List<VO> livroPesquisado = pesquisarProduto(vo);
+				if(livroPesquisado.isEmpty()) {
+					dao.cadastrar((LivrosVO)vo);
+				}else throw new ErroCadastroAluguel("Livro cadastrado. Pesquise e atualize a quantidade em estoque!");
+				
 			}
 			else
 			{
@@ -34,7 +40,10 @@ public class ProdutosBO<VO> implements ProdutosInterBO<VO>{
 			if(((DiscosVO)vo).getTitulo() != null && ((DiscosVO)vo).getEstilo() != null && ((DiscosVO)vo).getNomeBanda() != null && ((DiscosVO)vo).getValorAluguel() > 0)
 			{
 				DiscosDAO dao = new DiscosDAO();
-				dao.cadastrar(((DiscosVO)vo));
+				List<VO> discoPesquisado = pesquisarProduto(vo);
+				if(discoPesquisado.isEmpty()) {
+					dao.cadastrar(((DiscosVO)vo));
+				}else throw new ErroCadastroAluguel("Disco cadastrado. Pesquise e atualize a quantidade em estoque!");
 			}
 			else
 			{
