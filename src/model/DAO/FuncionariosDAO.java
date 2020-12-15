@@ -88,7 +88,7 @@ public class FuncionariosDAO extends BaseDAO implements FuncionariosInterDAO{
 			else if(vo.getLogin() != null) {
 				String sql = "SELECT * FROM Funcionarios WHERE login = ?";
 				ptst = conn.prepareStatement(sql);
-				ptst.setString(1, vo.getLogin());
+				ptst.setString(1,vo.getLogin());
 				rs = ptst.executeQuery();
 			}
 			

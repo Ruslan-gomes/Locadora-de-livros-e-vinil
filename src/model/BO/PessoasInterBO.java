@@ -4,7 +4,6 @@ import java.util.List;
 
 import exception.AutenticationException;
 import model.VO.FuncionariosVO;
-import model.VO.PessoasVO;
 
 public interface PessoasInterBO<VO> {
 	

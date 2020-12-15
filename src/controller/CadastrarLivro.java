@@ -42,6 +42,8 @@ public class CadastrarLivro {
 			data.set(Calendar.YEAR, a);
 			vo.setAnoLancamento(data);
 			
+			vo.setQtdExemplares(Integer.parseInt(qtdexemplares.getText()));
+			
 			double valor = Double.parseDouble(valoraluguel.getText());
 			vo.setValorAluguel(valor);
 			
