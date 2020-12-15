@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+//import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import model.BO.PessoasBO;
 import model.VO.FuncionariosVO;
