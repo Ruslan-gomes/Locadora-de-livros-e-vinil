@@ -21,7 +21,9 @@ public class CadastrarCliente {
 	
 	public void cadastrarCliente(ActionEvent event) throws Exception
 	{
-		
+		if(cpf.getText().isEmpty() || nome.getText().isEmpty() || endereco.getText().isEmpty()) {
+			mensagem.setVisible(true);
+		}else {
 			ClientesVO cliente  = new ClientesVO();
 			cliente.setCpf(cpf.getText());
 			cliente.setNome(nome.getText());
@@ -40,5 +42,6 @@ public class CadastrarCliente {
 			}catch(Exception e) {
 				Telas.telaErro();
 			}
+		}	
 	}
 }
