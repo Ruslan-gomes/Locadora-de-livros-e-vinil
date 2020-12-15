@@ -10,3 +10,5 @@ Utilizamos o PostgreSQL 13.
 - Localize o botão "Execute" e clique para executar e criar todas as tabelas, regras, funções, gatilhos e views.
 
 - Coloque no build path do projeto os arquivos que estão em resources (itextpdf, jfxrt e postgresql).
+
+- Apenas os funcionários que tem o cargo "Recepcionista" e "Supervisor" tem acesso ao sistema. Os demais cargos não tem acesso ao sistema.
