@@ -46,6 +46,9 @@ public class Login {
 					funcionarioLogado = usuarioAutenticado;
 					Telas.telaInicial();
 					TelaInicial.telaInicial.Restricao();
+				}else {
+					erroAut.setText("Usuário ou senha inválidos!");
+					erroAut.setVisible(true);
 				}
 			}
 			
