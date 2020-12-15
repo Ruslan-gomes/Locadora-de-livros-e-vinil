@@ -8,3 +8,5 @@ Utilizamos o PostgreSQL 13.
 - Selecione o database criado e vá no menu Tools > Query Tool. Dentro do Query Tool localize o botão Open File e abra o arquivo BD.sql.
 
 - Localize o botão "Execute" e clique para executar e criar todas as tabelas, regras, funções, gatilhos e views.
+
+- Coloque no build path do projeto os arquivos que estão em resources (itextpdf, jfxrt e postgresql).
