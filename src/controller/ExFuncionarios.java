@@ -11,7 +11,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.BO.PessoasBO;
-import model.VO.AlugueisVO;
 import model.VO.FuncionariosVO;
 
 public class ExFuncionarios {
@@ -34,8 +33,6 @@ public class ExFuncionarios {
 		TableColumn<FuncionariosVO, String> colunaCargo = new TableColumn<>("cargo");
 		TableColumn<FuncionariosVO, String> colunaEndereco = new TableColumn<>("endereço");
 		TableColumn<FuncionariosVO, Calendar> colunaDemissao = new TableColumn<>("Data demissão");
-		//TableColumn<FuncionariosVO, FuncionariosVO> colunaEditar = new TableColumn<>("");
-		//TableColumn<FuncionariosVO, FuncionariosVO> colunaDeletar = new TableColumn<>("");
 		
 		colunaId.setCellValueFactory(new PropertyValueFactory<>("id"));
 		colunaCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
@@ -66,7 +63,6 @@ public class ExFuncionarios {
 		tabelaexfuncionarios.getColumns().addAll(colunaId, colunaCpf, colunaNome, colunaLogin, colunaSenha, colunaCargo, colunaEndereco, colunaDemissao);
 		lista = FXCollections.observableArrayList(bo.ListarExFuncionarios());
 		tabelaexfuncionarios.setItems(lista);
-		
 		
 	}
 }

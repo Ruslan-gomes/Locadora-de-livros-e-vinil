@@ -126,17 +126,11 @@ public class PessoasBO<VO> implements PessoasInterBO<VO>{
 				while(rs.next())
 				{
 					ClientesVO cliente = new ClientesVO();
-					//Button editar = new Button();
-					//Button deletar = new Button();
 					
 					cliente.setCpf(rs.getString("Cpf"));
 					cliente.setNome(rs.getString("Nome"));
 					cliente.setEndereco(rs.getString("Endereco"));
-					
-					//setando os 2 botões
-					//cliente.setEditar(editar);
-					//cliente.setDeletar(deletar);
-					
+
 					//adicionando o objeto ao list
 					clientes.add(cliente);
 				}

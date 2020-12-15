@@ -13,7 +13,6 @@ public class EditarFuncionario {
 	public static EditarFuncionario editarFuncionario;
 	
 	@FXML private Pane painel;
-	
 	@FXML private TextField cpf;
 	@FXML private TextField nome;
 	@FXML private TextField endereco;
@@ -27,7 +26,6 @@ public class EditarFuncionario {
 	
 	@FXML
 	void initialize() {
-		//cpfcliente.setText("123");
 		editarFuncionario = this;
 	}
 	
@@ -52,17 +50,9 @@ public class EditarFuncionario {
 		Telas.telaCadastroEfetuado();
 		ConfirmarCadastro.confirmarCadastro.alteraTexto("Editado com sucesso!");
 		
-		//Telas.getPrimaryStage().setOpacity(1);
 		PesquisarFuncionario.pesquisarFuncionario.atualizaTableView();
 		stage.close();
 		
-		/*
-		//fecha a tela
-				Stage stage = (Stage) painel.getScene().getWindow();
-				Telas.getPrimaryStage().setOpacity(1);
-				PesquisarFuncionario.pesquisarFuncionario.atualizaTableView();
-				stage.close();
-			*/
 	}
 	
 	public void insereTexto(FuncionariosVO func)

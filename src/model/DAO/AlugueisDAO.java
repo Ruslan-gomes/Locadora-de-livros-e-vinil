@@ -7,10 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Calendar;
-
 import exception.ErroCadastroAluguel;
 import model.VO.AlugueisVO;
-//import model.VO.ClientesVO;
 
 public class AlugueisDAO extends BaseDAO implements AlugueisInterDAO{
 

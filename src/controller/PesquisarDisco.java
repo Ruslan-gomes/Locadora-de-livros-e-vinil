@@ -54,7 +54,6 @@ public class PesquisarDisco {
 		tabeladiscos.setItems(lista);
 		
 		Utils.initButtons(colunaEditar, 15, PEN_SOLID, "svg-gray", (DiscosVO DiscosVO, ActionEvent event) -> {
-			System.out.println("Você clicou para editar as informações de: " + DiscosVO.getTitulo());
 			try {
 				Telas.telaEditaDisco();
 				EditarDisco.editarDisco.insereTexto(DiscosVO);
@@ -68,7 +67,6 @@ public class PesquisarDisco {
 			}
 		});
 		Utils.initButtons(colunaDeletar, 15, TRASH_SOLID, "svg-red", (DiscosVO DiscosVO, ActionEvent event) -> {
-			System.out.println("Você clicou para deletar as informações de: "+ DiscosVO.getTitulo());
 			// Aqui vai toda a lógica para deletar 
 			try {
 				Telas.telaConfirmaDelecao();

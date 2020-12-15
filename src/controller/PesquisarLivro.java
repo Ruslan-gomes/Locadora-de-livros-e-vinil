@@ -51,8 +51,6 @@ public class PesquisarLivro {
 		colunaAnoLancamento.setCellValueFactory(new PropertyValueFactory<>("anoLancamento"));
 		colunaAnoLancamento.setCellFactory( cell -> {          
             return new TableCell<LivrosVO, Calendar>() {
-                SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-                
                 @Override
                 protected void updateItem(Calendar item, boolean empty) {
                    super.updateItem(item, empty);
@@ -76,7 +74,6 @@ public class PesquisarLivro {
 		tabelalivros.setItems(lista);
 		
 		Utils.initButtons(colunaEditar, 15, PEN_SOLID, "svg-gray", (LivrosVO LivrosVO, ActionEvent event) -> {
-			System.out.println("Você clicou para editar as informações de: " + LivrosVO.getTitulo());
 			try {
 				Telas.telaEditaLivro();
 				EditarLivro.editarLivro.insereTexto(LivrosVO);
@@ -86,7 +83,6 @@ public class PesquisarLivro {
 			}
 		});
 		Utils.initButtons(colunaDeletar, 15, TRASH_SOLID, "svg-red", (LivrosVO LivrosVO, ActionEvent event) -> {
-			System.out.println("Você clicou para deletar as informações de: "+ LivrosVO.getTitulo());
 			// Aqui vai toda a lógica para deletar o livro
 			try {
 				Telas.telaConfirmaDelecao();

@@ -95,14 +95,12 @@ public class PesquisarAlugueis {
         
         tabelaalugueis.getColumns().addAll(cpfCliente, nomeProduto, quantidade, dataEmprestimo, dataDevolucao, valorTotal, colunaEditar, colunaDeletar);
         
-        //System.out.println(bo.listar());
         lista = FXCollections.observableArrayList(bo.listar());
         tabelaalugueis.setItems(lista);
         
      // BOTÕES COM ÍCONES EM SVG
 		// configura a coluna para editar e deletar
 		Utils.initButtons(colunaEditar, 15, PEN_SOLID, "svg-gray", (AlugueisVO AlugueisVO, ActionEvent event) -> {
-			System.out.println("Você clicou para editar as informações de: " + AlugueisVO.getNomeProduto());
 			// Aqui vai toda a lógica para editar 
 				try {
 					Telas.telaEditaAlugueis();
@@ -117,8 +115,6 @@ public class PesquisarAlugueis {
 				}
 		});
 		Utils.initButtons(colunaDeletar, 15, TRASH_SOLID, "svg-red", (AlugueisVO AlugueisVO, ActionEvent event) -> {
-			System.out.println("Você clicou para deletar as informações de: "+ AlugueisVO.getNomeProduto());
-			
 			// Aqui vai toda a lógica para deletar 
 			try {
 				Telas.telaConfirmaDelecao();

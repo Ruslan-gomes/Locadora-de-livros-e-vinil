@@ -3,12 +3,10 @@ package controller;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-//import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
@@ -25,7 +23,6 @@ public class RelatorioAlugueisClientes {
 	
 	@FXML Pane painelconteudo;
 	@FXML private TextField cpfcliente;
-	//@FXML private ComboBox escolha;
 	@FXML private DatePicker datainicio;
 	@FXML private DatePicker datafim;
 	@FXML private TableView<AlugueisVO> tabelaalugueis;
@@ -87,7 +84,6 @@ public class RelatorioAlugueisClientes {
         
         tabelaalugueis.getColumns().addAll(cpfCliente, nomeProduto, quantidade, dataEmprestimo, dataDevolucao, valorTotal);
         
-        //System.out.println(bo.listar());
         lista = FXCollections.observableArrayList(bo.listar());
         tabelaalugueis.setItems(lista);
 	}

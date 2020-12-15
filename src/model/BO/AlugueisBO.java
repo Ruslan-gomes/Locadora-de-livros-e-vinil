@@ -139,8 +139,6 @@ public class AlugueisBO implements AlugueisInterBO {
 		
 		List<AlugueisVO> alugueis = new ArrayList<AlugueisVO>();
 		
-		
-		
 		try {
 			while(rs.next())
 			{
@@ -218,12 +216,10 @@ public class AlugueisBO implements AlugueisInterBO {
 				vo.setQtdAlugados(rs.getInt("qtd_alugada"));
 				
 				Calendar dataCalendar = Calendar.getInstance();
-				//Date date = new Date(dataCalendar.getTimeInMillis());
 				dataCalendar.setTime(rs.getDate("data_emprestimo"));
 				vo.setDataEmprestimo(dataCalendar);
 				
 				Calendar dataCalendar2 = Calendar.getInstance();
-				//Date date2 = new Date(dataCalendar2.getTimeInMillis());
 				dataCalendar2.setTime(rs.getDate("data_devolucao"));
 				vo.setDataDevolucao(dataCalendar2);
 				
@@ -238,22 +234,11 @@ public class AlugueisBO implements AlugueisInterBO {
 		return alugueis;
 	}
 	
-	//Todos os clientes
-	public AlugueisVO [] relatorioAlugados(Calendar dataInicio, Calendar dataFim) {
-		/* Vai receber uma data de inicio e fim, pesquisar todos os aluguéis dentro desse espaço de tempo
-		 * e retornar um array com todos os aluguéis.
-		 */
-		
-		AlugueisVO [] relatorio = new AlugueisVO[1];// Apenas para tirar o erro de retorno
-		return relatorio;
-	}
-	
 	public AlugueisVO relatorioFaturaMensal(Calendar mes) {
 		AlugueisDAO dao = new AlugueisDAO();
 		ResultSet rs = dao.faturaMensal(mes);
 		AlugueisVO vo = new AlugueisVO();
 		
-		List<AlugueisVO> alugueis = new ArrayList<AlugueisVO>();
 		try {
 			while(rs.next())
 			{
@@ -265,12 +250,6 @@ public class AlugueisBO implements AlugueisInterBO {
 			e.printStackTrace();
 		}
 		return vo;
-	}
-
-	@Override
-	public AlugueisVO[] relatorioAlugados(ClientesVO cliente, Calendar dataInicio, Calendar dataFim) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
@@ -290,12 +269,10 @@ public class AlugueisBO implements AlugueisInterBO {
 				vo.setQtdAlugados(rs.getInt("qtd_alugada"));
 				
 				Calendar dataCalendar = Calendar.getInstance();
-				//Date date = new Date(dataCalendar.getTimeInMillis());
 				dataCalendar.setTime(rs.getDate("data_emprestimo"));
 				vo.setDataEmprestimo(dataCalendar);
 				
 				Calendar dataCalendar2 = Calendar.getInstance();
-				//Date date2 = new Date(dataCalendar2.getTimeInMillis());
 				dataCalendar2.setTime(rs.getDate("data_devolucao"));
 				vo.setDataDevolucao(dataCalendar2);
 				
@@ -327,12 +304,10 @@ public class AlugueisBO implements AlugueisInterBO {
 				vo.setQtdAlugados(rs.getInt("qtd_alugada"));
 				
 				Calendar dataCalendar = Calendar.getInstance();
-				//Date date = new Date(dataCalendar.getTimeInMillis());
 				dataCalendar.setTime(rs.getDate("data_emprestimo"));
 				vo.setDataEmprestimo(dataCalendar);
 				
 				Calendar dataCalendar2 = Calendar.getInstance();
-				//Date date2 = new Date(dataCalendar2.getTimeInMillis());
 				dataCalendar2.setTime(rs.getDate("data_devolucao"));
 				vo.setDataDevolucao(dataCalendar2);
 				
@@ -411,7 +386,6 @@ public class AlugueisBO implements AlugueisInterBO {
 			doc.add(p);
 			
 			doc.close();
-			System.out.println("Terminou");
 			Desktop.getDesktop().open(new File(arquivoPDF));
 			
 		}catch(Exception e) {

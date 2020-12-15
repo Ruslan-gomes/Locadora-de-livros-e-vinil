@@ -47,7 +47,6 @@ public class PesquisarCliente {
 		colunaCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
         colunaNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         colunaEndereco.setCellValueFactory(new PropertyValueFactory<>("endereco"));
-        //colunaAcao.setCellValueFactory(new PropertyValueFactory<>("editar"));
 		
         tabelaclientes.getColumns().addAll(colunaCpf, colunaNome, colunaEndereco, colunaEditar, colunaDeletar);
         
@@ -57,17 +56,14 @@ public class PesquisarCliente {
         cliente.setEndereco("Rua tal");
         
         PessoasBO<ClientesVO> bo = new PessoasBO<ClientesVO>();
-        //System.out.println(bo.ListarPessoa(cliente));
-        
-        
+      
         List<ClientesVO> arrayClientes = bo.ListarPessoa(cliente);
         ObservableList<ClientesVO> listaClientes = FXCollections.observableArrayList(arrayClientes);
 		tabelaclientes.setItems(listaClientes);
 		
 		// BOTÕES COM ÍCONES EM SVG
-		// configura a coluna para editar e deleter uma pessoa
+		// configura a coluna para editar e deletar uma pessoa
 		Utils.initButtons(colunaEditar, 15, PEN_SOLID, "svg-gray", (ClientesVO ClientesVO, ActionEvent event) -> {
-			System.out.println("Você clicou para editar as informações de: " + ClientesVO.getNome());
 			try {
 				Telas.telaEditaClientes();
 				EditarCliente.editarCliente.insereTexto(ClientesVO);
@@ -81,7 +77,6 @@ public class PesquisarCliente {
 			}
 		});
 		Utils.initButtons(colunaDeletar, 15, TRASH_SOLID, "svg-red", (ClientesVO ClientesVO, ActionEvent event) -> {
-			System.out.println("Você clicou para deletar as informações de: "+ ClientesVO.getNome());
 			// Aqui vai toda a lógica para deletar a pessoa
 			try {
 				Telas.telaConfirmaDelecao();

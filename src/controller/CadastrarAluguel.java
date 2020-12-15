@@ -31,7 +31,6 @@ public class CadastrarAluguel {
 		Telas.telaCadastraAluguel(painelConteudo);
 	}
 	
-	
 	public void cadastrarAluguel(ActionEvent event) throws Exception
 	{
 		if(cpfcliente.getText().isEmpty() || nomeproduto.getText().isEmpty() || quantidadealugada.getText().isEmpty() || dataemprestimo.getValue() == null || valortotal.getText().isEmpty())
@@ -54,8 +53,6 @@ public class CadastrarAluguel {
 			
 			double valor = Double.parseDouble(valortotal.getText());
 			vo.setValorTotal(valor);
-			
-			
 			
 			try {
 				bo.cadastrarAluguel(vo);
